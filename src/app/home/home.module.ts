@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 
+import { MenuService } from './services/menu/menu.service';
+import { SettingsService } from './services/settings/settings.service';
+import { menu } from './menu';
+
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { ProductCatalogComponent } from './components/product-catalog/product-catalog.component';
@@ -13,11 +17,7 @@ import { CarousalComponent } from './components/portal-home/carousal/carousal.co
 import { ProductsComponent } from './components/portal-home/products/products.component';
 import { CategoriesComponent } from './components/portal-home/categories/categories.component';
 import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
-
-import { MenuService } from './services/menu/menu.service';
-import { SettingsService } from './services/settings/settings.service';
-
-import { menu } from './menu';
+import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
 
 @NgModule({
   imports: [
@@ -36,7 +36,8 @@ import { menu } from './menu';
       CarousalComponent,
       ProductsComponent,
       CategoriesComponent,
-      SideNavbarComponent
+      SideNavbarComponent,
+      CharacteristicsComponent
     ],
   providers:[MenuService,SettingsService]
 })
