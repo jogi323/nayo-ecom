@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RecoverComponent } from './recover/recover.component';
+import { RecoverUsernameComponent } from './recover-username/recover-username.component';
 
 // https://github.com/ocombe/ng2-translate/issues/218
 export function createTranslateLoader(http: Http) {
@@ -28,6 +29,7 @@ export function createTranslateLoader(http: Http) {
         LoginComponent,
         RegisterComponent,
         RecoverComponent,
+        RecoverUsernameComponent,
     ],
     imports: [
         HttpModule,

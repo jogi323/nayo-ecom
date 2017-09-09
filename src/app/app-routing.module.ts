@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RecoverComponent } from './recover/recover.component';
 import { AppComponent } from './app.component';
+import { RecoverUsernameComponent } from './recover-username/recover-username.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'recover', component: RecoverComponent },
+  { path: 'recoverusername', component: RecoverUsernameComponent },
   // { path: 'lock', component: LockComponent },
   // { path: 'maintenance', component: MaintenanceComponent },
   // { path: '404', component: Error404Component },
