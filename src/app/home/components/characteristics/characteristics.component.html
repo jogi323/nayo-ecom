@@ -22,7 +22,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Characteristics</div>
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover" id="table-ext-2">
+                        <table class="table table-bordered table-hover" id="table-ext-3">
                             <thead>
                                 <tr>
                                     <th>Characteristic id</th>
@@ -38,7 +38,7 @@
                                     <td>{{characteristic.id}}</td>
                                     <td>{{characteristic.description}}</td>
                                     <td></td>
-                                    <td></td>
+                                    <td><a class="label label-danger" (click)=showVlaues($event,characteristic)>Select</a></td>
                                     <td></td>
                                     <td></td>
                                 </tr>
