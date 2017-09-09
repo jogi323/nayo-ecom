@@ -8,9 +8,9 @@
                 </a>
             </div>
             <div class="panel-body">
-                <p class="text-center pv">PASSWORD RESET</p>
+                <p class="text-center pv">USERNAME RESET</p>
                 <form [formGroup]="valForm" class="form-validate" role="form" name="recoverForm" novalidate="" (submit)="submitForm($event, valForm.value)">
-                    <p class="text-center">Fill with your mail to receive instructions on how to reset your password.</p>
+                    <p class="text-center">Fill with your mail to receive instructions on how to reset your username.</p>
                     <div class="form-group has-feedback">
                         <label class="text-muted">Email address</label>
                         <input class="form-control" type="email" name="email" placeholder="Enter email" autocomplete="off" formControlName="email"/>
@@ -22,14 +22,5 @@
                 </form>
             </div>
         </div>
-        <!-- END panel-->
-        <!--<div class="p-lg text-center">
-            <span>&copy;</span>
-            <span>{{ settings.app.year }}</span>
-            <span>-</span>
-            <span>{{ settings.app.name }}</span>
-            <br/>
-            <span>{{ settings.app.description }}</span>
-        </div>-->
     </div>
 </div>
