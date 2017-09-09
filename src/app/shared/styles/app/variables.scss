@@ -191,6 +191,10 @@ $btn-primary-color:              #fff;
 $btn-primary-bg:                 $brand-primary;
 $btn-primary-border:             darken($btn-primary-bg, 1%);
 
+$btn-transparent-color:          #fff;
+$btn-transparent-bg:             transparent;
+$btn-transparent-border:         darken($btn-transparent-bg, 1%);
+
 $btn-success-color:              #fff;
 $btn-success-bg:                 $brand-success;
 $btn-success-border:             darken($btn-success-bg, 1%);

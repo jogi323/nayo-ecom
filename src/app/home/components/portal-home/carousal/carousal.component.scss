@@ -1,7 +1,15 @@
 .carousel-images{
      width: 100%;   
-     height: 400px;
+     height: 500px;
+    margin-top:4%;
 }
-.carousel-main {
-    padding: 0px;
+.carousel-caption{
+    padding-bottom: 20% !important; 
+
 }
+
+.btn-primary-outline {
+    background-color: transparent;
+    border-color: #ccc;
+    color:#ccc;
+  }

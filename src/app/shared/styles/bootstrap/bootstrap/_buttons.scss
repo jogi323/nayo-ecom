@@ -71,6 +71,11 @@ a.btn {
 .btn-primary {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
+
+.btn-transparent {
+  @include button-variant($btn-transparent-color, $btn-transparent-bg, $btn-transparent-border);
+}
+
 // Success appears as green
 .btn-success {
   @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);

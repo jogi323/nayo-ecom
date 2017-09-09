@@ -16,7 +16,8 @@
   "private": true,
   "napa": {
     "jquery.flot.spline": "miloszfalinski/jquery.flot.spline",
-    "ika.jvectormap": "kakirigi/ika.jvectormap"
+    "ika.jvectormap": "kakirigi/ika.jvectormap",
+    "flot": "flot/flot#v0.8.3"
   },
   "dependencies": {
     "@agm/core": "1.0.0-beta.0",
@@ -42,8 +43,7 @@
     "classlist.js": "1.1.20150312",
     "codemirror": "5.25.0",
     "core-js": "2.4.1",
-    "easy-pie-chart": "2.1.7",
-    "flot": "flot/flot#v0.8.3",    
+    "easy-pie-chart": "2.1.7",   
     "font-awesome": "4.7.0",
     "fullcalendar": "3.3.1",
     "intl": "1.2.5",

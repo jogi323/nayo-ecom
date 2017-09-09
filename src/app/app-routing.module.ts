@@ -4,6 +4,7 @@ import { ModuleWithProviders } from '@angular/core';
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RecoverComponent } from './recover/recover.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
@@ -29,7 +30,7 @@ const routes: Routes = [
   // Not lazy-loaded routes
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  // { path: 'recover', component: RecoverComponent },
+  { path: 'recover', component: RecoverComponent },
   // { path: 'lock', component: LockComponent },
   // { path: 'maintenance', component: MaintenanceComponent },
   // { path: '404', component: Error404Component },

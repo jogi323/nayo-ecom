@@ -1,3 +1,89 @@
-<p>
-  register works!
-</p>
+<div class="wrapper">
+    <div class="block-center mt-xl wd-xl">
+        <!-- START panel-->
+        <div class="panel panel-dark panel-flat">
+            <div class="panel-heading text-center">
+                <a href="#">
+                    <img class="block-center img-rounded" src="assets/img/logo.png" alt="Image" />
+                </a>
+            </div>
+            <div class="panel-body">
+                <!--<p class="text-center pv">SIGNUP TO GET INSTANT ACCESS.</p>-->
+                <form [formGroup]="valForm" class="form-validate mb-lg" role="form" name="registerForm" novalidate="" (submit)="submitForm($event, valForm.value)">
+                    <div class="form-group has-feedback">
+                        <!--<label class="text-muted">Full name</label>-->
+                        <input class="form-control" type="text" name="account_name" placeholder="Enter Name" autocomplete="off" formControlName="name" required="" />
+                        <span class="fa fa-user-o form-control-feedback text-muted"></span>
+                        <span class="text-danger" *ngIf="valForm.controls['name'].hasError('required') && (valForm.controls['name'].dirty || valForm.controls['name'].touched)">Name is required</span>
+                        <span class="text-danger" *ngIf="valForm.controls['name'].hasError('minlength') && (valForm.controls['name'].dirty || valForm.controls['name'].touched)">Name must contain atleast 2 characters</span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <!--<label class="text-muted">Email address</label>-->
+                        <input class="form-control" type="email" name="account_email" placeholder="Enter email" autocomplete="off" formControlName="email" required="" />
+                        <span class="fa fa-envelope form-control-feedback text-muted"></span>
+                        <span class="text-danger" *ngIf="valForm.controls['email'].hasError('required') && (valForm.controls['email'].dirty || valForm.controls['email'].touched)">Email is required</span>
+                        <span class="text-danger" *ngIf="valForm.controls['email'].hasError('email') && (valForm.controls['email'].dirty || valForm.controls['email'].touched)">This field must be a valid email address</span>
+                    </div>
+                    <div formGroupName="passwordGroup">
+                        <div class="form-group has-feedback">
+                            <!--<label class="text-muted">Password</label>-->
+                            <input class="form-control" id="id-password" type="password" name="password" placeholder="Enter Password" formControlName="password" [formControl]="valForm.get('passwordGroup.password')"/>
+                            <span class="fa fa-lock form-control-feedback text-muted"></span>
+                            <span class="text-danger" *ngIf="valForm.get('passwordGroup.password').hasError('required') && (valForm.get('passwordGroup.password').dirty || valForm.get('passwordGroup.password').touched)">Password is required</span>
+                            <span class="text-danger" *ngIf="valForm.get('passwordGroup.password').hasError('pattern') && (valForm.get('passwordGroup.password').dirty || valForm.get('passwordGroup.password').touched)">Input should match 'a-zA-Z0-9' and 6-10 length</span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <!--<label class="text-muted">Retype Password</label>-->
+                            <input class="form-control" type="password" name="confirmPassword" placeholder="Confirm Password" formControlName="confirmPassword" [formControl]="valForm.get('passwordGroup.confirmPassword')"/>
+                            <span class="fa fa-lock form-control-feedback text-muted"></span>
+
+                            <span class="text-danger" *ngIf="valForm.get('passwordGroup.confirmPassword').hasError('equalTo')">Password does Not match</span>
+                        </div>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <!--<label class="text-muted">address</label>-->
+                        <input class="form-control" type="description" name="account_address" placeholder="Enter address" autocomplete="off" formControlName="address" required="" />
+                        <span class="fa fa-address-card form-control-feedback text-muted"></span>
+                        <span class="text-danger" *ngIf="valForm.controls['address'].hasError('required') && (valForm.controls['address'].dirty || valForm.controls['address'].touched)">address is required</span>
+                        <span class="text-danger" *ngIf="valForm.controls['address'].hasError('minlength') && (valForm.controls['address'].dirty || valForm.controls['address'].touched)">address must contain atlest 10 characters</span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <!--<label class="text-muted">Phone Number</label>-->
+                        <input class="form-control" type="number" name="account_phone" placeholder="Enter Mobile number" autocomplete="off" formControlName="phone" required="" />
+                        <span class="fa fa-phone-square form-control-feedback text-muted"></span>
+                        <span class="text-danger" *ngIf="valForm.controls['phone'].hasError('required') && (valForm.controls['phone'].dirty || valForm.controls['phone'].touched)">Phone Number is required</span>
+                        <span class="text-danger" *ngIf="valForm.controls['phone'].hasError('minlength') && (valForm.controls['phone'].dirty || valForm.controls['phone'].touched)">Must contain atleast 10 number</span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <!--<label class="text-muted">Phone Number</label>-->
+                        <input class="form-control" type="number" name="account_pincode" placeholder="Enter Pin code" autocomplete="off" formControlName="pincode" required="" />
+                        <span class="fa fa-ellipsis-h form-control-feedback text-muted"></span>
+                        <span class="text-danger" *ngIf="valForm.controls['pincode'].hasError('required') && (valForm.controls['pincode'].dirty || valForm.controls['pincode'].touched)">Pin Code is required</span>
+                        <span class="text-danger" *ngIf="valForm.controls['pincode'].hasError('minlength') && (valForm.controls['pincode'].dirty || valForm.controls['pincode'].touched)">Must contain atleast 6 numbers</span>
+                    </div>
+                    <div class="clearfix">
+                        <div class="checkbox c-checkbox pull-left mt0">
+                            <label>
+                                <input type="checkbox" required="" name="account_agreed" formControlName="accountagreed" />
+                                <span class="fa fa-check"></span>I agree with the <a href="#">terms</a>
+                            </label>
+                        </div>
+                    </div>
+                    <span class="text-danger" *ngIf="valForm.controls['accountagreed'].hasError('required') && (valForm.controls['accountagreed'].dirty || valForm.controls['accountagreed'].touched)">You must agree the terms</span>
+                    <button class="btn btn-block btn-primary mt-lg" type="submit">Create account</button>
+                </form>
+                <!-- <div class="alert alert-danger text-center"></div> -->
+                <p class="pt-lg text-center">Have an account?</p><a class="btn btn-block btn-default" [routerLink]="'/login'">Signin</a>
+            </div>
+        </div>
+        <!-- END panel-->
+        <!--<div class="p-lg text-center">
+            <span>&copy;</span>
+            <span>{{ settings.app.year }}</span>
+            <span>-</span>
+            <span>{{ settings.app.name }}</span>
+            <br/>
+            <span>{{ settings.app.description }}</span>
+        </div>-->
+    </div>
+</div>

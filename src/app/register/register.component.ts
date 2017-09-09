@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from '../core/settings/settings.service';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { CustomValidators } from 'ng2-validation';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +10,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+    valForm: FormGroup;
+    passwordForm: FormGroup;
 
-  ngOnInit() {
-  }
+    constructor(public settings: SettingsService, fb: FormBuilder) {
+
+        let password = new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9]{6,10}$')]));
+        let certainPassword = new FormControl('', CustomValidators.equalTo(password));
+
+        this.passwordForm = fb.group({
+            'password': password,
+            'confirmPassword': certainPassword
+        });
+
+        this.valForm = fb.group({
+            'name': [null, Validators.compose([Validators.required, Validators.minLength(2)])],
+            'email': [null, Validators.compose([Validators.required, CustomValidators.email])],
+            'accountagreed': [null, Validators.required],
+            'passwordGroup': this.passwordForm,
+            'address': [null, Validators.compose([Validators.required, Validators.minLength(10)])],
+            'phone': [null, Validators.compose([Validators.required, Validators.maxLength(10), Validators.minLength(9)])],
+            'pincode': [null, Validators.compose([Validators.required, Validators.maxLength(6), Validators.minLength(5)])],
+        });
+    }
+
+    submitForm($ev, value: any) {
+        $ev.preventDefault();
+        for (let c in this.valForm.controls) {
+            this.valForm.controls[c].markAsTouched();
+        }
+        for (let c in this.passwordForm.controls) {
+            this.passwordForm.controls[c].markAsTouched();
+        }
+
+        if (this.valForm.valid) {
+            console.log('Valid!');
+            console.log(value);
+        }
+    }
+
+    ngOnInit() {
+    }
 
 }

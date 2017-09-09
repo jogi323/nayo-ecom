@@ -4,21 +4,18 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-recover',
+  templateUrl: './recover.component.html',
+  styleUrls: ['./recover.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class RecoverComponent implements OnInit {
 
     valForm: FormGroup;
 
     constructor(public settings: SettingsService, fb: FormBuilder) {
-
         this.valForm = fb.group({
-            'email': [null, Validators.compose([Validators.required, CustomValidators.email])],
-            'password': [null, Validators.required]
+            'email': [null, Validators.compose([Validators.required, CustomValidators.email])]
         });
-
     }
 
     submitForm($ev, value: any) {
@@ -33,7 +30,5 @@ export class LoginComponent implements OnInit {
     }
 
     ngOnInit() {
-
     }
-
 }
