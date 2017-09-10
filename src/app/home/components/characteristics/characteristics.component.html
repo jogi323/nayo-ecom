@@ -37,10 +37,10 @@
                                 <tr *ngFor="let characteristic of characteristics; let i = 'index'">
                                     <td>{{characteristic.id}}</td>
                                     <td>{{characteristic.description}}</td>
-                                    <td></td>
+                                    <td>{{findSelectedCharacteristicValue(i)}}</td>
                                     <td><a class="label label-danger" (click)=showVlaues($event,i) data-toggle="modal" data-target="#characteristicModal" *ngIf="characteristic.value.length">Select</a></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{findSelectedCharacteristicDesc(i)}}</td>
+                                    <td>{{findSelectedCharacteristicPricing(i)}}</td>
                                 </tr>
                             </tbody>
                         </table>

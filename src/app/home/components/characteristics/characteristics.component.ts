@@ -18,7 +18,7 @@ export class CharacteristicsComponent implements OnInit {
       { id:"0",
         description:"vechile identification number",
         value:[
-          {charValu:"1231", valueDesc:"abcd",pricing:"100",status:''},
+          {charValu:"1231", valueDesc:"abcd",pricing:"100",status:'selected'},
           {charValu:"8888", valueDesc:"abc",pricing:"600",status:''},
           {charValu:"9999", valueDesc:"abd",pricing:"1000",status:''}
         ]
@@ -28,7 +28,7 @@ export class CharacteristicsComponent implements OnInit {
         description:"paint code",
         value:[
           {charValu:"a3da", valueDesc:"abcd",pricing:"",status:''},
-          {charValu:"678", valueDesc:"fvdg",pricing:"",status:''}
+          {charValu:"678", valueDesc:"fvdg",pricing:"",status:'selected'}
         ]
       },
       {
@@ -59,8 +59,28 @@ export class CharacteristicsComponent implements OnInit {
         this.characteristics[this.currentCharacteristicId].value[i].status = '';
     }
     this.characteristics[this.currentCharacteristicId].value[this.selectedCharacteristic].status = 'selected';
-    console.log(this.characteristics);
     this.selectedCharacteristic=null;
+  }
+  findSelectedCharacteristicValue(index){
+    for(var i=0; i<this.characteristics[index].value.length;i++){
+      if(this.characteristics[index].value[i].status == 'selected'){
+        return this.characteristics[index].value[i].charValu;
+      }
+    }
+  }
+  findSelectedCharacteristicDesc(index){
+    for(var i=0; i<this.characteristics[index].value.length;i++){
+      if(this.characteristics[index].value[i].status == 'selected'){
+        return this.characteristics[index].value[i].valueDesc;
+      }
+    }
+  }
+  findSelectedCharacteristicPricing(index){
+    for(var i=0; i<this.characteristics[index].value.length;i++){
+      if(this.characteristics[index].value[i].status == 'selected'){
+        return this.characteristics[index].value[i].pricing;
+      }
+    }
   }
   ngOnInit() {
   }
