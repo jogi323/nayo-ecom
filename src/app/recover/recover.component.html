@@ -18,7 +18,10 @@
                         <span class="text-danger" *ngIf="valForm.controls['email'].hasError('required') && (valForm.controls['email'].dirty || valForm.controls['email'].touched)">This field is required</span>
                         <span class="text-danger" *ngIf="valForm.controls['email'].hasError('email') && (valForm.controls['email'].dirty || valForm.controls['email'].touched)">This field must be a valid email address</span>
                     </div>
-                    <button class="btn btn-danger btn-block" type="submit">Reset</button>
+                    <button class="btn btn-danger btn-block" type="submit">Reset</button><br>
+                    <div class="pull-right">
+                        <a class="text-muted" [routerLink]="'/login'">Login</a>
+                    </div>
                 </form>
             </div>
         </div>
