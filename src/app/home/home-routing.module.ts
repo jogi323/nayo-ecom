@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
 import { PortalHomeComponent } from './components/portal-home/portal-home.component';
-import { ProductCatalogComponent } from './components/product-catalog/product-catalog.component'
+import { ProductCatalogComponent } from './components/product-catalog/product-catalog.component';
+import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
+
 
 const routes: Routes = [
   {
@@ -11,7 +13,8 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
         { path: '', component:PortalHomeComponent },
-        { path: 'products', component:ProductCatalogComponent }
+        { path: 'products', component:ProductCatalogComponent },
+        { path: 'characteristics', component:CharacteristicsComponent },
     ]
   },
   

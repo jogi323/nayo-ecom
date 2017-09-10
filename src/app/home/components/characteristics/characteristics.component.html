@@ -1,0 +1,93 @@
+<div class="layout-h">
+    <div class="wrapper">
+        <section>
+            <!-- Page content-->
+            <div class="content-wrapper">
+                <!-- START panel-->
+                <div class="panel widget">
+                    <div class="panel-body">
+                        <div class="row row-table">
+                            <div class="col-xs-3 text-center">
+                                <img class="img-thumbnail img-circle img-responsive thumb96" src="assets/img/user/06.jpg" alt="Image" />
+                            </div>
+                            <div class="col-xs-9">
+                                <div class="pull-right"><a class="btn btn-success" href="#">Follow</a>
+                                </div>
+                                <h3 class="mt0">Product Name</h3>
+                                <p class="text-muted">150 Following / 100 Followers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Characteristics</div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="table-ext-3">
+                            <thead>
+                                <tr>
+                                    <th>Characteristic id</th>
+                                    <th>Description</th>
+                                    <th>Characteristics value</th>
+                                    <th>Value</th>
+                                    <th>Value Description</th>
+                                    <th>Pricing</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let characteristic of characteristics; let i = 'index'">
+                                    <td>{{characteristic.id}}</td>
+                                    <td>{{characteristic.description}}</td>
+                                    <td></td>
+                                    <td><a class="label label-danger" (click)=showVlaues($event,i) data-toggle="modal" data-target="#characteristicModal" *ngIf="characteristic.value.length">Select</a></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- END table-responsive-->
+                    
+                </div>
+                <!-- Characteristic Modal -->
+                  <div class="modal fade" id="characteristicModal" role="dialog">
+                    <div class="modal-dialog">
+                    
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Select Value for Characteristic</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-bordered table-hover" id="table-ext-3">
+                                <thead>
+                                    <tr>
+                                        <th>Characteristic value</th>
+                                        <th>Value Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <select class="form-control" [(ngModel)]="selectedCharacteristic">
+                                                <option *ngFor="let characteristic of characteristics[currentCharacteristicId].value; let i = 'index'" value={{i}}>{{characteristic.charValu}}</option>
+                                            </select>
+                                        </td>
+                                        <td><span *ngIf="selectedCharacteristic">{{characteristics[currentCharacteristicId].value[selectedCharacteristic].valueDesc}}</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" (click)="selectCharacteristic()" data-dismiss="modal">Submit</button>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+                <!-- End of Characteristic Modal -->
+            </div>
+        </section>
+
+    </div>
+</div>
