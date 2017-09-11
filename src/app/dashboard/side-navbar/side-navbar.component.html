@@ -5,6 +5,11 @@
         <!-- START sidebar nav-->
         <ul class="nav">
 
+            <!-- START user info-->
+            <li class="has-user-block">
+                <app-userblock></app-userblock>
+            </li>
+            <!-- END user info-->
 
             <li *ngFor='let item of menuItems' [ngClass]="{'nav-heading': item.heading}" [routerLinkActive]="['active']">
                 <!-- menu heading -->
@@ -109,4 +114,3 @@
     </nav>
 </div>
 <!-- END Sidebar (left)-->
-

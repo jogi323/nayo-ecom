@@ -13,13 +13,14 @@ import { HomeComponent } from './components/home/home.component';
 import { TopNavbarComponent } from './top-navbar/top-navbar.component';
 import { NavsearchComponent } from './top-navbar/navsearch/navsearch.component';
 import { SideNavbarComponent } from './side-navbar/side-navbar.component';
-
+import { UserblockComponent } from './side-navbar/userblock/userblock.component';
 import { ThemeSettingsComponent } from './components/theme-settings/theme-settings.component';
 
 //Services
-import { SettingsService } from './services/settings/settings.service';
-import { MenuService } from './services/menu/menu.service';
-import { ThemesService } from './services/themes/themes.service';
+// import { SettingsService } from './services/settings/settings.service';
+import { MenuService } from '../core/menu/menu.service';
+// import { ThemesService } from './services/themes/themes.service';
+import { UserblockService } from './side-navbar/userblock/userblock.service';
 //Naigation Menu
 import { menu } from './menu';
 
@@ -36,12 +37,11 @@ import { menu } from './menu';
     HomeComponent, ThemeSettingsComponent, 
     TopNavbarComponent,
     SideNavbarComponent,
-    NavsearchComponent
+    NavsearchComponent,
+    UserblockComponent
   ],
   providers:[
-    SettingsService,
-    MenuService,
-    ThemesService
+    UserblockService
   ]
 })
 export class DashboardModule { 

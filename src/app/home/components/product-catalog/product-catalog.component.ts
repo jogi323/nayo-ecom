@@ -17,6 +17,7 @@ export class ProductCatalogComponent implements OnInit {
   brands:any[];
   models:any[];
   products:any[];
+  currentColor:number;
 
   constructor(fb: FormBuilder, public settings: SettingsService) {
       // Model Driven validation
@@ -41,9 +42,9 @@ export class ProductCatalogComponent implements OnInit {
             {id:"3",name:"green"},
             {id:"4",name:"warning"},
             {id:"5",name:"info"},
-            {id:"5",name:"success"},
-            {id:"5",name:"primary"},
-            {id:"5",name:"danger"},
+            {id:"6",name:"success"},
+            {id:"7",name:"primary"},
+            {id:"8",name:"danger"},
           ]
         this.brands=[
             {id:"0",name:"audi"},
@@ -68,7 +69,7 @@ export class ProductCatalogComponent implements OnInit {
             {id:"4",name:"2013"},
             {id:"5",name:"2012"}
         ]
-
+        this.currentColor = null;
   }
 
   public styleSelected(event){
@@ -85,6 +86,7 @@ export class ProductCatalogComponent implements OnInit {
   }
 
   public colorSelected(color){
+      this.currentColor=color;
       this.products=[
         {id:"0",name:"swift",color:color ,image:"p0.png"},
         {id:"1",name:"civic",color:color,image:"p1.png"},

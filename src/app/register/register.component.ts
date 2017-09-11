@@ -29,8 +29,10 @@ export class RegisterComponent implements OnInit {
             'accountagreed': [null, Validators.required],
             'passwordGroup': this.passwordForm,
             'address': [null, Validators.compose([Validators.required, Validators.minLength(10)])],
+            'company': [null, Validators.compose([Validators.required, Validators.minLength(2)])],
             'phone': [null, Validators.compose([Validators.required, Validators.maxLength(10), Validators.minLength(9)])],
             'pincode': [null, Validators.compose([Validators.required, Validators.maxLength(6), Validators.minLength(5)])],
+            
         });
     }
 

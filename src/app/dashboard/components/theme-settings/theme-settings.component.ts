@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { SettingsService } from '../../services/settings/settings.service';
-import { ThemesService } from '../../services/themes/themes.service';
+import { SettingsService } from '../../../core/settings/settings.service';
+import { ThemesService } from '../../../core/themes/themes.service';
 
 
 @Component({

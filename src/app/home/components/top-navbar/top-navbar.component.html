@@ -18,17 +18,17 @@
     <!-- START Nav wrapper-->
     <div class="nav-wrapper">
         <!-- START Left navbar-->
-        <!--<ul class="nav navbar-nav">
-            <li>-->
+        <ul class="nav navbar-nav">
+            <li>
                 <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
                 <!--<a class="hidden-xs" trigger-resize="" (click)="toggleCollapsedSideabar()" *ngIf="!isCollapsedText()">
                     <em class="fa fa-navicon"></em>
                 </a>-->
                 <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
-                <!--<a class="visible-xs sidebar-toggle" (click)="settings.layout.asideToggled =! settings.layout.asideToggled">
+                <a class="visible-xs sidebar-toggle" (click)="settings.layout.asideToggled =! settings.layout.asideToggled">
                     <em class="fa fa-navicon"></em>
-                </a>-->
-            <!--</li>-->
+                </a>
+            </li>
             <!-- START User avatar toggle-->
             <!--<li>-->
                 <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
@@ -44,7 +44,7 @@
                 </a>
             </li>-->
             <!-- END lock screen-->
-        <!--</ul>-->
+        </ul>
         <!-- END Left navbar-->
         <!-- START Right Navbar-->
         <ul class="nav navbar-nav navbar-right">
@@ -62,6 +62,10 @@
             </li> -->
             <li class="visible-lg">
                 <a #fsbutton [routerLink]="'/login'">Login
+                </a>
+            </li>
+            <li class="visible-lg">
+                <a #fsbutton [routerLink]="'/register'">Signup
                 </a>
             </li>
             <!-- START Alert menu-->

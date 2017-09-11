@@ -48,6 +48,13 @@
                         <span class="text-danger" *ngIf="valForm.controls['address'].hasError('minlength') && (valForm.controls['address'].dirty || valForm.controls['address'].touched)">address must contain atlest 10 characters</span>
                     </div>
                     <div class="form-group has-feedback">
+                        <!--<label class="text-muted">address</label>-->
+                        <input class="form-control" type="description" name="account_company" placeholder="Enter company name" autocomplete="off" formControlName="company" required="" />
+                        <span class="fa fa-briefcase form-control-feedback text-muted"></span>
+                        <span class="text-danger" *ngIf="valForm.controls['company'].hasError('required') && (valForm.controls['company'].dirty || valForm.controls['company'].touched)">Company name is required</span>
+                        <span class="text-danger" *ngIf="valForm.controls['company'].hasError('minlength') && (valForm.controls['company'].dirty || valForm.controls['company'].touched)">Company name must contain atlest 2 characters</span>
+                    </div>
+                    <div class="form-group has-feedback">
                         <!--<label class="text-muted">Phone Number</label>-->
                         <input class="form-control" type="number" name="account_phone" placeholder="Enter Mobile number" autocomplete="off" formControlName="phone" required="" />
                         <span class="fa fa-phone-square form-control-feedback text-muted"></span>

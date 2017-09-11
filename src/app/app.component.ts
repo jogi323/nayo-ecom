@@ -24,6 +24,6 @@ export class AppComponent implements OnInit {
     constructor(public settings: SettingsService) { }
 
     ngOnInit() {
-        // $(document).on('click', '[href="#"]', e => e.preventDefault());
+         $(document).on('click', '[href="#"]', e => e.preventDefault());
     }
 }

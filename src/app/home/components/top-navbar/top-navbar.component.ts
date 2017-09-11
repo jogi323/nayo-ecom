@@ -3,6 +3,7 @@ const screenfull = require('screenfull');
 const browser = require('jquery.browser');
 declare var $: any;
 
+import { SettingsService } from '../../../core/settings/settings.service';
 
 @Component({
   selector: 'app-top-navbar',
@@ -17,7 +18,7 @@ export class TopNavbarComponent implements OnInit {
     isNavSearchVisible: boolean;
     @ViewChild('fsbutton') fsbutton;  // the fullscreen button
 
-    constructor() {
+    constructor(private settings:SettingsService) {
 
         // show only a few items on demo
         // this.menuItems = menu.getMenu().slice(0,4); // for horizontal layout
@@ -51,17 +52,17 @@ export class TopNavbarComponent implements OnInit {
         return this.isNavSearchVisible;
     }
 
-    // toggleOffsidebar() {
-    //     this.settings.layout.offsidebarOpen = !this.settings.layout.offsidebarOpen;
-    // }
+    toggleOffsidebar() {
+        this.settings.layout.offsidebarOpen = !this.settings.layout.offsidebarOpen;
+    }
 
-    // toggleCollapsedSideabar() {
-    //     this.settings.layout.isCollapsed = !this.settings.layout.isCollapsed;
-    // }
+    toggleCollapsedSideabar() {
+        this.settings.layout.isCollapsed = !this.settings.layout.isCollapsed;
+    }
 
-    // isCollapsedText() {
-    //     return this.settings.layout.isCollapsedText;
-    // }
+    isCollapsedText() {
+        return this.settings.layout.isCollapsedText;
+    }
 
     toggleFullScreen(event) {
 

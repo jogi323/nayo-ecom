@@ -5,72 +5,52 @@
         <!-- START Sidebar (left)-->
         <div class="aside-inner">
             <nav class="sidebar" sidebar-anyclick-close="" [class.show-scrollbar]="settings.layout.asideScrollbar">
-               <br> 
-               <div class="container-fluid">
+                <br>
+                <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-12">
                             <form [formGroup]="valForm" class="form-validate form-horizontal" (submit)="submitForm($event, valForm.value)" novalidate="">
                                 <!-- START sidebar nav-->
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label float-left pull-left">Style</label>
-                                        <div class="col-sm-12">
-                                            <select 
-                                                class="form-control" 
-                                                formControlName="style"
-                                                [formControl]="valForm.controls['style']" 
-                                                (change)="styleSelected($event)">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label float-left pull-left">Style</label>
+                                    <div class="col-sm-12">
+                                        <select class="form-control" formControlName="style" [formControl]="valForm.controls['style']" (change)="styleSelected($event)">
                                                     <option *ngFor="let style of styles" value={{style.id}}>{{style.name}}</option>
                                             </select>
-                                            <span class="text-danger" *ngIf="valForm.controls['style'].hasError('required') && (valForm.controls['style'].dirty || valForm.controls['style'].touched)">This field is required</span>
+                                        <span class="text-danger" *ngIf="valForm.controls['style'].hasError('required') && (valForm.controls['style'].dirty || valForm.controls['style'].touched)">This field is required</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label pull-left">Color</label>
+                                    <div class="col-sm-12">
+                                        <div class="panel-body">
+
+                                            <ul class="list-inline external-event-color-selector">
+                                                <li *ngFor="let color of colors" class="p0">
+                                                    <a class="circle circle-{{color.name}} circle-xl" (click)="colorSelected(color.id)" [ngClass]="{'currentColor':currentColor == color.id}"></a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label pull-left">Color</label>
-                                        <div class="col-sm-12">
-                                            <div class="panel-body">
-                                                
-                                                    <ul class="list-inline external-event-color-selector">
-                                                        <li *ngFor="let color of colors" class="p0">
-                                                            <a class="circle circle-{{color.name}} circle-xl selected" (click)="colorSelected(color.id)"></a>
-                                                        </li>
-                                                        <!-- <li class="p0"><a class="circle circle-primary circle-xl"></a></li>
-                                                        <li class="p0"><a class="circle circle-info circle-xl"></a></li>
-                                                        <li class="p0"><a class="circle circle-success circle-xl"></a></li>
-                                                        <li class="p0"><a class="circle circle-warning circle-xl"></a></li>
-                                                        <li class="p0"><a class="circle circle-green circle-xl"></a></li>
-                                                        <li class="p0"><a class="circle circle-pink circle-xl"></a></li>
-                                                        <li class="p0"><a class="circle circle-inverse circle-xl"></a></li>
-                                                        <li class="p0"><a class="circle circle-purple circle-xl"></a></li> -->
-                                                    </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label pull-left">Brand</label>
-                                        <div class="col-sm-12">
-                                            <select 
-                                                class="form-control" 
-                                                formControlName="brand" 
-                                                [formControl]="valForm.controls['brand']"
-                                                (change)="brandSelected($event)">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label pull-left">Brand</label>
+                                    <div class="col-sm-12">
+                                        <select class="form-control" formControlName="brand" [formControl]="valForm.controls['brand']" (change)="brandSelected($event)">
                                                     <option *ngFor="let brand of brands" value={{brand.id}}>{{brand.name}}</option>
                                                 </select>
-                                            <span class="text-danger" *ngIf="valForm.controls['brand'].hasError('required') && (valForm.controls['brand'].dirty || valForm.controls['brand'].touched)">This field is required</span>
-                                        </div>
+                                        <span class="text-danger" *ngIf="valForm.controls['brand'].hasError('required') && (valForm.controls['brand'].dirty || valForm.controls['brand'].touched)">This field is required</span>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label pull-left">Model</label>
-                                        <div class="col-sm-12">
-                                            <select 
-                                                class="form-control" 
-                                                formControlName="model" 
-                                                [formControl]="valForm.controls['model']"
-                                                (change)="modelSelected($event)">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label pull-left">Model</label>
+                                    <div class="col-sm-12">
+                                        <select class="form-control" formControlName="model" [formControl]="valForm.controls['model']" (change)="modelSelected($event)">
                                                     <option *ngFor="let model of models" value={{model.id}}>{{model.name}}</option>
                                                 </select>
-                                            <span class="text-danger" *ngIf="valForm.controls['model'].hasError('required') && (valForm.controls['model'].dirty || valForm.controls['model'].touched)">This field is required</span>
-                                        </div>
+                                        <span class="text-danger" *ngIf="valForm.controls['model'].hasError('required') && (valForm.controls['model'].dirty || valForm.controls['model'].touched)">This field is required</span>
                                     </div>
+                                </div>
                                 <!-- END sidebar nav-->
                             </form>
                         </div>
@@ -78,7 +58,7 @@
                 </div>
             </nav>
         </div>
-<!-- END Sidebar (left)-->
+        <!-- END Sidebar (left)-->
     </div>
     <!-- </div> -->
     <!-- offsidebar-->
@@ -122,5 +102,5 @@
         </div>
     </section>
     <!-- </div> -->
-<!-- </div> -->
+    <!-- </div> -->
 </div>

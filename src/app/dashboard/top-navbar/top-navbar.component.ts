@@ -3,9 +3,9 @@ const screenfull = require('screenfull');
 const browser = require('jquery.browser');
 declare var $: any;
 
-import { SettingsService } from '../services/settings/settings.service';
-import { MenuService } from '../services/menu/menu.service';
-import { ThemesService } from '../services/themes/themes.service';
+import { SettingsService } from '../../core/settings/settings.service';
+import { MenuService } from '../../core/menu/menu.service';
+import { ThemesService } from '../../core/themes/themes.service';
 
 @Component({
   selector: 'app-top-navbar',
@@ -56,7 +56,6 @@ export class TopNavbarComponent implements OnInit {
     }
 
     toggleOffsidebar() {
-        console.log(this.settings);
         this.settings.layout.offsidebarOpen = !this.settings.layout.offsidebarOpen;
     }
 
