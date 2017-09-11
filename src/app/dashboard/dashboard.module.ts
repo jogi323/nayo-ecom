@@ -10,12 +10,16 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 // Dasboard and it's child components
 import { DashboardComponent } from './dashboard.component';
 import { HomeComponent } from './components/home/home.component';
+import { TopNavbarComponent } from './top-navbar/top-navbar.component';
+import { NavsearchComponent } from './top-navbar/navsearch/navsearch.component';
+import { SideNavbarComponent } from './side-navbar/side-navbar.component';
+
 import { ThemeSettingsComponent } from './components/theme-settings/theme-settings.component';
 
 //Services
-import { SettingsService } from '../shared/services/settings/settings.service';
-import { MenuService } from '../shared/services/menu/menu.service';
-import { ThemesService } from '../shared/services/themes/themes.service';
+import { SettingsService } from './services/settings/settings.service';
+import { MenuService } from './services/menu/menu.service';
+import { ThemesService } from './services/themes/themes.service';
 //Naigation Menu
 import { menu } from './menu';
 
@@ -30,6 +34,9 @@ import { menu } from './menu';
   declarations: [
     DashboardComponent, 
     HomeComponent, ThemeSettingsComponent, 
+    TopNavbarComponent,
+    SideNavbarComponent,
+    NavsearchComponent
   ],
   providers:[
     SettingsService,

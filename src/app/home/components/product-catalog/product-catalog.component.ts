@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, ValidatorFn } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
 
-import { SettingsService } from '../../../shared/services/settings/settings.service';
+import { SettingsService } from '../../services/settings/settings.service';
 
 @Component({
   selector: 'app-product-catalog',

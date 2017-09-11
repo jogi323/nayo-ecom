@@ -4,7 +4,7 @@ const Home = {
     link: '/home',
     icon: 'icon-home'
 };
-const Theme = {
+const theme = {
     text: 'Theme Settings',
     link: '/dashboard/themesettings',
     icon: 'icon-settings'
@@ -398,7 +398,7 @@ const headingMore = {
 export const menu = [
     headingMain,
     Home,
-    Theme,
+    theme,
     Dashboard,
     Widgets,
     headingComponents,
