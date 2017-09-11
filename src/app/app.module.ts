@@ -5,14 +5,19 @@ import { HttpModule, Http } from '@angular/http';
 import { TranslateService, TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+//Parent Component
 import { AppComponent } from './app.component';
 
+//Main Routing
 import { routing } from './app-routing.module';
+
+//Lazy Loading Modules
 import { CoreModule } from './core/core.module';
 import { LayoutModule } from './layout/layout.module';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
 // import { RoutesModule } from './routes/routes.module';
+//Basic Components
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RecoverComponent } from './recover/recover.component';

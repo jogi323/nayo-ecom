@@ -2,8 +2,8 @@ import { Component, OnInit, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 declare var $: any;
 
-import { SettingsService } from '../services/settings/settings.service';
-import { MenuService } from '../services/menu/menu.service';
+import { SettingsService } from '../../services/settings/settings.service';
+import { MenuService } from '../../services/menu/menu.service';
 
 @Component({
   selector: 'app-side-navbar',
@@ -17,7 +17,6 @@ export class SideNavbarComponent implements OnInit {
 
     constructor(public menu: MenuService, public settings: SettingsService, public injector: Injector) {
         this.menuItems = menu.getMenu();
-
     }
 
     ngOnInit() {
