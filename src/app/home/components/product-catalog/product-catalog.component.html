@@ -25,14 +25,22 @@
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label pull-left">Color</label>
                                         <div class="col-sm-12">
-                                            <select 
-                                                class="form-control" 
-                                                formControlName="color" 
-                                                [formControl]="valForm.controls['color']"
-                                                (change)="colorSelected($event)">
-                                                    <option *ngFor="let color of colors" value={{color.id}}>{{color.name}}</option>
-                                            </select>
-                                            <span class="text-danger" *ngIf="valForm.controls['color'].hasError('required') && (valForm.controls['color'].dirty || valForm.controls['color'].touched)">This field is required</span>
+                                            <div class="panel-body">
+                                                
+                                                    <ul class="list-inline external-event-color-selector">
+                                                        <li *ngFor="let color of colors" class="p0">
+                                                            <a class="circle circle-{{color.name}} circle-xl selected" (click)="colorSelected(color.id)"></a>
+                                                        </li>
+                                                        <!-- <li class="p0"><a class="circle circle-primary circle-xl"></a></li>
+                                                        <li class="p0"><a class="circle circle-info circle-xl"></a></li>
+                                                        <li class="p0"><a class="circle circle-success circle-xl"></a></li>
+                                                        <li class="p0"><a class="circle circle-warning circle-xl"></a></li>
+                                                        <li class="p0"><a class="circle circle-green circle-xl"></a></li>
+                                                        <li class="p0"><a class="circle circle-pink circle-xl"></a></li>
+                                                        <li class="p0"><a class="circle circle-inverse circle-xl"></a></li>
+                                                        <li class="p0"><a class="circle circle-purple circle-xl"></a></li> -->
+                                                    </ul>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -97,7 +105,7 @@
                         <div class="panel-body text-center bg-gray-lighter">
                             <div class="row row-table">
                                 <div class="col-xs-12">
-                                    <a class="text-{{product.color}}" href="#">
+                                    <a class="text-{{product.color}}" [routerLink]="'/home/characteristics'">
                                         product name
                                     </a>
                                 </div>

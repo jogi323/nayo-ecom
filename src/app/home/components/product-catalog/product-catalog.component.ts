@@ -36,43 +36,76 @@ export class ProductCatalogComponent implements OnInit {
           {id:"4",name:"solid"},
           {id:"5",name:"plain"}
         ]
-
+        this.colors=[
+            {id:"0",name:"pink"},
+            {id:"1",name:"inverse"},
+            {id:"2",name:"purple"},
+            {id:"3",name:"green"},
+            {id:"4",name:"warning"},
+            {id:"5",name:"info"},
+            {id:"5",name:"success"},
+            {id:"5",name:"primary"},
+            {id:"5",name:"danger"},
+          ]
+        this.brands=[
+            {id:"0",name:"audi"},
+            {id:"1",name:"honda"},
+            {id:"2",name:"maruti"},
+            {id:"3",name:"benz"},
+            {id:"4",name:"merc"}
+        ]
+        this.products=[
+            {id:"0",name:"swift",colo:"red",image:"p0.png"},
+            {id:"1",name:"civic",color:"white",image:"p1.png"},
+            {id:"2",name:"brio",color:"green",image:"p2.png"},
+            {id:"3",name:"verna",color:"blue",image:"p3.png"},
+            {id:"4",name:"indica",color:"black",image:"p1.png"},
+            {id:"5",name:"polo",color:"yellow",image:"p0.png"}
+        ]
+        this.models=[
+            {id:"0",name:"2017"},
+            {id:"1",name:"2016"},
+            {id:"2",name:"2015"},
+            {id:"3",name:"2014"},
+            {id:"4",name:"2013"},
+            {id:"5",name:"2012"}
+        ]
 
   }
 
   public styleSelected(event){
-    this.colors=[
-        {id:"0",name:"blue"},
-        {id:"1",name:"green"},
-        {id:"2",name:"black"},
-        {id:"3",name:"red"},
-        {id:"4",name:"white"},
-        {id:"5",name:"green"}
+    this.products=[
+        {id:"0",name:"swift",color:"red"},
+        {id:"1",name:"civic",color:"white"},
+        {id:"2",name:"brio",color:"green"},
+        {id:"3",name:"verna",color:"blue"},
+        {id:"4",name:"indica",color:"black"},
+        {id:"5",name:"polo",color:"yellow"},
+        {id:"5",name:"vent",color:"brown"},
+        {id:"5",name:"kwid",color:"blue"}
     ]
   }
 
-  public colorSelected(event){
-    this.brands=[
-        {id:"0",name:"audi"},
-        {id:"1",name:"honda"},
-        {id:"2",name:"maruti"},
-        {id:"3",name:"benz"},
-        {id:"4",name:"merc"}
+  public colorSelected(color){
+      this.products=[
+        {id:"0",name:"swift",color:color ,image:"p0.png"},
+        {id:"1",name:"civic",color:color,image:"p1.png"},
+        {id:"4",name:"indica",color:color,image:"p1.png"},
+        {id:"5",name:"polo",color:color,image:"p0.png"}
     ]
   }
   public brandSelected(event){
-    this.models=[
-        {id:"0",name:"2017"},
-        {id:"1",name:"2016"},
-        {id:"2",name:"2015"},
-        {id:"3",name:"2014"},
-        {id:"4",name:"2013"},
-        {id:"5",name:"2012"}
+    this.products=[
+        {id:"0",name:"swift",color:"blue",image:"p0.png"},
+        {id:"1",name:"civic",color:"red",image:"p1.png"},
+        {id:"4",name:"indica",color:"black",image:"p1.png"},
+        {id:"5",name:"polo",color:"yellow",image:"p0.png"}
     ]
+    
   }
   public modelSelected(event){
     this.products=[
-        {id:"0",name:"swift",colo:"red"},
+        {id:"0",name:"swift",color:"red"},
         {id:"1",name:"civic",color:"white"},
         {id:"2",name:"brio",color:"green"},
         {id:"3",name:"verna",color:"blue"},

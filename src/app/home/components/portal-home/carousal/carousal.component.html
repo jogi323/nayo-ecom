@@ -4,8 +4,8 @@
     <slide *ngFor="let slidez of slides; let index=index" [active]="slidez.active">
       <img [src]="slidez.image" class="img-responsive carousel-images">
       <div class="carousel-caption">
-        <h2>some description about the product</h2>
-        <button class="mb-sm btn btn-primary-outline" type="button">Default</button>
+        <h1>Excellence in exterior building products</h1>
+        <button class="mb-sm btn btn-primary-outline" [routerLink]="'/home/products'" type="button">View Products</button>
       </div>
     </slide>
   </carousel>

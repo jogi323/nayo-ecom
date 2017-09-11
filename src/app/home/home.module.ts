@@ -18,6 +18,8 @@ import { ProductsComponent } from './components/portal-home/products/products.co
 import { CategoriesComponent } from './components/portal-home/categories/categories.component';
 import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   imports: [
@@ -37,7 +39,9 @@ import { CharacteristicsComponent } from './components/characteristics/character
       ProductsComponent,
       CategoriesComponent,
       SideNavbarComponent,
-      CharacteristicsComponent
+      CharacteristicsComponent,
+      OrdersComponent,
+      FooterComponent
     ],
   providers:[MenuService,SettingsService]
 })

@@ -42,6 +42,11 @@ span.details{
 .half-float{
     margin-bottom:0px !important;  
 }
-img.img-responsive.second-catageroies{
 
+
+@media only screen and (min-width: 1185px) {
+    .catageoryTopMargin{
+        // margin-top:55px;
+        margin-top:-230px;
+    }
 }

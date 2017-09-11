@@ -5,6 +5,7 @@ import { HomeComponent } from './home.component';
 import { PortalHomeComponent } from './components/portal-home/portal-home.component';
 import { ProductCatalogComponent } from './components/product-catalog/product-catalog.component';
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
         { path: '', component:PortalHomeComponent },
         { path: 'products', component:ProductCatalogComponent },
         { path: 'characteristics', component:CharacteristicsComponent },
+        { path: 'orders', component:OrdersComponent },
     ]
   },
   

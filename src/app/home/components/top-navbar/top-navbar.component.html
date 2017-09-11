@@ -2,17 +2,17 @@
 <nav class="navbar topnavbar" role="navigation">
     <!-- START navbar header-->
     <div class="navbar-header">
-        <!--<a class="navbar-brand" [routerLink]="'/'">-->
-            <!--<div class="brand-logo">
+        <a class="navbar-brand" [routerLink]="'/'">
+            <div class="brand-logo">
                 <img class="img-responsive" src="assets/img/logo.png" alt="App Logo" />
             </div>
             <div class="brand-logo-collapsed">
                 <img class="img-responsive" src="assets/img/logo-single.png" alt="App Logo" />
-            </div>-->
-            <a class="navbar-brand brand" [routerLink]="'/home'">
+            </div>
+            <!-- <a class="navbar-brand brand" [routerLink]="'/home'">
                 nayo
-            </a>
-        <!--</a>-->
+            </a> -->
+        </a>
     </div>
     <!-- END navbar header-->
     <!-- START Nav wrapper-->
@@ -52,12 +52,6 @@
             <li>
                 <a (click)="openNavSearch($event)">
                     <em class="icon-magnifier"></em>
-                </a>
-            </li>
-            <!-- Fullscreen (only desktops)-->
-            <li class="visible-lg">
-                <a #fsbutton (click)="toggleFullScreen($event)">
-                    <em class="fa fa-expand"></em>
                 </a>
             </li>
             <li class="visible-lg">

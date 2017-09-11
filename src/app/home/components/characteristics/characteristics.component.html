@@ -2,35 +2,45 @@
     <div class="wrapper">
         <section>
             <!-- Page content-->
-            <div class="content-wrapper">
+            <div class="content-wrapper contentWrapperTopMargin" >
                 <!-- START panel-->
                 <div class="panel widget">
                     <div class="panel-body">
                         <div class="row row-table">
-                            <div class="col-xs-3 text-center">
-                                <img class="img-thumbnail img-circle img-responsive thumb96" src="assets/img/user/06.jpg" alt="Image" />
+                            <div class="col-xs-2 ">
+                                <img class="img-thumbnail img-circle img-responsive thumb96" src="assets/img/product7.png" alt="Image" />
                             </div>
-                            <div class="col-xs-9">
-                                <div class="pull-right"><a class="btn btn-success" href="#">Follow</a>
-                                </div>
+                            <div class="col-xs-7">
+                                
                                 <h3 class="mt0">Product Name</h3>
-                                <p class="text-muted">150 Following / 100 Followers</p>
+                                <p class="text-muted">Our award-winning steel roofing offers timeless 
+                                    beauty and an unmatched quality.</p>
+                                    <p class="text-muted" *ngIf="showProductDetails"> Engineered to withstand the most extreme weather conditions 
+                                     - hail, wind, snow and ice, while maintaining its original look for years to come.
+                                    Home and business owners alike will have peace of mind knowing their products are
+                                    backed with a lifetime, non-prorated warranty. </p>
+                                <a><small (click)="toggleShowProductDetails()" *ngIf="!showProductDetails" class="pull-right">View Details</small></a>
+                                <a><small (click)="toggleShowProductDetails()" *ngIf="showProductDetails" class="pull-right">Close</small></a>
+                            </div>
+                            <div class="col-xs-2">
+                                <div ><a class="btn btn-success" [routerLink]="'/home/products'">Change Product</a>
+                                </div>    
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="panel panel-default">
-                    <div class="panel-heading">Characteristics</div>
+                    <div class="panel-heading">Customize this product</div>
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover" id="table-ext-3">
                             <thead>
                                 <tr>
-                                    <th>Characteristic id</th>
+                                    <th>ID</th>
                                     <th>Description</th>
-                                    <th>Characteristics value</th>
-                                    <th>Value</th>
-                                    <th>Value Description</th>
-                                    <th>Pricing</th>
+                                    <th>Chosen option</th>
+                                    <th>List of Values</th>
+                                    <th>Description of chosen option</th>
+                                    <th>Price</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -63,19 +63,5 @@ export class TopNavbarComponent implements OnInit {
     //     return this.settings.layout.isCollapsedText;
     // }
 
-    toggleFullScreen(event) {
-
-        if (screenfull.enabled) {
-            screenfull.toggle();
-        }
-        // Switch icon indicator
-        let el = $(this.fsbutton.nativeElement);
-        if (screenfull.isFullscreen) {
-            el.children('em').removeClass('fa-expand').addClass('fa-compress');
-        }
-        else {
-            el.children('em').removeClass('fa-compress').addClass('fa-expand');
-        }
-    }
 
 }
