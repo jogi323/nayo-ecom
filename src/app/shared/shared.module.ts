@@ -31,11 +31,23 @@ import { NowDirective } from './directives/now/now.directive';
 import { ScrollableDirective } from './directives/scrollable/scrollable.directive';
 import { JqcloudDirective } from './directives/jqcloud/jqcloud.directive';
 
+// Shared Components
+
+import { TopNavbarComponent} from './components/top-navbar/top-navbar.component';
+import { NavsearchComponent} from './components/top-navbar/navsearch/navsearch.component';
+import { SideNavbarComponent} from './components/side-navbar/side-navbar.component';
+
+//Shared Services
+import { ThemesService } from './services/themes/themes.service';
+import { MenuService } from './services/menu/menu.service';
+import { SettingsService } from './services/settings/settings.service';
+
 // https://angular.io/styleguide#!#04-10
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
+        RouterModule,
         ReactiveFormsModule,
         TranslateModule,
         AccordionModule.forRoot(),
@@ -56,7 +68,10 @@ import { JqcloudDirective } from './directives/jqcloud/jqcloud.directive';
         ToasterModule
     ],
     providers: [
-        ColorsService
+        ColorsService,
+        ThemesService,
+        MenuService,
+        SettingsService
     ],
     declarations: [
         FlotDirective,
@@ -66,7 +81,10 @@ import { JqcloudDirective } from './directives/jqcloud/jqcloud.directive';
         VectormapDirective,
         NowDirective,
         ScrollableDirective,
-        JqcloudDirective
+        JqcloudDirective,
+        TopNavbarComponent,
+        NavsearchComponent,
+        SideNavbarComponent
     ],
     exports: [
         CommonModule,
@@ -97,7 +115,10 @@ import { JqcloudDirective } from './directives/jqcloud/jqcloud.directive';
         VectormapDirective,
         NowDirective,
         ScrollableDirective,
-        JqcloudDirective
+        JqcloudDirective,
+        TopNavbarComponent,
+        NavsearchComponent,
+        SideNavbarComponent
     ]
 })
 

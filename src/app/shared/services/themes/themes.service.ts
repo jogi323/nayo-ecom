@@ -13,7 +13,7 @@ const themeH = require('../../../shared/styles/themes/theme-h.scss');
 export class ThemesService {
 
     styleTag: any;
-    defaultTheme: string = 'F';
+    defaultTheme: string;
 
     constructor() {
         this.createStyle();

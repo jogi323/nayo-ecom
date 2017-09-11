@@ -3,9 +3,9 @@ const screenfull = require('screenfull');
 const browser = require('jquery.browser');
 declare var $: any;
 
-import { SettingsService } from '../services/settings/settings.service';
-import { MenuService } from '../services/menu/menu.service';
-import { ThemesService } from '../services/themes/themes.service';
+import { SettingsService } from '../../services/settings/settings.service';
+import { MenuService } from '../../services/menu/menu.service';
+import { ThemesService } from '../../services/themes/themes.service';
 
 @Component({
   selector: 'app-top-navbar',
@@ -16,7 +16,7 @@ export class TopNavbarComponent implements OnInit {
 
   navCollapsed = true; // for horizontal layout
     menuItems = []; // for horizontal layout
-    currentTheme = 'D';
+    currentTheme = this.themes.getDefaultTheme();
     isNavSearchVisible: boolean;
     @ViewChild('fsbutton') fsbutton;  // the fullscreen button
 
@@ -61,10 +61,12 @@ export class TopNavbarComponent implements OnInit {
     }
 
     toggleCollapsedSideabar() {
+        console.log(this.settings);
         this.settings.layout.isCollapsed = !this.settings.layout.isCollapsed;
     }
 
     isCollapsedText() {
+        console.log('hai')
         return this.settings.layout.isCollapsedText;
     }
 

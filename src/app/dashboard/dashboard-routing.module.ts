@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent } from './dashboard.component';
 import { HomeComponent } from './components/home/home.component';
+import { ThemeSettingsComponent } from './components/theme-settings/theme-settings.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,8 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
         //{ path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-        { path: '', component: HomeComponent }
+        { path: '', component: HomeComponent },
+        { path: 'themesettings', component: ThemeSettingsComponent }
         // { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
         // { path: 'widgets', loadChildren: './widgets/widgets.module#WidgetsModule' },
         // { path: 'elements', loadChildren: './elements/elements.module#ElementsModule' },
