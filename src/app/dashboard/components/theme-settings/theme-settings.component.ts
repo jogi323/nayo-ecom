@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
 
+import { AppService } from '../../../app.service';
+
 import { SettingsService } from '../../../core/settings/settings.service';
 import { ThemesService } from '../../../core/themes/themes.service';
 
@@ -19,23 +21,24 @@ export class ThemeSettingsComponent implements OnInit {
   public hasAnotherDropZoneOver: boolean = false;
 
   public fileOverBase(e: any): void {
-    console.log(e);
     this.hasBaseDropZoneOver = e;
   }
 
   public fileOverAnother(e: any): void {
     this.hasAnotherDropZoneOver = e;
   }
-  constructor(public settings: SettingsService, public themes: ThemesService) {
+  constructor(public settings: SettingsService, public themes: ThemesService,public SettingService:AppService) {
     this.image = {};
-    this.currentTheme = themes.getDefaultTheme();
     // this.selectedLanguage = this.getLangs()[0].code;
   }
 
-  ngOnInit() {
+  ngOnInit() {  
   }
   setTheme() {
-    this.themes.setTheme(this.currentTheme);
+    this.SettingService.url = 'http://localhost:4200/src/app/shared/data.json';
+    this.SettingService.data = this.currentTheme;
+    this.SettingService.postData().subscribe(res => {
+    });    
   }
   
   fileChangeListener($event) {
@@ -49,6 +52,9 @@ export class ThemeSettingsComponent implements OnInit {
     };
 
     myReader.readAsDataURL(file);
+}
+saveLogo(){
+  console.log(this.image.src)
 }
 
   // getLangs() {

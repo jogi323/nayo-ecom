@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 const screenfull = require('screenfull');
 const browser = require('jquery.browser');
 declare var $: any;
+import { AppService } from '../../app.service';
 
 import { SettingsService } from '../../core/settings/settings.service';
 import { MenuService } from '../../core/menu/menu.service';
@@ -14,13 +15,14 @@ import { ThemesService } from '../../core/themes/themes.service';
 })
 export class TopNavbarComponent implements OnInit {
 
-  navCollapsed = true; // for horizontal layout
+    navCollapsed = true; // for horizontal layout
     menuItems = []; // for horizontal layout
-    currentTheme = 'A';
+    currentTheme:String;
     isNavSearchVisible: boolean;
+    logo:any;
     @ViewChild('fsbutton') fsbutton;  // the fullscreen button
 
-    constructor(private menu:MenuService, private settings:SettingsService, private themes:ThemesService ) {
+    constructor(private menu:MenuService, private settings:SettingsService, private themes:ThemesService,public navbarService:AppService ) {
 
         // show only a few items on demo
          this.menuItems = menu.getMenu().slice(0,4); // for horizontal layout
@@ -28,7 +30,11 @@ export class TopNavbarComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.themes.setTheme(this.currentTheme);
+        this.navbarService.url  = 'http://localhost:4200/src/app/shared/data.json';
+        this.navbarService.getData().subscribe(res => {
+            this.logo = res[0].logo.src;
+            this.themes.setTheme(res[0].default);
+        });
         this.isNavSearchVisible = false;
         if (browser.msie) { // Not supported under IE
             this.fsbutton.nativeElement.style.display = 'none';

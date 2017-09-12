@@ -8,6 +8,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 //Parent Component
 import { AppComponent } from './app.component';
 
+//Services
+import { AppService } from './app.service';
 //Main Routing
 import { routing } from './app-routing.module';
 
@@ -51,7 +53,9 @@ export function createTranslateLoader(http: Http) {
             }
         })
     ],
-    providers: [],
+    providers: [
+        AppService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
