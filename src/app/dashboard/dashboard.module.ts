@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FileUploadModule } from 'ng2-file-upload';
+import { ImageCropperModule } from 'ng2-img-cropper';
 // Shared module
 import { SharedModule } from '../shared/shared.module';
 
@@ -30,7 +32,9 @@ import { menu } from './menu';
     FormsModule,
     ReactiveFormsModule,
     DashboardRoutingModule,
-    SharedModule
+    SharedModule,
+    FileUploadModule,
+    ImageCropperModule
   ],
   declarations: [
     DashboardComponent, 

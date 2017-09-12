@@ -3,10 +3,11 @@
         <ng-template tabHeading>
             <em class="icon-equalizer fa-lg"></em>
         </ng-template>
-        <h3 class="text-center text-thin">Settings</h3>
+        <!-- <h3 class="text-center text-thin">Settings</h3> -->
         <!-- Theme Settings -->
         <div class="p">
             <h4 class="text-muted text-thin">Themes</h4>
+            <p class="text-muted text-thin">Select your theme :</p>
             <div class="table-grid mb">
                 <div class="col mb">
                     <div class="setting-color">
@@ -116,116 +117,59 @@
                 </div>
             </div>
         </div>
-        <!-- Layout Seettings -->
-        <div class="p">
-            <h4 class="text-muted text-thin">Layout</h4>
-            <div class="clearfix">
-                <p class="pull-left">Fixed</p>
-                <div class="pull-right">
-                    <label class="switch">
-                      <input type="checkbox" [(ngModel)]="settings.layout.isFixed" />
-                      <span></span>
-                  </label>
-                </div>
-            </div>
-            <div class="clearfix">
-                <p class="pull-left">Boxed</p>
-                <div class="pull-right">
-                    <label class="switch">
-                      <input type="checkbox" [(ngModel)]="settings.layout.isBoxed" />
-                      <span></span>
-                  </label>
-                </div>
-            </div>
-            <!-- <div class="clearfix">
-                <p class="pull-left">RTL</p>
-                <div class="pull-right">
-                <label class="switch">
-                    <input type="checkbox" [(ngModel)]="layoutRTL"/>
-                    <span></span>
-                </label>
-                </div>
-            </div> -->
-        </div>
-        <div class="p" *ngIf="!settings.layout.horizontal">
-            <h4 class="text-muted text-thin">Aside</h4>
-            <div class="clearfix">
-                <p class="pull-left">Collapsed</p>
-                <div class="pull-right">
-                    <label class="switch">
-                      <input type="checkbox" [(ngModel)]="settings.layout.isCollapsed" [disabled]="settings.layout.isCollapsedText" />
-                      <span></span>
-                  </label>
-                </div>
-            </div>
-            <div class="clearfix">
-                <p class="pull-left">Collapsed Text</p>
-                <div class="pull-right">
-                    <label class="switch">
-                      <input type="checkbox" [(ngModel)]="settings.layout.isCollapsedText" [disabled]="settings.layout.isCollapsed" />
-                      <span></span>
-                  </label>
-                </div>
-            </div>
-            <div class="clearfix">
-                <p class="pull-left">Float</p>
-                <div class="pull-right">
-                    <label class="switch">
-                      <input type="checkbox" [(ngModel)]="settings.layout.isFloat" />
-                      <span></span>
-                  </label>
-                </div>
-            </div>
-            <div class="clearfix">
-                <p class="pull-left">Hover</p>
-                <div class="pull-right">
-                    <label class="switch">
-                      <input type="checkbox" [(ngModel)]="settings.layout.asideHover" />
-                      <span></span>
-                  </label>
-                </div>
-            </div>
-            <div class="clearfix">
-                <p class="pull-left">Show Scrollbar</p>
-                <div class="pull-right">
-                    <label class="switch">
-                      <input type="checkbox" [(ngModel)]="settings.layout.asideScrollbar" />
-                      <span></span>
-                  </label>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="p">
-          <h4 class="text-muted text-thin">Language</h4>
-          <select class="form-control" [ngModel]="selectedLanguage" (ngModelChange)="setLang($event)">
-              <option [value]="lang.code" *ngFor="let lang of getLangs()">{{lang.text}}</option>
-          </select>
-      </div> -->
     </tab>
-    <!-- <tab>
-      <ng-template tabHeading>
-          <em class="icon-user fa-lg"></em>
-      </ng-template> -->
-    <!-- Extra items-->
-    <!-- <div class="p">
-          <p>
-              <small class="text-muted">Tasks completion</small>
-          </p>
-          <div class="progress progress-xs m0">
-              <div role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-success progress-80">
-                  <span class="sr-only">80% Complete</span>
-              </div>
-          </div>
-      </div>
-      <div class="p">
-          <p>
-              <small class="text-muted">Upload quota</small>
-          </p>
-          <div class="progress progress-xs m0">
-              <div role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-warning progress-40">
-                  <span class="sr-only">40% Complete</span>
-              </div>
-          </div>
-      </div>
-  </tab> -->
+</tabset>
+<tabset [justified]="true">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="text-muted text-thin">Logo</h4>
+        </div>
+        <hr>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+            <h4>Select file : </h4>
+            <!-- <div ng-show="form.uploader.isHTML5" class=""> -->
+                <!-- 3. nv-file-over uploader="link" over-class="className"-->
+                <!-- <div ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)" [uploader]="uploader" class="box-placeholder my-drop-zone">
+                        Base drop zone
+                    </div> -->
+                <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}"-->
+                <!-- <div nv-file-drop="" uploader="form.uploader" options="{ url: '/foo' }">
+                    <div nv-file-over="" uploader="form.uploader" over-class="bg-purple" class="box-placeholder my-drop-zone">Another drop zone with its own settings</div>
+                </div> -->
+            <!-- </div> -->
+            <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}"-->
+            <!-- <hr> -->
+            <!-- <input filestyle="" type="file" data-button-text="Multiple" data-class-button="btn btn-default" data-class-input="form-control inline"
+                nv-file-select="" uploader="form.uploader" multiple="" class="form-control" id="filestyle-0" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
+            <div class="bootstrap-filestyle input-group"><input type="text" class="form-control " placeholder="" disabled=""> 
+                <span class="group-span-filestyle input-group-btn"
+                    tabindex="0"><label for="filestyle-0" class="btn btn-default "><span class="icon-span-filestyle glyphicon glyphicon-folder-open"></span>                <span class="buttonText">Multiple</span></label>
+                </span>
+            </div><br> -->
+            <input filestyle="" type="file" data-button-text="Single" data-class-button="btn btn-default" data-classinput="form-control inline"
+                nv-file-select="" uploader="form.uploader" class="form-control" id="filestyle-1" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);" (change)="fileChangeListener($event)">
+            <div class="bootstrap-filestyle input-group">
+                <input type="text" class="form-control " placeholder="" disabled="">
+                <span class="group-span-filestyle input-group-btn"
+                    tabindex="0">
+                    <label for="filestyle-1" class="btn btn-default "><span class="icon-span-filestyle glyphicon glyphicon-folder-open"></span><span class="buttonText">Upload Logo</span>
+                    </label>
+                </span>
+            </div>
+            <!-- <label for="image-input" class="file-upload">
+                    <button class="btn btn-default btn-block">Upload Logo</button>
+                    <input id="image-input" type="file" (change)="fileChangeListener($event)">
+                </label> -->
+        </div>
+        <div class="col-md-6">
+            <div class="text-center">
+                <img *ngIf="image.src" src={{image.src}}  height="200px" width="300px">                 
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
 </tabset>
