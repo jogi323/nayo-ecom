@@ -35,10 +35,12 @@ export class ThemeSettingsComponent implements OnInit {
   ngOnInit() {  
   }
   setTheme() {
-    this.SettingService.url = 'http://localhost:4200/src/app/shared/data.json';
-    this.SettingService.data = this.currentTheme;
-    this.SettingService.postData().subscribe(res => {
-    });    
+    localStorage.setItem('currentTheme', this.currentTheme);
+    this.themes.setTheme(this.currentTheme);
+    // this.SettingService.url = 'http://localhost:4200/src/app/shared/data.json';
+    // this.SettingService.data = this.currentTheme;
+    // this.SettingService.postData().subscribe(res => {
+    // });    
   }
   
   fileChangeListener($event) {
@@ -54,7 +56,7 @@ export class ThemeSettingsComponent implements OnInit {
     myReader.readAsDataURL(file);
 }
 saveLogo(){
-  console.log(this.image.src)
+  localStorage.setItem('logo',this.image.src);
 }
 
   // getLangs() {
