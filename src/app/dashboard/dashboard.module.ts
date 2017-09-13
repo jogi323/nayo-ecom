@@ -25,6 +25,10 @@ import { MenuService } from '../core/menu/menu.service';
 import { UserblockService } from './side-navbar/userblock/userblock.service';
 //Naigation Menu
 import { menu } from './menu';
+import { SalesReportsComponent } from './components/sales-reports/sales-reports.component';
+import { ActivityReportsComponent } from './components/activity-reports/activity-reports.component';
+import { DasboardComponent } from './components/dasboard/dasboard.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 @NgModule({
   imports: [
@@ -42,7 +46,11 @@ import { menu } from './menu';
     TopNavbarComponent,
     SideNavbarComponent,
     NavsearchComponent,
-    UserblockComponent
+    UserblockComponent,
+    SalesReportsComponent,
+    ActivityReportsComponent,
+    DasboardComponent,
+    HomePageComponent
   ],
   providers:[
     UserblockService

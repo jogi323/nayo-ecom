@@ -4,6 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { ThemeSettingsComponent } from './components/theme-settings/theme-settings.component';
+import { SalesReportsComponent } from './components/sales-reports/sales-reports.component';
+import { ActivityReportsComponent } from './components/activity-reports/activity-reports.component';
+import { DasboardComponent } from './components/dasboard/dasboard.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 const routes: Routes = [
   {
@@ -11,12 +15,12 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
         //{ path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-        { path: '', component: HomeComponent },
-        { path: 'themesettings', component: ThemeSettingsComponent }
-        // { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
-        // { path: 'widgets', loadChildren: './widgets/widgets.module#WidgetsModule' },
-        // { path: 'elements', loadChildren: './elements/elements.module#ElementsModule' },
-        // { path: 'forms', loadChildren: './forms/forms.module#FormsModule' },
+        { path: '', component: DasboardComponent },
+        { path: 'themesettings', component: ThemeSettingsComponent },
+        { path: 'dashboard', component: DasboardComponent },
+        { path: 'salesreports', component: SalesReportsComponent },
+        { path: 'activityreports', component: ActivityReportsComponent },
+        { path: 'homepage', component: HomePageComponent },
         // { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
         // { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
         // { path: 'maps', loadChildren: './maps/maps.module#MapsModule' },

@@ -29,6 +29,7 @@ export class TopNavbarComponent implements OnInit {
     ngOnInit() {
         this.topNavbarService.url  = 'http://localhost:4200/src/app/shared/data.json';
         this.topNavbarService.getData().subscribe(res => {
+            console.log(res);
             this.logo = res[0].logo.src;
             this.themes.setTheme(res[0].default);
         });

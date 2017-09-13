@@ -1,0 +1,361 @@
+<div class="content-heading">
+  Dashboard
+  <small>{{ 'dashboard.WELCOME' | translate }} !</small>
+</div>
+<!-- START widgets box-->
+<div class="row">
+  <div class="col-lg-3 col-sm-6">
+      <!-- START widget-->
+      <div class="panel widget bg-primary">
+          <div class="row row-table">
+              <div class="col-xs-4 text-center bg-primary-dark pv-lg">
+                  <em class="fa fa-truck fa-3x"></em>
+              </div>
+              <div class="col-xs-8 pv-lg">
+                  <div class="h2 mt0">1700
+                    <!-- <small>total</small> -->
+                  </div>
+                  <div class="text-uppercase">Orders</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-3 col-sm-6">
+      <!-- START widget-->
+      <div class="panel widget bg-purple">
+          <div class="row row-table">
+              <div class="col-xs-4 text-center bg-purple-dark pv-lg">
+                  <em class="fa fa-user fa-3x"></em>
+              </div>
+              <div class="col-xs-8 pv-lg">
+                  <div class="h2 mt0">700
+                  </div>
+                  <div class="text-uppercase">Users</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-12">
+      <!-- START widget-->
+      <div class="panel widget bg-green">
+          <div class="row row-table">
+              <div class="col-xs-4 text-center bg-green-dark pv-lg">
+                  <em class="fa fa-eye fa-3x"></em>
+              </div>
+              <div class="col-xs-8 pv-lg">
+                  <div class="h2 mt0">5000</div>
+                  <div class="text-uppercase">Visitors</div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-12">
+      <!-- START date widget-->
+      <div class="panel widget bg-green">
+        <div class="row row-table">
+            <div class="col-xs-4 text-center bg-green-dark pv-lg">
+                <em class="fa fa-money fa-3x"></em>
+            </div>
+            <div class="col-xs-8 pv-lg">
+                <div class="h2 mt0">$ 90000</div>
+                <div class="text-uppercase">Sales</div>
+            </div>
+        </div>
+    </div>
+      <!-- END date widget    -->
+  </div>
+</div>
+<!-- END widgets box-->
+<div class="row">
+  <!-- START dashboard main content-->
+  <div class="col-lg-9">
+      <!-- START chart-->
+      <div class="row">
+          <div class="col-lg-12">
+              <!-- START widget-->
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <div class="panel-title">Inbound visitor statistics</div>
+                  </div>
+                  <div class="panel-body">
+                      <div flot [dataset]="splineData" [options]="splineOptions" height="260"></div>
+                  </div>
+              </div>
+              <!-- END widget-->
+          </div>
+      </div>
+      <!-- END chart-->
+      
+      <div class="row">
+          <div class="col-lg-4">
+              <!-- START widget-->
+              <div class="panel widget">
+                  <div class="panel-body">
+                      <div class="clearfix">
+                          <h3 class="pull-left text-muted mt0">300</h3>
+                          <em class="pull-right text-muted fa fa-shopping-cart  fa-2x"></em>
+                      </div>
+                      <div class="pv-lg" [sparkline]="sparkOptions2" values="1,3,4,7,5,9,4,4,7,5,9,6,4"></div>
+                      <p>
+                          <small class="text-muted">Cart to bag</small>
+                      </p>
+                      <progressbar class="progress-striped progress-xs" value="80" type="info">80%</progressbar>
+                  </div>
+              </div>
+              <!-- END widget-->
+          </div>
+          <div class="col-lg-8">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <!-- <div class="pull-right label label-danger">5</div>
+                      <div class="pull-right label label-success">12</div> -->
+                      <div class="panel-title">Top selling products</div>
+                  </div>
+                  <!-- START list group-->
+                  <scrollable class="list-group" height="180">
+                      <!-- START list group item-->
+                      <a class="list-group-item" href="">
+                          <div class="media-box">
+                              <div class="pull-left">
+                                  <img class="media-box-object img-circle thumb32" src="assets/img/product7.png" alt="Image" />
+                              </div>
+                              <div class="media-box-body clearfix">
+                                  <small class="pull-right">200</small>
+                                  <strong class="media-box-heading text-primary">
+                            <span class="text-left"></span>Product 1</strong>
+                                  <p class="mb-sm">
+                                      <small>some description about the product</small>
+                                  </p>
+                              </div>
+                          </div>
+                      </a>
+                      <!-- END list group item-->
+                      <!-- START list group item-->
+                      <a class="list-group-item" href="">
+                        <div class="media-box">
+                            <div class="pull-left">
+                                <img class="media-box-object img-circle thumb32" src="assets/img/product8.png" alt="Image" />
+                            </div>
+                            <div class="media-box-body clearfix">
+                                <small class="pull-right">180</small>
+                                <strong class="media-box-heading text-primary">
+                          <span class="text-left"></span>Product 2</strong>
+                                <p class="mb-sm">
+                                    <small>some description about the product</small>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- END list group item-->
+                      <!-- START list group item-->
+                      <a class="list-group-item" href="">
+                        <div class="media-box">
+                            <div class="pull-left">
+                                <img class="media-box-object img-circle thumb32" src="assets/img/product9.png" alt="Image" />
+                            </div>
+                            <div class="media-box-body clearfix">
+                                <small class="pull-right">150</small>
+                                <strong class="media-box-heading text-primary">
+                          <span class="text-left"></span>Product 3</strong>
+                                <p class="mb-sm">
+                                    <small>some description about the product</small>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- END list group item-->
+                      <!-- START list group item-->
+                      <a class="list-group-item" href="">
+                        <div class="media-box">
+                            <div class="pull-left">
+                                <img class="media-box-object img-circle thumb32" src="assets/img/product10.png" alt="Image" />
+                            </div>
+                            <div class="media-box-body clearfix">
+                                <small class="pull-right">135</small>
+                                <strong class="media-box-heading text-primary">
+                          <span class="text-left"></span>Product 4</strong>
+                                <p class="mb-sm">
+                                    <small>some description about the product</small>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- END list group item-->
+                      <!-- START list group item-->
+                      <a class="list-group-item" href="">
+                        <div class="media-box">
+                            <div class="pull-left">
+                                <img class="media-box-object img-circle thumb32" src="assets/img/product7.png" alt="Image" />
+                            </div>
+                            <div class="media-box-body clearfix">
+                                <small class="pull-right">111</small>
+                                <strong class="media-box-heading text-primary">
+                          <span class="text-left"></span>Product 5</strong>
+                                <p class="mb-sm">
+                                    <small>some description about the product</small>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- END list group item-->                      
+                  </scrollable>
+                  <!-- END list group-->
+                  <!-- START panel footer-->
+                  <div class="panel-footer clearfix">
+                      <div class="input-group">
+                          <input class="form-control input-sm" type="text" placeholder="Search message .." />
+                          <span class="input-group-btn">
+                      <button class="btn btn-default btn-sm" type="submit"><i class="fa fa-search"></i>
+                      </button>
+                   </span>
+                      </div>
+                  </div>
+                  <!-- END panel-footer-->
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- END dashboard main content-->
+  <!-- START dashboard sidebar-->
+  <aside class="col-lg-3">
+      <!-- START loader widget-->
+      <div class="panel panel-default">
+          <div class="panel-body">
+              <a class="text-muted pull-right" href="">
+                  <em class="fa fa-arrow-right"></em>
+              </a>
+              <div class="text-info">Average Monthly Orders</div>
+              <div class="text-center pv-xl">
+                  <div class="easypie-chart easypie-chart-lg" easypiechart [options]="pieOptions" [percent]="easyPiePercent">
+                      <span>{{easyPiePercent}}%</span>
+                  </div>
+              </div>
+              <div class="text-center" [sparkline]="sparkOptions1"  values="5,4,8,7,8,5,4,6,5,5,9,4,6,3,4,7,5,4,7"></div>
+          </div>
+          <div class="panel-footer">
+              <p class="text-muted">
+                  <em class="fa fa-upload fa-fw"></em>
+                  <span>This Month</span>
+                  <span class="text-dark">300 orders</span>
+              </p>
+          </div>
+      </div>
+      <!-- END loader widget-->
+      <!-- START messages and activity-->
+      <div class="panel panel-default">
+          <div class="panel-heading">
+              <div class="panel-title">Last orders</div>
+          </div>
+          <!-- START list group-->
+          <div class="list-group">
+              
+              <!-- START list group item-->
+              <div class="list-group-item">
+                  <div class="media-box">
+                    <div class="pull-left">
+                      <img class="media-box-object img-circle thumb32" src="assets/img/product7.png" alt="Image" />
+                    </div>
+                    <div class="media-box-body clearfix">
+                        <small class="text-muted pull-right ml">15h</small>
+                        <div class="media-box-heading"><a class="text-success m0" href="">Product 1</a>
+                        </div>
+                        <p class="m0">
+                            <small>On
+                        <em>10/08/2017 09:00 am</em>
+                    </small>
+                        </p>
+                    </div>
+                  </div>
+              </div>
+              <!-- END list group item-->
+              <!-- START list group item-->
+              <div class="list-group-item">
+                <div class="media-box">
+                  <div class="pull-left">
+                    <img class="media-box-object img-circle thumb32" src="assets/img/product7.png" alt="Image" />
+                  </div>
+                  <div class="media-box-body clearfix">
+                      <small class="text-muted pull-right ml">1D</small>
+                      <div class="media-box-heading"><a class="text-success m0" href="">Product 2</a>
+                      </div>
+                      <p class="m0">
+                          <small>On
+                      <em>05/08/2017 09:00 am</em>
+                  </small>
+                      </p>
+                  </div>
+                </div>
+            </div>
+            <!-- END list group item-->
+            <!-- START list group item-->
+            <div class="list-group-item">
+              <div class="media-box">
+                <div class="pull-left">
+                  <img class="media-box-object img-circle thumb32" src="assets/img/product7.png" alt="Image" />
+                </div>
+                <div class="media-box-body clearfix">
+                    <small class="text-muted pull-right ml">15d</small>
+                    <div class="media-box-heading"><a class="text-success m0" href="">Product 3</a>
+                    </div>
+                    <p class="m0">
+                        <small>On
+                    <em>2/7/2015 09:00 am</em>
+                </small>
+                    </p>
+                </div>
+              </div>
+          </div>
+          <!-- END list group item-->
+          <!-- START list group item-->
+          <div class="list-group-item">
+            <div class="media-box">
+              <div class="pull-left">
+                <img class="media-box-object img-circle thumb32" src="assets/img/product7.png" alt="Image" />
+              </div>
+              <div class="media-box-body clearfix">
+                  <small class="text-muted pull-right ml">21d</small>
+                  <div class="media-box-heading"><a class="text-success m0" href="">Product 4</a>
+                  </div>
+                  <p class="m0">
+                      <small>On
+                  <em>23/06/2017 09:00 am</em>
+              </small>
+                  </p>
+              </div>
+            </div>
+        </div>
+        <!-- END list group item-->
+        <!-- START list group item-->
+        <div class="list-group-item">
+          <div class="media-box">
+              <div class="pull-left">
+                <img class="media-box-object img-circle thumb32" src="assets/img/product7.png" alt="Image" />
+              </div>
+              <div class="media-box-body clearfix">
+                  <small class="text-muted pull-right ml">45d</small>
+                  <div class="media-box-heading"><a class="text-success m0" href="">Product 5</a>
+                  </div>
+                  <p class="m0">
+                      <small>On
+                 <em>10/05/2017 09:00 am</em>
+              </small>
+                  </p>
+              </div>
+          </div>
+      </div>
+      <!-- END list group item-->
+      
+          </div>
+          <!-- END list group-->
+          <!-- START panel footer-->
+          <div class="panel-footer clearfix">
+              <a class="pull-left" href="">
+                  <small>Load more</small>
+              </a>
+          </div>
+          <!-- END panel-footer-->
+      </div>
+      <!-- END messages and activity-->
+  </aside>
+  <!-- END dashboard sidebar-->
+</div>
