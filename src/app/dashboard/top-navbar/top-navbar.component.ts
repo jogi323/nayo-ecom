@@ -30,11 +30,18 @@ export class TopNavbarComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.navbarService.url  = 'http://localhost:4200/src/app/shared/data.json';
-        this.navbarService.getData().subscribe(res => {
-            this.logo = res[0].logo.src;
-            this.themes.setTheme(res[0].default);
-        });
+        // this.navbarService.url  = 'http://localhost:4200/src/app/shared/data.json';
+        // this.navbarService.getData().subscribe(res => {
+        //     console.log(res);
+        //     this.logo = res[0].logo.src;
+        //     this.themes.setTheme(res[0].default);
+        // });
+        if(localStorage.getItem('currentTheme')){
+            this.themes.setTheme(localStorage.getItem('currentTheme'));
+        }
+        if(localStorage.getItem('logo')){
+            this.logo = localStorage.getItem('logo');
+        }
         this.isNavSearchVisible = false;
         if (browser.msie) { // Not supported under IE
             this.fsbutton.nativeElement.style.display = 'none';
