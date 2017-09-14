@@ -75,7 +75,11 @@
 <!-- START panel tab-->
 <div class="row">
     <div class="col-lg-9">
+        <div class="form-group mb-xl">
+            <input class="form-control mb" type="text" placeholder="Search products, products, etc." />
+        </div>
         <div class="panel">
+                
             <tabset class="bg-white p0" [justified]="true">
                 
                 <tab>
@@ -154,6 +158,55 @@
             </tabset>
         </div>
     </div>
-    <div class="col-lg-3"></div>
+    <div class="col-lg-3">
+        <h3 class="m0 pb-lg">Search Orders</h3>
+        <!-- <div class="form-group mb-xl">
+            <label class="control-label mb">by Text</label>
+            <br/>
+            <ng-select [allowClear]="true" [items]="items" placeholder="Nothing selected"></ng-select>
+        </div> -->
+        <div class="form-group mb-xl">
+            <label class="control-label mb">From Date</label>
+            <br/>
+            <p class="input-group">
+                <input class="form-control" type="date" />
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                    <em class="fa fa-calendar"></em>
+                </button>
+            </span>
+            </p>
+        </div>
+        <div class="form-group mb-xl">
+            <label class="control-label mb">To Date</label>
+            <br/>
+            <p class="input-group">
+                <input class="form-control" type="date" />
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                    <em class="fa fa-calendar"></em>
+                </button>
+            </span>
+            </p>
+        </div>
+        <!-- <div class="form-group mb-xl">
+            <label class="control-label mb">by Date</label>
+            <br/>
+            <p class="input-group">
+                <input class="form-control" type="date" />
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                    <em class="fa fa-calendar"></em>
+                </button>
+            </span>
+            </p>
+        </div> -->
+        <div class="form-group mb-xl">
+          <label class="control-label mb">Order no:</label>
+          <br>
+          <input type="text" class="slider slider-lg form-control">
+        </div>
+        <button class="btn btn-default btn-lg">Apply</button>
+    </div>
 </div>
 <!-- END panel tab-->
