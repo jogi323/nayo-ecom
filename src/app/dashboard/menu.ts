@@ -11,12 +11,12 @@ const Home = {
 const Sales = {
     text: 'Sales Reports',
     link: '/dashboard/salesreports',
-    icon: 'icon-file'
+    icon: 'fa fa-inr'
 };
 const activityreports = {
     text: 'Activity Reports',
     link: '/dashboard/activityreports',
-    icon: 'icon-file'
+    icon: 'fa fa-bar-chart'
 };
 // const Dashboard = {
 //     text: 'Dashboard',

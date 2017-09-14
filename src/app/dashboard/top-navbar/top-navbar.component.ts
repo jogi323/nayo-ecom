@@ -41,6 +41,8 @@ export class TopNavbarComponent implements OnInit {
         }
         if(localStorage.getItem('logo')){
             this.logo = localStorage.getItem('logo');
+        }else{
+            this.logo = 'assets/img/logo.png';
         }
         this.isNavSearchVisible = false;
         if (browser.msie) { // Not supported under IE

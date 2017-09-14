@@ -32,6 +32,8 @@ export class TopNavbarComponent implements OnInit {
         }
         if (localStorage.getItem('logo')) {
             this.logo = localStorage.getItem('logo');
+        }else{
+            this.logo = 'assets/img/logo.png';
         }
         // this.topNavbarService.url  = 'http://localhost:4200/src/app/shared/data.json';
         // this.topNavbarService.getData().subscribe(res => {

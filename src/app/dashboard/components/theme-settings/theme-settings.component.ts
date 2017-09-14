@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
 import { AppService } from '../../../app.service';
 
 import { SettingsService } from '../../../core/settings/settings.service';
@@ -15,9 +15,13 @@ export class ThemeSettingsComponent implements OnInit {
   currentTheme: any;
   selectedLanguage: string;
   image:any;
+  data : appNameInterface;
   
   constructor(public settings: SettingsService, public themes: ThemesService,public SettingService:AppService , private router:Router) {
     this.image = {};
+    this.data  = {
+      name:''
+    }
     // this.selectedLanguage = this.getLangs()[0].code;
   }
 
@@ -46,10 +50,13 @@ export class ThemeSettingsComponent implements OnInit {
 }
 saveLogo(){
   localStorage.setItem('logo',this.image.src);
-  this.themes.setLogo(this.image.src);
+  //this.themes.setLogo(this.image.src);
   this.router.navigate(['/dashboard']);
 }
-
+saveAppName(data){
+  localStorage.setItem('appName',data.name);
+ // data.resetForm();
+}
   // getLangs() {
   //   return this.translator.getAvailableLanguages();
   // }
@@ -57,4 +64,8 @@ saveLogo(){
   // setLang(value) {
   //   this.translator.useLanguage(value);
   // }
+}
+
+export class appNameInterface{
+  name:String
 }

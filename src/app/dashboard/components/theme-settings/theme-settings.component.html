@@ -129,27 +129,8 @@
                 </div>
                 <hr>
                 <div class="panel-body">
-
+                    <p class="text-muted text-thin">*Note: Please upload Logo of width 100px and height 40px.</p>
                     <h4>Select file : </h4>
-                    <!-- <div ng-show="form.uploader.isHTML5" class=""> -->
-                    <!-- 3. nv-file-over uploader="link" over-class="className"-->
-                    <!-- <div ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)" [uploader]="uploader" class="box-placeholder my-drop-zone">
-                        Base drop zone
-                    </div> -->
-                    <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}"-->
-                    <!-- <div nv-file-drop="" uploader="form.uploader" options="{ url: '/foo' }">
-                    <div nv-file-over="" uploader="form.uploader" over-class="bg-purple" class="box-placeholder my-drop-zone">Another drop zone with its own settings</div>
-                </div> -->
-                    <!-- </div> -->
-                    <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}"-->
-                    <!-- <hr> -->
-                    <!-- <input filestyle="" type="file" data-button-text="Multiple" data-class-button="btn btn-default" data-class-input="form-control inline"
-                nv-file-select="" uploader="form.uploader" multiple="" class="form-control" id="filestyle-0" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
-            <div class="bootstrap-filestyle input-group"><input type="text" class="form-control " placeholder="" disabled=""> 
-                <span class="group-span-filestyle input-group-btn"
-                    tabindex="0"><label for="filestyle-0" class="btn btn-default "><span class="icon-span-filestyle glyphicon glyphicon-folder-open"></span>                <span class="buttonText">Multiple</span></label>
-                </span>
-            </div><br> -->
                     <input filestyle="" type="file" data-button-text="Single" data-class-button="btn btn-default" data-classinput="form-control inline"
                         nv-file-select="" uploader="form.uploader" class="form-control" id="filestyle-1" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);"
                         (change)="fileChangeListener($event)">
@@ -157,10 +138,9 @@
                         <input type="text" class="form-control " placeholder="" disabled="">
                         <span class="group-span-filestyle input-group-btn" tabindex="0">
                     <label for="filestyle-1" class="btn btn-default "><span class="icon-span-filestyle glyphicon glyphicon-folder-open"></span>
-                        <span
-                            class="buttonText">Upload Logo</span>
-                            </label>
-                            </span>
+                        <span class="buttonText">Upload Logo</span>
+                        </label>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -173,7 +153,7 @@
                 <hr>
                 <div class="panel-body">
                     <div class="text-center">
-                        <img  src={{image.src}} height="42px" width="300px"><br>
+                        <img src={{image.src}} height="40px" width="100px"><br>
                         <button class="btn btn-primary pull-right" (click)='saveLogo()'>Save Logo</button>
                     </div>
                 </div>
@@ -181,4 +161,29 @@
         </div>
     </div>
 
+</tabset>
+<tabset [justified]="true">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="text-muted text-thin">App name</h4>
+                </div>
+                <hr>
+                <div class="panel-body">
+                    <form novalidate #appNameForm = 'ngForm'>
+                        <div class="form-group">
+                            <label for="appName">App name:</label>
+                            <input type="text" class="form-control" id="usr" name="name" placeholder="Please enter our app name here" [(ngModel)]='data.name' #name='ngModel' minlength="3" required>
+                            <div *ngIf="name.errors && (name.dirty || name.touched)" class="error">
+                                <span class="text-danger" [hidden]="!name.errors.required">Please Enter the app name </span>
+                                <span class="text-danger" [hidden]="!name.errors.minlength">app name should be more than 3 characters.</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary pull-right" [disabled]="!appNameForm.form.valid"  (click)='saveAppName(data); appNameForm.reset()'>Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </tabset>
