@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Renderer} from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, ValidatorFn } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
 
@@ -17,9 +18,8 @@ export class ProductCatalogComponent implements OnInit {
   brands:any[];
   models:any[];
   products:any[];
-  currentColor:number;
 
-  constructor(fb: FormBuilder, public settings: SettingsService) {
+  constructor(fb: FormBuilder, public settings: SettingsService, private render:Renderer) {
       // Model Driven validation
       this.valForm = fb.group({
           'style': [{value:null, disabled:false}, Validators.required],
@@ -69,7 +69,6 @@ export class ProductCatalogComponent implements OnInit {
             {id:"4",name:"2013"},
             {id:"5",name:"2012"}
         ]
-        this.currentColor = null;
   }
 
   public styleSelected(event){
@@ -85,8 +84,9 @@ export class ProductCatalogComponent implements OnInit {
     ]
   }
 
-  public colorSelected(color){
-      this.currentColor=color;
+  public colorSelected(color, event:any){
+      event.preventDefault();
+      this.render.setElementClass(event.target,"currentColor",true);
       this.products=[
         {id:"0",name:"swift",color:color ,image:"p0.png"},
         {id:"1",name:"civic",color:color,image:"p1.png"},
