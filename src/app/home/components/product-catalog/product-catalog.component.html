@@ -27,7 +27,7 @@
 
                                             <ul class="list-inline external-event-color-selector">
                                                 <li *ngFor="let color of colors" class="p0">
-                                                    <a class="circle circle-{{color.name}} circle-xl" (click)="colorSelected(color.id)" [ngClass]="{'currentColor':currentColor == color.id}"></a>
+                                                    <a class="circle circle-{{color.name}} circle-xl" (click)="colorSelected(color.id, $event)"></a>
                                                 </li>
                                             </ul>
                                         </div>

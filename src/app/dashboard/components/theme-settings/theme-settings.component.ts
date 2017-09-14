@@ -46,7 +46,7 @@ export class ThemeSettingsComponent implements OnInit {
 }
 saveLogo(){
   localStorage.setItem('logo',this.image.src);
-  this.themes.setLogo(this.image.src);
+  //this.themes.setLogo(this.image.src);
   this.router.navigate(['/dashboard']);
 }
 
