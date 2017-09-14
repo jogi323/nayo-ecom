@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FileUploadModule } from 'ng2-file-upload';
 import { ImageCropperModule } from 'ng2-img-cropper';
+import { ChartsModule as Ng2ChartsModule } from 'ng2-charts/ng2-charts';
 // Shared module
 import { SharedModule } from '../shared/shared.module';
 
@@ -38,7 +39,8 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     DashboardRoutingModule,
     SharedModule,
     FileUploadModule,
-    ImageCropperModule
+    ImageCropperModule,
+    Ng2ChartsModule
   ],
   declarations: [
     DashboardComponent, 
