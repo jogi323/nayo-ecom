@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { UserblockService } from './userblock.service';
 
@@ -9,6 +9,7 @@ import { UserblockService } from './userblock.service';
 })
 export class UserblockComponent implements OnInit {
     user: any;
+    @Output() someEvent = new EventEmitter<string>();
     constructor(public userblockService: UserblockService) {
 
         this.user = {
@@ -18,7 +19,9 @@ export class UserblockComponent implements OnInit {
 
     ngOnInit() {
     }
-
+      callParent() {
+    this.someEvent.next('fayaz');
+  }
     userBlockIsVisible() {
         return this.userblockService.getVisibility();
     }

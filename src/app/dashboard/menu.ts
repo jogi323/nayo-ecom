@@ -18,6 +18,11 @@ const activityreports = {
     link: '/dashboard/activityreports',
     icon: 'fa fa-bar-chart'
 };
+const featuredProducts = {
+    text: 'Featured Products',
+    link: '/dashboard/featuredproducts',
+    icon: 'fa fa-product-hunt'
+};
 // const Dashboard = {
 //     text: 'Dashboard',
 //     link: '/dashboard',
@@ -410,6 +415,7 @@ export const menu = [
     
     Home,
     site,
+    featuredProducts,
     Sales,
     activityreports
     // Widgets,
