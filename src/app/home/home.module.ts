@@ -27,6 +27,7 @@ import { CategoriesComponent } from './components/portal-home/categories/categor
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { OrderViewComponent } from './components/order-view/order-view.component';
 
 @NgModule({
   imports: [
@@ -49,7 +50,8 @@ import { FooterComponent } from './components/footer/footer.component';
       CharacteristicsComponent,
       OrdersComponent,
       FooterComponent,
-      CharacteristicsComponent
+      CharacteristicsComponent,
+      OrderViewComponent
     ],
   providers:[
     SettingsService,

@@ -61,7 +61,7 @@
                                                     <img class="media-box-object img-responsive img-rounded thumb64" src="assets/img/dummy.png" alt="" />
                                                 </a>
                                                 <div class="media-box-body">
-                                                    <div class="pull-right btn btn-info btn-sm">View</div>
+                                                    <div class="pull-right btn btn-info btn-sm" [routerLink]="'/home/vieworder'" (click)="viewOrder()">View Order</div>
                                                     <h4 class="media-box-heading">Product 1</h4>
                                                     <small class="text-muted">Category1, Category2</small>
                                                     <p>Sed gravida auctor odio. Sed viverra rutrum hendrerit. Praesent dapibus justo dolor. Suspendisse rhoncus consectetur eros vehicula accumsan.</p>
@@ -84,7 +84,7 @@
                                                     <img class="media-box-object img-responsive img-rounded thumb64" src="assets/img/dummy.png" alt="" />
                                                 </a>
                                                 <div class="media-box-body">
-                                                    <div class="pull-right btn btn-info btn-sm">View</div>
+                                                    <div class="pull-right btn btn-info btn-sm" (click)="viewOrder()">View Order</div>
                                                     <h4 class="media-box-heading">Product 2</h4>
                                                     <small class="text-muted">Category1, Category2</small>
                                                     <p>Sed gravida auctor odio. Sed viverra rutrum hendrerit. Praesent dapibus justo dolor. Suspendisse rhoncus consectetur eros vehicula accumsan.</p>

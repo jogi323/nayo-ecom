@@ -18,6 +18,10 @@ export class OrdersComponent implements OnInit {
     'The Hague', 'Turin', 'Valencia', 'Vienna', 'Vilnius', 'Warsaw', 'Wrocław',
     'Zagreb', 'Zaragoza', 'Łódź'];
 
+  viewOrder(){
+    
+  }
+
   constructor() { }
 
   ngOnInit() {
