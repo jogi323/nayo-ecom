@@ -6,6 +6,7 @@ import { PortalHomeComponent } from './components/portal-home/portal-home.compon
 import { ProductCatalogComponent } from './components/product-catalog/product-catalog.component';
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { OrderViewComponent } from './components/order-view/order-view.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
         { path: 'products', component:ProductCatalogComponent },
         { path: 'characteristics', component:CharacteristicsComponent },
         { path: 'orders', component:OrdersComponent },
+        { path: 'vieworder', component:OrderViewComponent },
     ]
   },
   
