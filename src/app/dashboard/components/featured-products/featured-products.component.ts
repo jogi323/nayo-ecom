@@ -44,7 +44,7 @@ export class FeaturedProductsComponent implements OnInit {
 
   ngOnInit() {
   }
-  fileChangeListener($event) {
+  product1ImageUpload($event) {
     //let image: any = new Image();
     let file: File = $event.target.files[0];
     let myReader: FileReader = new FileReader();
@@ -55,7 +55,7 @@ export class FeaturedProductsComponent implements OnInit {
 
     myReader.readAsDataURL(file);
 }
-fileChangeListener2($event) {
+product2ImageUpload($event) {
   //let image: any = new Image();
   let file: File = $event.target.files[0];
   let myReader: FileReader = new FileReader();
@@ -66,7 +66,7 @@ fileChangeListener2($event) {
 
   myReader.readAsDataURL(file);
 }
-fileChangeListener3($event) {
+product3ImageUpload($event) {
   //let image: any = new Image();
   let file: File = $event.target.files[0];
   let myReader: FileReader = new FileReader();
@@ -77,7 +77,7 @@ fileChangeListener3($event) {
 
   myReader.readAsDataURL(file);
 }
-fileChangeListener4($event) {
+product4ImageUpload($event) {
   //let image: any = new Image();
   let file: File = $event.target.files[0];
   let myReader: FileReader = new FileReader();
@@ -90,19 +90,15 @@ fileChangeListener4($event) {
 }
   saveProduct1Data(){
     this.product1Data.product1Image = this.image1.src;
-    console.log(this.product1Data);
   }
   saveProduct2Data(){
     this.product2Data.product2Image = this.image2.src;
-    console.log(this.product2Data);
   }
   saveProduct3Data(){
     this.product3Data.product3Image = this.image3.src;
-    console.log(this.product3Data);
   }
   saveProduct4Data(){
     this.product4Data.product4Image = this.image4.src;
-    console.log(this.product4Data);
   }
 }
 
