@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Renderer} from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, ValidatorFn } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
 
@@ -11,7 +10,6 @@ import { SettingsService } from '../../services/settings/settings.service';
   styleUrls: ['./product-catalog.component.scss']
 })
 export class ProductCatalogComponent implements OnInit {
-
   valForm: FormGroup;
   styles:any[];
   colors:any[];
@@ -19,7 +17,7 @@ export class ProductCatalogComponent implements OnInit {
   models:any[];
   products:any[];
 
-  constructor(fb: FormBuilder, public settings: SettingsService, private render:Renderer) {
+  constructor(fb: FormBuilder, public settings: SettingsService) {
       // Model Driven validation
       this.valForm = fb.group({
           'style': [{value:null, disabled:false}, Validators.required],
@@ -36,15 +34,15 @@ export class ProductCatalogComponent implements OnInit {
           {id:"5",name:"plain"}
         ]
         this.colors=[
-            {id:"0",name:"pink"},
-            {id:"1",name:"inverse"},
-            {id:"2",name:"purple"},
-            {id:"3",name:"green"},
-            {id:"4",name:"warning"},
-            {id:"5",name:"info"},
-            {id:"6",name:"success"},
-            {id:"7",name:"primary"},
-            {id:"8",name:"danger"},
+            {id:"0",name:"pink",selected:false},
+            {id:"1",name:"inverse",selected:false},
+            {id:"2",name:"purple",selected:false},
+            {id:"3",name:"green",selected:false},
+            {id:"4",name:"warning",selected:false},
+            {id:"5",name:"info",selected:false},
+            {id:"6",name:"success",selected:false},
+            {id:"7",name:"primary",selected:false},
+            {id:"8",name:"danger",selected:false},
           ]
         this.brands=[
             {id:"0",name:"audi"},
@@ -85,8 +83,13 @@ export class ProductCatalogComponent implements OnInit {
   }
 
   public colorSelected(color, event:any){
-      event.preventDefault();
-      this.render.setElementClass(event.target,"currentColor",true);
+    //   event.preventDefault();
+    //   if(event.target.classList.contains('currentColor')){
+    //       console.log("hai");
+    //       this.render.setElementClass(this.elementRef.nativeElement,"currentColor",false);
+    //   }
+    //   this.render.setElementClass(event.target,"currentColor",true);
+    this.colors[color].selected = !this.colors[color].selected;
       this.products=[
         {id:"0",name:"swift",color:color ,image:"p0.png"},
         {id:"1",name:"civic",color:color,image:"p1.png"},

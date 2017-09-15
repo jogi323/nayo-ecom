@@ -1,23 +1,22 @@
 @import '../../../shared/styles/app/variables.scss';
 @import '../../../shared/styles/app/media-queries.scss';
-
 .home-container {
     margin: 0 auto;
     max-width: $container-md;
-
     .home-logo {
         width: 240px;
     }
-
     .home-text {
         @media only screen and (max-width: $mq-tablet) {
             text-align: center;
         }
     }
 }
-.currentColor{
-    border: 3px solid hsla(0,0%,100%,.5);
+
+.currentColor {
+    border: 3px solid hsla(0, 0%, 100%, .5);
 }
+
 // .product-catalog-main{
 //     margin-top: 4.2%;
 // }
