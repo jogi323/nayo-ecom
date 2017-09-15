@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit, Injector, Output,  EventEmitter} from '@angular/core';
 import { Router } from '@angular/router';
 declare var $: any;
 
@@ -11,7 +11,7 @@ import { MenuService } from '../../core/menu/menu.service';
   styleUrls: ['./side-navbar.component.scss']
 })
 export class SideNavbarComponent implements OnInit {
-
+    @Output() openModal = new EventEmitter<string>();
   menuItems: Array<any>;
     router: Router;
 
@@ -32,7 +32,10 @@ export class SideNavbarComponent implements OnInit {
         });
 
     }
-
+    test(value){
+        console.log(value);
+        this.openModal.next('shaik');
+    }
     toggleSubmenuClick(event) {
         if (!this.isSidebarCollapsed() && !this.isSidebarCollapsedText() && !this.isEnabledHover()) {
             event.preventDefault();
