@@ -1,0 +1,141 @@
+<tabset [justified]="true">
+  <tab>
+    <ng-template tabHeading>
+      <i class="fa fa-upload fa-2x" aria-hidden="true"></i>
+    </ng-template>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="text-muted text-thin">Product 1</h4>
+          </div>
+          <hr>
+          <div class="panel-body">
+            <form novalidate #product1Form = 'ngForm'>
+              <div class="form-group">
+              <label class="text-muted text-thin">Select your product image</label>
+              <label for="image-input" class="file-upload">
+                  <button class="btn btn-default btn-block">Upload Image</button>
+                  <input  type="file" name="product1Image" (change)="fileChangeListener1($event)" >
+              </label>
+            </div>
+              <div class="result" *ngIf='image1.src'>
+                  <label class="text-muted text-thin">Image Preview</label>
+                  <img src="{{image1.src}}" width="200px" height="200px">
+              </div>
+              <div class="form-group">
+                  <label for="productName" class="text-muted text-thin">Product name</label>
+                  <input type="text" name="product1name" class="form-control" [(ngModel)] = 'product1Data.product1name' #product1name = 'ngModel'>
+              </div>
+              <div class="form-group">
+                  <label for="productDesc" class="text-muted text-thin">Product description</label>
+                  <!-- <input type="text" name="product1desc" class="form-control"> -->
+                  <textarea class="form-control" rows="3"  name="product1desc" [(ngModel)] = 'product1Data.product1desc' #product1desc = 'ngModel'></textarea>
+              </div>
+              <button class="btn btn-primary pull-right" [disabled]="!product1Form.form.valid"  (click)='saveProduct1Data(product1Data); product1Form.reset()'>Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="text-muted text-thin">Product 2</h4>
+            </div>
+            <hr>
+            <div class="panel-body">
+              <form novalidate #product2Form = 'ngForm'>
+                <div class="form-group">
+                <label class="text-muted text-thin">Select your product image</label>
+                <label for="image-input" class="file-upload">
+                    <button class="btn btn-default btn-block">Upload Image</button>
+                    <input  type="file" name="product2Image" (change)="fileChangeListener2($event)" >
+                </label>
+              </div>
+                <div class="result" *ngIf='image2.src'>
+                    <label class="text-muted text-thin">Image Preview</label>
+                    <img src="{{image2.src}}" width="200px" height="200px">
+                </div>
+                <div class="form-group">
+                    <label for="productName" class="text-muted text-thin">Product name</label>
+                    <input type="text" name="product2name" class="form-control" [(ngModel)] = 'product2Data.product2name' #product2name = 'ngModel'>
+                </div>
+                <div class="form-group">
+                    <label for="productDesc" class="text-muted text-thin">Product description</label>
+                    <!-- <input type="text" name="product2desc" class="form-control"> -->
+                    <textarea class="form-control" rows="3"  name="product2desc" [(ngModel)] = 'product2Data.product2desc' #product2desc = 'ngModel'></textarea>
+                </div>
+                <button class="btn btn-primary pull-right" [disabled]="!product2Form.form.valid"  (click)='saveProduct2Data(product2Data); product2Form.reset()'>Save</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="text-muted text-thin">Product 3</h4>
+              </div>
+              <hr>
+              <div class="panel-body">
+                <form novalidate #product3Form = 'ngForm'>
+                  <div class="form-group">
+                  <label class="text-muted text-thin">Select your product image</label>
+                  <label for="image-input" class="file-upload">
+                      <button class="btn btn-default btn-block">Upload Image</button>
+                      <input  type="file" name="product3Image" (change)="fileChangeListener3($event)" >
+                  </label>
+                </div>
+                  <div class="result" *ngIf='image3.src'>
+                      <label class="text-muted text-thin">Image Preview</label>
+                      <img src="{{image3.src}}" width="200px" height="200px">
+                  </div>
+                  <div class="form-group">
+                      <label for="productName" class="text-muted text-thin">Product name</label>
+                      <input type="text" name="product3name" class="form-control" [(ngModel)] = 'product3Data.product3name' #product3name = 'ngModel'>
+                  </div>
+                  <div class="form-group">
+                      <label for="productDesc" class="text-muted text-thin">Product description</label>
+                      <!-- <input type="text" name="product3desc" class="form-control"> -->
+                      <textarea class="form-control" rows="3"  name="product3desc" [(ngModel)] = 'product3Data.product3desc' #product3desc = 'ngModel'></textarea>
+                  </div>
+                  <button class="btn btn-primary pull-right" [disabled]="!product3Form.form.valid"  (click)='saveProduct3Data(product3Data); product3Form.reset()'>Save</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="text-muted text-thin">Product 4</h4>
+                </div>
+                <hr>
+                <div class="panel-body">
+                  <form novalidate #product4Form = 'ngForm'>
+                    <div class="form-group">
+                    <label class="text-muted text-thin">Select your product image</label>
+                    <label for="image-input" class="file-upload">
+                        <button class="btn btn-default btn-block">Upload Image</button>
+                        <input  type="file" name="product4Image" (change)="fileChangeListener4($event)" >
+                    </label>
+                  </div>
+                    <div class="result" *ngIf='image4.src'>
+                        <label class="text-muted text-thin">Image Preview</label>
+                        <img src="{{image4.src}}" width="200px" height="200px">
+                    </div>
+                    <div class="form-group">
+                        <label for="productName" class="text-muted text-thin">Product name</label>
+                        <input type="text" name="product4name" class="form-control" [(ngModel)] = 'product4Data.product4name' #product4name = 'ngModel'>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDesc" class="text-muted text-thin">Product description</label>
+                        <!-- <input type="text" name="product4desc" class="form-control"> -->
+                        <textarea class="form-control" rows="3"  name="product4desc" [(ngModel)] = 'product4Data.product4desc' #product4desc = 'ngModel'></textarea>
+                    </div>
+                    <button class="btn btn-primary pull-right" [disabled]="!product4Form.form.valid"  (click)='saveProduct4Data(product4Data); product4Form.reset()'>Save</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+    </div>
+  </tab>
+</tabset>

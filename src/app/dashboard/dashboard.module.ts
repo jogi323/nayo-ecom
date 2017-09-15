@@ -30,6 +30,7 @@ import { SalesReportsComponent } from './components/sales-reports/sales-reports.
 import { ActivityReportsComponent } from './components/activity-reports/activity-reports.component';
 import { DasboardComponent } from './components/dasboard/dasboard.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { FeaturedProductsComponent } from './components/featured-products/featured-products.component';
 
 @NgModule({
   imports: [
@@ -52,7 +53,8 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     SalesReportsComponent,
     ActivityReportsComponent,
     DasboardComponent,
-    HomePageComponent
+    HomePageComponent,
+    FeaturedProductsComponent,
   ],
   providers:[
     UserblockService
