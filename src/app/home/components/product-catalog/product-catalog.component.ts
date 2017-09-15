@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, ValidatorFn } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
+import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
 
 import { SettingsService } from '../../services/settings/settings.service';
 
@@ -11,10 +12,13 @@ import { SettingsService } from '../../services/settings/settings.service';
 })
 export class ProductCatalogComponent implements OnInit {
   valForm: FormGroup;
-  styles:any[];
+  styles:IMultiSelectOption[];
   colors:any[];
-  brands:any[];
-  models:any[];
+  brands:IMultiSelectOption[];
+  models:IMultiSelectOption[];
+  stylesModel: number[];
+  brandssModel: number[];
+  modelsModel: number[];
   products:any[];
 
   constructor(fb: FormBuilder, public settings: SettingsService) {

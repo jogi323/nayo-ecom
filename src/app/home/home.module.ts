@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 
 //Shared Module
 import { SharedModule } from '../shared/shared.module';
@@ -35,6 +36,7 @@ import { OrderViewComponent } from './components/order-view/order-view.component
     FormsModule,
     ReactiveFormsModule,
     HomeRoutingModule,
+    MultiselectDropdownModule,
     SharedModule
   ],
   declarations: [
