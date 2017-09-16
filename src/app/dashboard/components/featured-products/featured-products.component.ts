@@ -44,7 +44,7 @@ export class FeaturedProductsComponent implements OnInit {
 
   ngOnInit() {
   }
-  fileChangeListener($event) {
+  fileChangeListener1($event) {
     //let image: any = new Image();
     let file: File = $event.target.files[0];
     let myReader: FileReader = new FileReader();
