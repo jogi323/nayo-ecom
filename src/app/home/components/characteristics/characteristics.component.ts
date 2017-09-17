@@ -59,12 +59,12 @@ export class CharacteristicsComponent implements OnInit {
   showVlaues(event,index){
     this.currentCharacteristicId = index;
   }
-  selectCharacteristic(){
+  selectCharacteristic(index){
     for(var i=0; i<this.characteristics[this.currentCharacteristicId].value.lenght;i++){
         this.characteristics[this.currentCharacteristicId].value[i].status = '';
     }
-    this.characteristics[this.currentCharacteristicId].value[this.selectedCharacteristic].status = 'selected';
-    this.selectedCharacteristic=null;
+    this.characteristics[this.currentCharacteristicId].value[index].status = 'selected';
+    //this.selectedCharacteristic=null;
   }
   findSelectedCharacteristicValue(index){
     for(var i=0; i<this.characteristics[index].value.length;i++){

@@ -77,10 +77,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let characteristic of characteristics[currentCharacteristicId].value | searchfilter: 'charValu' : txtFname.value">
-                                            <td>
-                                                <input type="radio" name="selectedCharacter">
-                                            </td>
+                                        <tr *ngFor="let characteristic of characteristics[currentCharacteristicId].value | searchfilter: 'charValu' : txtFname.value; let i = 'index'">
                                             <td>
                                                 {{characteristic.charValu}}
                                             </td>
@@ -89,6 +86,9 @@
                                             </td>
                                             <td>
                                                 {{characteristic.pricing}}
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-success" (click)="selectCharacteristic(i)" data-dismiss="modal">select</button>
                                             </td>
                                         </tr>
                                     </tbody>
