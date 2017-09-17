@@ -16,7 +16,7 @@
               <label class="text-muted text-thin">Select your product image</label>
               <label for="image-input" class="file-upload">
                   <button class="btn btn-default btn-block">Upload Image</button>
-                  <input  type="file" name="product1Image" (change)="fileChangeListener1($event)" >
+                  <input  type="file" name="product1Image" (change)="product1ImageUpload($event)" >
               </label>
             </div>
               <div class="result" *ngIf='image1.src'>
@@ -49,7 +49,7 @@
                 <label class="text-muted text-thin">Select your product image</label>
                 <label for="image-input" class="file-upload">
                     <button class="btn btn-default btn-block">Upload Image</button>
-                    <input  type="file" name="product2Image" (change)="fileChangeListener2($event)" >
+                    <input  type="file" name="product2Image" (change)="product2ImageUpload($event)" >
                 </label>
               </div>
                 <div class="result" *ngIf='image2.src'>
@@ -82,7 +82,7 @@
                   <label class="text-muted text-thin">Select your product image</label>
                   <label for="image-input" class="file-upload">
                       <button class="btn btn-default btn-block">Upload Image</button>
-                      <input  type="file" name="product3Image" (change)="fileChangeListener3($event)" >
+                      <input  type="file" name="product3Image" (change)="product3ImageUpload($event)" >
                   </label>
                 </div>
                   <div class="result" *ngIf='image3.src'>
@@ -115,7 +115,7 @@
                     <label class="text-muted text-thin">Select your product image</label>
                     <label for="image-input" class="file-upload">
                         <button class="btn btn-default btn-block">Upload Image</button>
-                        <input  type="file" name="product4Image" (change)="fileChangeListener4($event)" >
+                        <input  type="file" name="product4Image" (change)="product4ImageUpload($event)" >
                     </label>
                   </div>
                     <div class="result" *ngIf='image4.src'>
