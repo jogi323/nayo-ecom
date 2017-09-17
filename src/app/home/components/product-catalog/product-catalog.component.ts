@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, ValidatorFn } from '@angular/forms';
 import { CustomValidators } from 'ng2-validation';
-import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
 
 import { SettingsService } from '../../services/settings/settings.service';
 
@@ -12,13 +11,14 @@ import { SettingsService } from '../../services/settings/settings.service';
 })
 export class ProductCatalogComponent implements OnInit {
   valForm: FormGroup;
-  styles:IMultiSelectOption[];
+  styles:any[];
   colors:any[];
-  brands:IMultiSelectOption[];
-  models:IMultiSelectOption[];
-  stylesModel: number[];
-  brandssModel: number[];
-  modelsModel: number[];
+  brands:any[];
+  models:any[];
+  dropdownSettings = {};
+  selectedStyles:any[];
+  selectedBrands: any[];
+  selectedModels: any[];
   products:any[];
 
   constructor(fb: FormBuilder, public settings: SettingsService) {
@@ -29,13 +29,20 @@ export class ProductCatalogComponent implements OnInit {
           'brand': [{value:null, disabled:false}, Validators.required],
           'model': [{value:null, disabled:false}, Validators.required]
       });
+      this.dropdownSettings = { 
+        singleSelection: false, 
+        text:"Select an item",
+        enableCheckAll:false,
+        enableSearchFilter: true,
+        classes:"myclass custom-class"
+      }; 
       this.styles=[
-          {id:"0",name:"dotted"},
-          {id:"1",name:"striped"},
-          {id:"2",name:"checks"},
-          {id:"3",name:"lined"},
-          {id:"4",name:"solid"},
-          {id:"5",name:"plain"}
+          {id:"0",itemName:"dotted"},
+          {id:"1",itemName:"striped"},
+          {id:"2",itemName:"checks"},
+          {id:"3",itemName:"lined"},
+          {id:"4",itemName:"solid"},
+          {id:"5",itemName:"plain"}
         ]
         this.colors=[
             {id:"0",name:"pink",selected:false},
@@ -49,11 +56,11 @@ export class ProductCatalogComponent implements OnInit {
             {id:"8",name:"danger",selected:false},
           ]
         this.brands=[
-            {id:"0",name:"audi"},
-            {id:"1",name:"honda"},
-            {id:"2",name:"maruti"},
-            {id:"3",name:"benz"},
-            {id:"4",name:"merc"}
+            {id:"0",itemName:"audi"},
+            {id:"1",itemName:"honda"},
+            {id:"2",itemName:"maruti"},
+            {id:"3",itemName:"benz"},
+            {id:"4",itemName:"merc"}
         ]
         this.products=[
             {id:"0",name:"swift",colo:"red",image:"p0.png"},
@@ -64,12 +71,12 @@ export class ProductCatalogComponent implements OnInit {
             {id:"5",name:"polo",color:"yellow",image:"p0.png"}
         ]
         this.models=[
-            {id:"0",name:"2017"},
-            {id:"1",name:"2016"},
-            {id:"2",name:"2015"},
-            {id:"3",name:"2014"},
-            {id:"4",name:"2013"},
-            {id:"5",name:"2012"}
+            {id:"0",itemName:"2017"},
+            {id:"1",itemName:"2016"},
+            {id:"2",itemName:"2015"},
+            {id:"3",itemName:"2014"},
+            {id:"4",itemName:"2013"},
+            {id:"5",itemName:"2012"}
         ]
   }
 
@@ -84,6 +91,9 @@ export class ProductCatalogComponent implements OnInit {
         {id:"5",name:"vent",color:"brown"},
         {id:"5",name:"kwid",color:"blue"}
     ]
+  }
+  public styleDeselected(event){
+    
   }
 
   public colorSelected(color, event:any){
@@ -110,6 +120,10 @@ export class ProductCatalogComponent implements OnInit {
     ]
     
   }
+  public brandDeselected(event){
+  
+  }
+
   public modelSelected(event){
     this.products=[
         {id:"0",name:"swift",color:"red"},
@@ -119,6 +133,10 @@ export class ProductCatalogComponent implements OnInit {
         {id:"4",name:"indica",color:"black"},
         {id:"5",name:"polo",color:"yellow"}
     ]
+  }
+
+  public modelDeselected(event){
+  
   }
 
   submitForm($ev, value: any) {

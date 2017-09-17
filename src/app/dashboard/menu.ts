@@ -18,6 +18,16 @@ const activityreports = {
     link: '/dashboard/activityreports',
     icon: 'fa fa-bar-chart'
 };
+const featuredProducts = {
+    text: 'Featured Products',
+    link: '/dashboard/featuredproducts',
+    icon: 'fa fa-product-hunt'
+};
+const userslist = {
+    text: 'Users List',
+    link: '/dashboard/userslist',
+    icon: 'fa fa-users'
+};
 // const Dashboard = {
 //     text: 'Dashboard',
 //     link: '/dashboard',
@@ -410,8 +420,10 @@ export const menu = [
     
     Home,
     site,
+    featuredProducts,
     Sales,
-    activityreports
+    activityreports,
+    userslist
     // Widgets,
     // headingComponents,
     // Elements,

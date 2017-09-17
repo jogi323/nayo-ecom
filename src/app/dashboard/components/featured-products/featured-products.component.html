@@ -1,0 +1,414 @@
+<tabset [justified]="true">
+  <tab>
+    <ng-template tabHeading>
+      <h4 class="text-muted text-thin">Products <i class="fa fa-upload fa-lg" aria-hidden="true"></i></h4>
+    </ng-template>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="text-muted text-thin">Product 1</h4>
+          </div>
+          <hr>
+          <div class="panel-body">
+            <form novalidate #product1Form = 'ngForm'>
+              <div class="form-group">
+              <label class="text-muted text-thin">Select your product image</label>
+              <label for="image-input" class="file-upload">
+                  <button class="btn btn-default btn-block">Upload Image</button>
+                  <input  type="file" name="product1Image" (change)="product1ImageUpload($event)" >
+              </label>
+            </div>
+              <div class="result" *ngIf='image1.src'>
+                  <label class="text-muted text-thin">Image Preview</label>
+                  <img src="{{image1.src}}" width="200px" height="200px">
+              </div>
+              <div class="form-group">
+                  <label for="productName" class="text-muted text-thin">Product name</label>
+                  <input type="text" name="product1name" class="form-control" [(ngModel)] = 'product1Data.product1name' #product1name = 'ngModel'>
+              </div>
+              <div class="form-group">
+                  <label for="productDesc" class="text-muted text-thin">Product description</label>
+                  <!-- <input type="text" name="product1desc" class="form-control"> -->
+                  <textarea class="form-control" rows="3"  name="product1desc" [(ngModel)] = 'product1Data.product1desc' #product1desc = 'ngModel'></textarea>
+              </div>
+              <button class="btn btn-primary pull-right" [disabled]="!product1Form.form.valid"  (click)='saveProduct1Data(product1Data); product1Form.reset()'>Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="text-muted text-thin">Product 2</h4>
+            </div>
+            <hr>
+            <div class="panel-body">
+              <form novalidate #product2Form = 'ngForm'>
+                <div class="form-group">
+                <label class="text-muted text-thin">Select your product image</label>
+                <label for="image-input" class="file-upload">
+                    <button class="btn btn-default btn-block">Upload Image</button>
+                    <input  type="file" name="product2Image" (change)="product2ImageUpload($event)" >
+                </label>
+              </div>
+                <div class="result" *ngIf='image2.src'>
+                    <label class="text-muted text-thin">Image Preview</label>
+                    <img src="{{image2.src}}" width="200px" height="200px">
+                </div>
+                <div class="form-group">
+                    <label for="productName" class="text-muted text-thin">Product name</label>
+                    <input type="text" name="product2name" class="form-control" [(ngModel)] = 'product2Data.product2name' #product2name = 'ngModel'>
+                </div>
+                <div class="form-group">
+                    <label for="productDesc" class="text-muted text-thin">Product description</label>
+                    <!-- <input type="text" name="product2desc" class="form-control"> -->
+                    <textarea class="form-control" rows="3"  name="product2desc" [(ngModel)] = 'product2Data.product2desc' #product2desc = 'ngModel'></textarea>
+                </div>
+                <button class="btn btn-primary pull-right" [disabled]="!product2Form.form.valid"  (click)='saveProduct2Data(product2Data); product2Form.reset()'>Save</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="text-muted text-thin">Product 3</h4>
+              </div>
+              <hr>
+              <div class="panel-body">
+                <form novalidate #product3Form = 'ngForm'>
+                  <div class="form-group">
+                  <label class="text-muted text-thin">Select your product image</label>
+                  <label for="image-input" class="file-upload">
+                      <button class="btn btn-default btn-block">Upload Image</button>
+                      <input  type="file" name="product3Image" (change)="product3ImageUpload($event)" >
+                  </label>
+                </div>
+                  <div class="result" *ngIf='image3.src'>
+                      <label class="text-muted text-thin">Image Preview</label>
+                      <img src="{{image3.src}}" width="200px" height="200px">
+                  </div>
+                  <div class="form-group">
+                      <label for="productName" class="text-muted text-thin">Product name</label>
+                      <input type="text" name="product3name" class="form-control" [(ngModel)] = 'product3Data.product3name' #product3name = 'ngModel'>
+                  </div>
+                  <div class="form-group">
+                      <label for="productDesc" class="text-muted text-thin">Product description</label>
+                      <!-- <input type="text" name="product3desc" class="form-control"> -->
+                      <textarea class="form-control" rows="3"  name="product3desc" [(ngModel)] = 'product3Data.product3desc' #product3desc = 'ngModel'></textarea>
+                  </div>
+                  <button class="btn btn-primary pull-right" [disabled]="!product3Form.form.valid"  (click)='saveProduct3Data(product3Data); product3Form.reset()'>Save</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="text-muted text-thin">Product 4</h4>
+                </div>
+                <hr>
+                <div class="panel-body">
+                  <form novalidate #product4Form = 'ngForm'>
+                    <div class="form-group">
+                    <label class="text-muted text-thin">Select your product image</label>
+                    <label for="image-input" class="file-upload">
+                        <button class="btn btn-default btn-block">Upload Image</button>
+                        <input  type="file" name="product4Image" (change)="product4ImageUpload($event)" >
+                    </label>
+                  </div>
+                    <div class="result" *ngIf='image4.src'>
+                        <label class="text-muted text-thin">Image Preview</label>
+                        <img src="{{image4.src}}" width="200px" height="200px">
+                    </div>
+                    <div class="form-group">
+                        <label for="productName" class="text-muted text-thin">Product name</label>
+                        <input type="text" name="product4name" class="form-control" [(ngModel)] = 'product4Data.product4name' #product4name = 'ngModel'>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDesc" class="text-muted text-thin">Product description</label>
+                        <!-- <input type="text" name="product4desc" class="form-control"> -->
+                        <textarea class="form-control" rows="3"  name="product4desc" [(ngModel)] = 'product4Data.product4desc' #product4desc = 'ngModel'></textarea>
+                    </div>
+                    <button class="btn btn-primary pull-right" [disabled]="!product4Form.form.valid"  (click)='saveProduct4Data(product4Data); product4Form.reset()'>Save</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+    </div>
+  </tab>
+  <tab>
+    <ng-template tabHeading>
+      <h4 class="text-muted text-thin">Banners <i class="fa fa-upload fa-lg" aria-hidden="true"></i></h4>
+    </ng-template>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="text-muted text-thin">Banners 1</h4>
+          </div>
+          <hr>
+          <div class="panel-body">
+            <form novalidate #banner1Form = 'ngForm'>
+              <div class="form-group">
+              <label class="text-muted text-thin">Select your Banner image</label>
+              <label for="image-input" class="file-upload">
+                  <button class="btn btn-default btn-block">Upload Image</button>
+                  <input  type="file" name="banner1Image" (change)="banner1ImageUpload($event)" >
+              </label>
+            </div>
+              <div class="result" *ngIf='banner1.src'>
+                  <label class="text-muted text-thin">Banner Preview</label>
+                  <img src="{{banner1.src}}" width="200px" height="200px">
+              </div>
+              <div class="form-group">
+                  <label for="bannerName" class="text-muted text-thin">Name</label>
+                  <input type="text" name="banner1name" class="form-control" [(ngModel)] = 'banner1Data.banner1name' #banner1name = 'ngModel'>
+              </div>
+              <div class="form-group">
+                  <label for="bannerDesc" class="text-muted text-thin">Banner description</label>
+                  <!-- <input type="text" name="product1desc" class="form-control"> -->
+                  <textarea class="form-control" rows="3"  name="banner1desc" [(ngModel)] = 'banner1Data.banner1desc' #banner1desc = 'ngModel'></textarea>
+              </div>
+              <button class="btn btn-primary pull-right" [disabled]="!banner1Form.form.valid"  (click)='saveBanner1Data(banner1Data); banner1Form.reset()'>Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="text-muted text-thin">Banners 2</h4>
+          </div>
+          <hr>
+          <div class="panel-body">
+            <form novalidate #banner2Form = 'ngForm'>
+              <div class="form-group">
+              <label class="text-muted text-thin">Select your Banner image</label>
+              <label for="image-input" class="file-upload">
+                  <button class="btn btn-default btn-block">Upload Image</button>
+                  <input  type="file" name="banner2Image" (change)="banner2ImageUpload($event)" >
+              </label>
+            </div>
+              <div class="result" *ngIf='banner2.src'>
+                  <label class="text-muted text-thin">Banner Preview</label>
+                  <img src="{{banner2.src}}" width="200px" height="200px">
+              </div>
+              <div class="form-group">
+                  <label for="bannerName" class="text-muted text-thin">Name</label>
+                  <input type="text" name="banner2name" class="form-control" [(ngModel)] = 'banner2Data.banner2name' #banner2name = 'ngModel'>
+              </div>
+              <div class="form-group">
+                  <label for="bannerDesc" class="text-muted text-thin">Banner description</label>
+                  <!-- <input type="text" name="product2desc" class="form-control"> -->
+                  <textarea class="form-control" rows="3"  name="banner2desc" [(ngModel)] = 'banner2Data.banner2desc' #banner2desc = 'ngModel'></textarea>
+              </div>
+              <button class="btn btn-primary pull-right" [disabled]="!banner2Form.form.valid"  (click)='saveBanner2Data(banner2Data); banner2Form.reset()'>Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="text-muted text-thin">Banners 3</h4>
+          </div>
+          <hr>
+          <div class="panel-body">
+            <form novalidate #banner3Form = 'ngForm'>
+              <div class="form-group">
+              <label class="text-muted text-thin">Select your Banner image</label>
+              <label for="image-input" class="file-upload">
+                  <button class="btn btn-default btn-block">Upload Image</button>
+                  <input  type="file" name="banner3Image" (change)="banner3ImageUpload($event)" >
+              </label>
+            </div>
+              <div class="result" *ngIf='banner3.src'>
+                  <label class="text-muted text-thin">Banner Preview</label>
+                  <img src="{{banner3.src}}" width="200px" height="200px">
+              </div>
+              <div class="form-group">
+                  <label for="bannerName" class="text-muted text-thin">Name</label>
+                  <input type="text" name="banner3name" class="form-control" [(ngModel)] = 'banner3Data.banner3name' #banner3name = 'ngModel'>
+              </div>
+              <div class="form-group">
+                  <label for="bannerDesc" class="text-muted text-thin">Banner description</label>
+                  <textarea class="form-control" rows="3"  name="banner3desc" [(ngModel)] = 'banner3Data.banner3desc' #banner3desc = 'ngModel'></textarea>
+              </div>
+              <button class="btn btn-primary pull-right" [disabled]="!banner3Form.form.valid"  (click)='saveBanner3Data(banner3Data); banner3Form.reset()'>Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="text-muted text-thin">Banners 4</h4>
+          </div>
+          <hr>
+          <div class="panel-body">
+            <form novalidate #banner4Form = 'ngForm'>
+              <div class="form-group">
+              <label class="text-muted text-thin">Select your Banner image</label>
+              <label for="image-input" class="file-upload">
+                  <button class="btn btn-default btn-block">Upload Image</button>
+                  <input  type="file" name="banner4Image" (change)="banner4ImageUpload($event)" >
+              </label>
+            </div>
+              <div class="result" *ngIf='banner4.src'>
+                  <label class="text-muted text-thin">Banner Preview</label>
+                  <img src="{{banner4.src}}" width="200px" height="200px">
+              </div>
+              <div class="form-group">
+                  <label for="bannerName" class="text-muted text-thin">Name</label>
+                  <input type="text" name="banner4name" class="form-control" [(ngModel)] = 'banner4Data.banner4name' #banner4name = 'ngModel'>
+              </div>
+              <div class="form-group">
+                  <label for="bannerDesc" class="text-muted text-thin">Banner description</label>
+                  <textarea class="form-control" rows="4"  name="banner4desc" [(ngModel)] = 'banner4Data.banner4desc' #banner4desc = 'ngModel'></textarea>
+              </div>
+              <button class="btn btn-primary pull-right" [disabled]="!banner4Form.form.valid"  (click)='saveBanner4Data(banner4Data); banner4Form.reset()'>Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </tab>
+  <tab>
+    <ng-template tabHeading>
+      <h4 class="text-muted text-thin">Catagories <i class="fa fa-upload fa-lg" aria-hidden="true"></i></h4>
+    </ng-template>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="text-muted text-thin">Catagory 1</h4>
+          </div>
+          <hr>
+          <div class="panel-body">
+            <form novalidate #catagory1Form = 'ngForm'>
+              <div class="form-group">
+              <label class="text-muted text-thin">Select your catagory image</label>
+              <label for="image-input" class="file-upload">
+                  <button class="btn btn-default btn-block">Upload Image</button>
+                  <input  type="file" name="catagory1Image" (change)="catagory1ImageUpload($event)" >
+              </label>
+            </div>
+              <div class="result" *ngIf='catagory1.src'>
+                  <label class="text-muted text-thin">Catagory Preview</label>
+                  <img src="{{catagory1.src}}" width="200px" height="200px">
+              </div>
+              <div class="form-group">
+                  <label for="catagoryName" class="text-muted text-thin">catagory name</label>
+                  <input type="text" name="catagory1name" class="form-control" [(ngModel)] = 'catagory1Data.catagory1name' #catagory1name = 'ngModel'>
+              </div>
+              <div class="form-group">
+                  <label for="catagoryDesc" class="text-muted text-thin">catagory description</label>
+                  <textarea class="form-control" rows="3"  name="catagory1desc" [(ngModel)] = 'catagory1Data.catagory1desc' #catagory1desc = 'ngModel'></textarea>
+              </div>
+              <button class="btn btn-primary pull-right" [disabled]="!catagory1Form.form.valid"  (click)='savecatagory1Data(catagory1Data); catagory1Form.reset()'>Save</button>
+            </form>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="text-muted text-thin">Catagory 2</h4>
+            </div>
+            <hr>
+            <div class="panel-body">
+              <form novalidate #catagory2Form = 'ngForm'>
+                <div class="form-group">
+                <label class="text-muted text-thin">Select your catagory image</label>
+                <label for="image-input" class="file-upload">
+                    <button class="btn btn-default btn-block">Upload Image</button>
+                    <input  type="file" name="catagory2Image" (change)="catagory2ImageUpload($event)" >
+                </label>
+              </div>
+                <div class="result" *ngIf='catagory2.src'>
+                    <label class="text-muted text-thin">Catagory Preview</label>
+                    <img src="{{catagory2.src}}" width="200px" height="200px">
+                </div>
+                <div class="form-group">
+                    <label for="catagoryName" class="text-muted text-thin">catagory name</label>
+                    <input type="text" name="catagory2name" class="form-control" [(ngModel)] = 'catagory2Data.catagory2name' #catagory2name = 'ngModel'>
+                </div>
+                <div class="form-group">
+                    <label for="catagoryDesc" class="text-muted text-thin">catagory description</label>
+                    <textarea class="form-control" rows="3"  name="catagory2desc" [(ngModel)] = 'catagory2Data.catagory2desc' #catagory2desc = 'ngModel'></textarea>
+                </div>
+                <button class="btn btn-primary pull-right" [disabled]="!catagory2Form.form.valid"  (click)='savecatagory2Data(catagory2Data); catagory2Form.reset()'>Save</button>
+              </form>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="text-muted text-thin">Catagory 3</h4>
+              </div>
+              <hr>
+              <div class="panel-body">
+                <form novalidate #catagory3Form = 'ngForm'>
+                  <div class="form-group">
+                  <label class="text-muted text-thin">Select your catagory image</label>
+                  <label for="image-input" class="file-upload">
+                      <button class="btn btn-default btn-block">Upload Image</button>
+                      <input  type="file" name="catagory3Image" (change)="catagory3ImageUpload($event)" >
+                  </label>
+                </div>
+                  <div class="result" *ngIf='catagory3.src'>
+                      <label class="text-muted text-thin">Catagory Preview</label>
+                      <img src="{{catagory3.src}}" width="200px" height="200px">
+                  </div>
+                  <div class="form-group">
+                      <label for="catagoryName" class="text-muted text-thin">catagory name</label>
+                      <input type="text" name="catagory3name" class="form-control" [(ngModel)] = 'catagory3Data.catagory3name' #catagory3name = 'ngModel'>
+                  </div>
+                  <div class="form-group">
+                      <label for="catagoryDesc" class="text-muted text-thin">catagory description</label>
+                      <textarea class="form-control" rows="3"  name="catagory3desc" [(ngModel)] = 'catagory3Data.catagory3desc' #catagory3desc = 'ngModel'></textarea>
+                  </div>
+                  <button class="btn btn-primary pull-right" [disabled]="!catagory3Form.form.valid"  (click)='savecatagory3Data(catagory3Data); catagory3Form.reset()'>Save</button>
+                </form>
+              </div>
+            </div>
+          </div>
+            <div class="col-md-3">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="text-muted text-thin">Catagory 4</h4>
+                </div>
+                <hr>
+                <div class="panel-body">
+                  <form novalidate #catagory4Form = 'ngForm'>
+                    <div class="form-group">
+                    <label class="text-muted text-thin">Select your catagory image</label>
+                    <label for="image-input" class="file-upload">
+                        <button class="btn btn-default btn-block">Upload Image</button>
+                        <input  type="file" name="catagory4Image" (change)="catagory4ImageUpload($event)" >
+                    </label>
+                  </div>
+                    <div class="result" *ngIf='catagory4.src'>
+                        <label class="text-muted text-thin">Catagory Preview</label>
+                        <img src="{{catagory4.src}}" width="200px" height="200px">
+                    </div>
+                    <div class="form-group">
+                        <label for="catagoryName" class="text-muted text-thin">catagory name</label>
+                        <input type="text" name="catagory4name" class="form-control" [(ngModel)] = 'catagory4Data.catagory4name' #catagory4name = 'ngModel'>
+                    </div>
+                    <div class="form-group">
+                        <label for="catagoryDesc" class="text-muted text-thin">catagory description</label>
+                        <textarea class="form-control" rows="3"  name="catagory4desc" [(ngModel)] = 'catagory4Data.catagory4desc' #catagory4desc = 'ngModel'></textarea>
+                    </div>
+                    <button class="btn btn-primary pull-right" [disabled]="!catagory4Form.form.valid"  (click)='savecatagory4Data(catagory4Data); catagory4Form.reset()'>Save</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+      
+    </div>
+  </tab>
+</tabset>

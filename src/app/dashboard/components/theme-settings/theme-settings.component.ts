@@ -15,10 +15,12 @@ export class ThemeSettingsComponent implements OnInit {
   currentTheme: any;
   selectedLanguage: string;
   image:any;
+  icon:any;
   data : appNameInterface;
-  
+
   constructor(public settings: SettingsService, public themes: ThemesService,public SettingService:AppService , private router:Router) {
     this.image = {};
+    this.icon = {};
     this.data  = {
       name:''
     }
@@ -36,7 +38,7 @@ export class ThemeSettingsComponent implements OnInit {
     // });    
   }
   
-  fileChangeListener($event) {
+  logoUploadBase64($event) {
     // let image: any = new Image();
     let file: File = $event.target.files[0];
     let myReader: FileReader = new FileReader();
@@ -52,6 +54,21 @@ saveLogo(){
   localStorage.setItem('logo',this.image.src);
   //this.themes.setLogo(this.image.src);
   this.router.navigate(['/dashboard']);
+}
+IconUploadBase64($eve){
+  let file: File = $eve.target.files[0];
+  let myReader: FileReader = new FileReader();
+  let that = this;
+  myReader.onloadend = function(loadEvent: any) {
+    that.icon.src = loadEvent.target.result;
+  };
+
+  myReader.readAsDataURL(file);
+}
+
+saveLogoIcon(){
+  localStorage.setItem('logoIcon',this.icon.src);
+  console.log(this.icon.src);
 }
 saveAppName(data){
   localStorage.setItem('appName',data.name);

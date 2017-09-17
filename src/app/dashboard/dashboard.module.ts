@@ -6,7 +6,7 @@ import { ImageCropperModule } from 'ng2-img-cropper';
 import { ChartsModule as Ng2ChartsModule } from 'ng2-charts/ng2-charts';
 // Shared module
 import { SharedModule } from '../shared/shared.module';
-
+import { Ng2TableModule } from 'ng2-table/ng2-table';
 // Dashoard Routing
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
@@ -30,6 +30,8 @@ import { SalesReportsComponent } from './components/sales-reports/sales-reports.
 import { ActivityReportsComponent } from './components/activity-reports/activity-reports.component';
 import { DasboardComponent } from './components/dasboard/dasboard.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { FeaturedProductsComponent } from './components/featured-products/featured-products.component';
+import { UsersListComponent } from './components/users-list/users-list.component';
 
 @NgModule({
   imports: [
@@ -40,7 +42,8 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     SharedModule,
     FileUploadModule,
     ImageCropperModule,
-    Ng2ChartsModule
+    Ng2ChartsModule,
+    Ng2TableModule
   ],
   declarations: [
     DashboardComponent, 
@@ -52,7 +55,9 @@ import { HomePageComponent } from './components/home-page/home-page.component';
     SalesReportsComponent,
     ActivityReportsComponent,
     DasboardComponent,
-    HomePageComponent
+    HomePageComponent,
+    FeaturedProductsComponent,
+    UsersListComponent,
   ],
   providers:[
     UserblockService

@@ -130,9 +130,9 @@
                 <hr>
                 <div class="panel-body">
                     <p class="text-muted text-thin">*Note: Please upload Logo of width 100px and height 40px.</p>
-                    <h4>Select file : </h4>
+                    <h4 class="text-muted text-thin">Select file : </h4>
                     <input filestyle="" type="file" data-button-text="Single" data-class-button="btn btn-default" data-classinput="form-control inline" nv-file-select="" uploader="form.uploader" class="form-control" id="filestyle-1" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);"
-                        (change)="fileChangeListener($event)">
+                        (change)="logoUploadBase64($event)">
                     <div class="bootstrap-filestyle input-group">
                         <input type="text" class="form-control " placeholder="" disabled="">
                         <span class="group-span-filestyle input-group-btn" tabindex="0">
@@ -141,19 +141,41 @@
                         </label>
                         </span>
                     </div>
+                    <div class="result" *ngIf='image.src'>
+                        <h4 class="text-muted text-thin">Logo Preview</h4><br>
+                        <div class="text-center">
+                            <img src={{image.src}} height="40px" width="100px"><br>
+                            <button class="btn btn-primary pull-right" (click)='saveLogo()'>Save Logo</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6" *ngIf="image.src">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="text-muted text-thin">Logo Preview</h4>
+                    <h4 class="text-muted text-thin">Logo Icon</h4>
                 </div>
                 <hr>
                 <div class="panel-body">
-                    <div class="text-center">
-                        <img src={{image.src}} height="40px" width="100px"><br>
-                        <button class="btn btn-primary pull-right" (click)='saveLogo()'>Save Logo</button>
+                    <p class="text-muted text-thin">*Note: Please upload Logo of width 42px and height 44px.</p>
+                    <h4 class="text-muted text-thin">Select file : </h4>
+                    <input filestyle="" type="file" data-button-text="Single" data-class-button="btn btn-default" data-classinput="form-control inline" nv-file-select="" uploader="form.uploader" class="form-control" id="filestyle-2" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);"
+                        (change)="IconUploadBase64($event)">
+                    <div class="bootstrap-filestyle input-group">
+                        <input type="text" class="form-control " placeholder="" disabled="">
+                        <span class="group-span-filestyle input-group-btn" tabindex="0">
+                                <label for="filestyle-2" class="btn btn-default "><span class="icon-span-filestyle glyphicon glyphicon-folder-open"></span>
+                        <span class="buttonText">Upload Logo Icon</span>
+                        </label>
+                        </span>
+                    </div>
+                    <div class="result" *ngIf='icon.src'>
+                        <h4 class="text-muted text-thin">Logo Icon Preview</h4><br>
+                        <div class="text-center">
+                            <img src={{icon.src}} height="42px" width="44px"><br>
+                            <button class="btn btn-primary pull-right" (click)='saveLogoIcon()'>Save Logo</button>
+                        </div>
                     </div>
                 </div>
             </div>

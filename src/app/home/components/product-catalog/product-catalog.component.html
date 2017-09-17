@@ -14,11 +14,14 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label float-left pull-left">Style</label>
                                     <div class="col-sm-12">
-                                            <ss-multiselect-dropdown [options]="styles" [(ngModel)]="stylesModel" name="styles" (ngModelChange)="styleSelected($event)"></ss-multiselect-dropdown>
-                                        <!-- <select class="form-control" formControlName="style" [formControl]="valForm.controls['style']" (change)="styleSelected($event)">
-                                                    <option *ngFor="let style of styles" value={{style.id}}>{{style.name}}</option>
-                                            </select>
-                                        <span class="text-danger" *ngIf="valForm.controls['style'].hasError('required') && (valForm.controls['style'].dirty || valForm.controls['style'].touched)">This field is required</span> -->
+                                        <angular2-multiselect [data]="styles" [(ngModel)]="selectedStyles" 
+                                            name="styles"
+                                            [settings]="dropdownSettings" 
+                                            (onSelect)="styleSelected($event)" 
+                                            (onDeSelect)="styleDeselected($event)"
+                                            (onSelectAll)="onSelectAll($event)"
+                                            (onDeSelectAll)="onDeSelectAll($event)"></angular2-multiselect>
+                                            <!-- <ss-multiselect-dropdown [options]="styles" [(ngModel)]="stylesModel"  (ngModelChange)="styleSelected($event)"></ss-multiselect-dropdown> -->
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -39,14 +42,24 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label pull-left">Brand</label>
                                     <div class="col-sm-12">
-                                        <ss-multiselect-dropdown [options]="brands" [(ngModel)]="brandssModel" name="brands" name="styles" (ngModelChange)="brandSelected($event)"></ss-multiselect-dropdown>    
+                                        <angular2-multiselect [data]="brands" [(ngModel)]="selectedBrands" 
+                                            name="brands"
+                                            [settings]="dropdownSettings" 
+                                            (onSelect)="brandSelected($event)" 
+                                            (onDeSelect)="brandDeselected($event)"></angular2-multiselect>
+                                        <!-- <ss-multiselect-dropdown [options]="brands" [(ngModel)]="brandssModel" name="brands" name="styles" (ngModelChange)="brandSelected($event)"></ss-multiselect-dropdown>     -->
                                         
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label pull-left">Model</label>
                                     <div class="col-sm-12">
-                                        <ss-multiselect-dropdown [options]="models" [(ngModel)]="modelsModel" name="models" name="styles" (ngModelChange)="modelSelected($event)"></ss-multiselect-dropdown>    
+                                        <angular2-multiselect [data]="models" [(ngModel)]="selectedModels" 
+                                            name="models"
+                                            [settings]="dropdownSettings" 
+                                            (onSelect)="modelSelected($event)" 
+                                            (onDeSelect)="modelDeselected($event)"></angular2-multiselect>
+                                        <!-- <ss-multiselect-dropdown [options]="models" [(ngModel)]="modelsModel" name="models" name="styles" (ngModelChange)="modelSelected($event)"></ss-multiselect-dropdown>     -->
                                             
                                     </div>
                                 </div>
