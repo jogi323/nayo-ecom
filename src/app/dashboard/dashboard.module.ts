@@ -57,7 +57,7 @@ import { UsersListComponent } from './components/users-list/users-list.component
     DasboardComponent,
     HomePageComponent,
     FeaturedProductsComponent,
-    UsersListComponent,
+    UsersListComponent
   ],
   providers:[
     UserblockService
