@@ -9,6 +9,7 @@ import { ActivityReportsComponent } from './components/activity-reports/activity
 import { DasboardComponent } from './components/dasboard/dasboard.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { FeaturedProductsComponent } from './components/featured-products/featured-products.component';
+import { UsersListComponent } from './components/users-list/users-list.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
         { path: 'activityreports', component: ActivityReportsComponent },
         { path: 'homepage', component: HomePageComponent },
         { path: 'featuredproducts', component: FeaturedProductsComponent },
+        { path: 'userslist', component: UsersListComponent },
         // { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
         // { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
         // { path: 'maps', loadChildren: './maps/maps.module#MapsModule' },

@@ -16,6 +16,7 @@ export class TopNavbarComponent implements OnInit {
     navCollapsed = true; // for horizontal layout
     menuItems = []; // for horizontal layout
     logo: any;
+    logoIcon:any;
     isNavSearchVisible: boolean;
     @ViewChild('fsbutton') fsbutton;  // the fullscreen button
 
@@ -34,6 +35,11 @@ export class TopNavbarComponent implements OnInit {
             this.logo = localStorage.getItem('logo');
         }else{
             this.logo = 'assets/img/logo.png';
+        }
+        if(localStorage.getItem('logoIcon')){
+            this.logoIcon = localStorage.getItem('logoIcon');
+        }else{
+            this.logoIcon = 'assets/img/logo-single.png';
         }
         // this.topNavbarService.url  = 'http://localhost:4200/src/app/shared/data.json';
         // this.topNavbarService.getData().subscribe(res => {

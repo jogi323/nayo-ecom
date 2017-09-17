@@ -20,6 +20,7 @@ export class TopNavbarComponent implements OnInit {
     currentTheme:String;
     isNavSearchVisible: boolean;
     logo:any;
+    logoIcon:any;
     @ViewChild('fsbutton') fsbutton;  // the fullscreen button
 
     constructor(private menu:MenuService, private settings:SettingsService, private themes:ThemesService,public navbarService:AppService ) {
@@ -43,6 +44,11 @@ export class TopNavbarComponent implements OnInit {
             this.logo = localStorage.getItem('logo');
         }else{
             this.logo = 'assets/img/logo.png';
+        }
+        if(localStorage.getItem('logoIcon')){
+            this.logoIcon = localStorage.getItem('logoIcon');
+        }else{
+            this.logoIcon = 'assets/img/logo-single.png';
         }
         this.isNavSearchVisible = false;
         if (browser.msie) { // Not supported under IE
