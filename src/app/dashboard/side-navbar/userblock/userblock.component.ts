@@ -19,9 +19,9 @@ export class UserblockComponent implements OnInit {
 
     ngOnInit() {
     }
-      callParent() {
-    this.someEvent.next('fayaz');
-  }
+    callParent() {
+        this.someEvent.next('fayaz');
+    }
     userBlockIsVisible() {
         return this.userblockService.getVisibility();
     }

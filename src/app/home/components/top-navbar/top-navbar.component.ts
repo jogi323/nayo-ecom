@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter} from '@angular/core';
 const screenfull = require('screenfull');
 const browser = require('jquery.browser');
 declare var $: any;
@@ -12,7 +12,7 @@ import { ThemesService } from '../../../core/themes/themes.service';
     styleUrls: ['./top-navbar.component.scss']
 })
 export class TopNavbarComponent implements OnInit {
-
+    @Output() openModal = new EventEmitter<string>();
     navCollapsed = true; // for horizontal layout
     menuItems = []; // for horizontal layout
     logo: any;
@@ -92,6 +92,9 @@ export class TopNavbarComponent implements OnInit {
         else {
             el.children('em').removeClass('fa-compress').addClass('fa-expand');
         }
+    }
+    editProfile(){
+        this.openModal.next();
     }
 
 }

@@ -31,8 +31,8 @@
             </li>
             <!-- START User avatar toggle-->
             <!--<li>-->
-                <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
-                <!--<a (click)="toggleUserBlock($event)">
+            <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
+            <!--<a (click)="toggleUserBlock($event)">
                     <em class="icon-user"></em>
                 </a>
             </li>-->
@@ -133,6 +133,51 @@
                 <!-- END Dropdown menu-->
             </li>
             <!-- END Alert menu-->
+            <!-- START Profile menu-->
+            <li class="dropdown dropdown-list" dropdown>
+                <a dropdownToggle>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <!--<div class="label label-danger">11</div>-->
+                </a>
+                <!-- START Dropdown menu-->
+                <ul *dropdownMenu class="dropdown-menu animated flipInX">
+                    <li>
+                        <!-- START list group-->
+                        <div class="list-group">
+                            <!-- list item-->
+                            <a class="list-group-item">
+                                <div class="media-box" (click)="editProfile()">
+                                    <div class="pull-left">
+                                        <em class="fa fa-pencil-square-o fa-2x text-info"></em>
+                                    </div>
+                                    <div class="media-box-body clearfix">
+                                        <p class="m0">Edit profile</p>
+                                        <!--<p class="m0 text-muted">
+                                            <small>1 new follower</small>
+                                        </p>-->
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- list item-->
+                            <a class="list-group-item">
+                                <div class="media-box">
+                                    <div class="pull-left">
+                                        <em class="fa fa-power-off fa-2x text-warning"></em>
+                                    </div>
+                                    <div class="media-box-body clearfix">
+                                        <p class="m0">Log Out</p>
+                                        <!--<p class="m0 text-muted">
+                                            <small>You have 10 new emails</small>
+                                        </p>-->
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- END list group-->
+                    </li>
+                </ul>
+                <!-- END Dropdown menu-->
+            </li>
             <!-- START Offsidebar button-->
             <!--<li>
                 <a (click)="toggleOffsidebar()">

@@ -6,7 +6,6 @@ import { Component, OnInit, ViewChild} from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  showmodal:boolean;
   @ViewChild('lgModal') modal;
   constructor() { }
 
@@ -14,7 +13,6 @@ export class DashboardComponent implements OnInit {
   }
   showModal(value){
     console.log(value);
-    this.showmodal = true;
-    this.modal.show();
+    //this.modal.show();
   }
 }

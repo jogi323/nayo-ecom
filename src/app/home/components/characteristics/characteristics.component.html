@@ -2,7 +2,7 @@
     <div class="wrapper">
         <section>
             <!-- Page content-->
-            <div class="content-wrapper contentWrapperTopMargin" >
+            <div class="content-wrapper contentWrapperTopMargin">
                 <!-- START panel-->
                 <div class="panel widget">
                     <div class="panel-body">
@@ -11,20 +11,17 @@
                                 <img class="img-thumbnail img-circle img-responsive thumb96" src="assets/img/product7.png" alt="Image" />
                             </div>
                             <div class="col-xs-7">
-                                
+
                                 <h3 class="mt0">Product Name</h3>
-                                <p class="text-muted">Our award-winning steel roofing offers timeless 
-                                    beauty and an unmatched quality.</p>
-                                    <p class="text-muted" *ngIf="showProductDetails"> Engineered to withstand the most extreme weather conditions 
-                                     - hail, wind, snow and ice, while maintaining its original look for years to come.
-                                    Home and business owners alike will have peace of mind knowing their products are
-                                    backed with a lifetime, non-prorated warranty. </p>
+                                <p class="text-muted">Our award-winning steel roofing offers timeless beauty and an unmatched quality.</p>
+                                <p class="text-muted" *ngIf="showProductDetails"> Engineered to withstand the most extreme weather conditions - hail, wind, snow and ice, while maintaining its original look for years to come. Home and business owners alike will have peace of mind knowing their products
+                                    are backed with a lifetime, non-prorated warranty. </p>
                                 <a><small (click)="toggleShowProductDetails()" *ngIf="!showProductDetails" class="pull-right">View Details</small></a>
                                 <a><small (click)="toggleShowProductDetails()" *ngIf="showProductDetails" class="pull-right">Close</small></a>
                             </div>
                             <div class="col-xs-2">
-                                <div ><a class="btn btn-success" [routerLink]="'/home/products'">Change Product</a>
-                                </div>    
+                                <div><a class="btn btn-success" [routerLink]="'/home/products'">Change Product</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -56,45 +53,53 @@
                         </table>
                     </div>
                     <!-- END table-responsive-->
-                    
+
                 </div>
                 <!-- Characteristic Modal -->
-                  <div class="modal fade" id="characteristicModal" role="dialog">
+                <div class="modal fade" id="characteristicModal" role="dialog">
                     <div class="modal-dialog">
-                    
-                      <!-- Modal content-->
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Select Value for Characteristic</h4>
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Select Value for Characteristic</h4>
+                            </div>
+                            <div class="modal-body">
+                                <table class="table table-bordered table-hover" id="table-ext-3">
+                                    <thead>
+                                        <tr>
+                                            <th>Action</th>
+                                            <th>Characteristic value</th>
+                                            <th>Value Description</th>
+                                            <th>Pricing</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let characteristic of characteristics[currentCharacteristicId].value">
+                                            <td>
+                                                <input type="radio" name="selectedCharacter">
+                                            </td>
+                                            <td>
+                                                {{characteristic.charValu}}
+                                            </td>
+                                            <td>
+                                                {{characteristic.valueDesc}}
+                                            </td>
+                                            <td>
+                                                {{characteristic.pricing}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                            <table class="table table-bordered table-hover" id="table-ext-3">
-                                <thead>
-                                    <tr>
-                                        <th>Characteristic value</th>
-                                        <th>Value Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <select class="form-control" [(ngModel)]="selectedCharacteristic">
-                                                <option *ngFor="let characteristic of characteristics[currentCharacteristicId].value; let i = 'index'" value={{i}}>{{characteristic.charValu}}</option>
-                                            </select>
-                                        </td>
-                                        <td><span *ngIf="selectedCharacteristic">{{characteristics[currentCharacteristicId].value[selectedCharacteristic].valueDesc}}</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-default" (click)="selectCharacteristic()" data-dismiss="modal">Submit</button>
-                        </div>
-                      </div>
-                      
+
                     </div>
-                  </div>
+                </div>
                 <!-- End of Characteristic Modal -->
             </div>
         </section>
