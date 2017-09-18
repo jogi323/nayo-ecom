@@ -12,9 +12,27 @@
         }
     }
 }
-
+.form-group .col-sm-12 span{
+    font-weight: bold;
+}
 .currentColor {
     border: 3px solid hsla(0, 0%, 100%, .5);
+}
+
+@media only screen and (max-width: 767px) {
+    .margin-sm-colors{
+        margin-top:12px!important
+    }
+     .selected-list[_ngcontent-c5] .fa-angle-up[_ngcontent-c5] {
+        top: 50%!important;
+    }
+    // .fa-angle-down{
+    //     margin-top:12px!important;
+    //     top:50%!important;
+    // }
+    // .fa-angle-up{
+    //     margin-top:12px!important
+    // }
 }
 
 // .product-catalog-main{

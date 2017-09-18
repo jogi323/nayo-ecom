@@ -70,10 +70,10 @@
                                 <table class="table table-bordered table-hover" id="table-ext-3">
                                     <thead>
                                         <tr>
-                                            <th>Action</th>
+                                            <!-- <th>Action</th> -->
                                             <th>Characteristic value</th>
                                             <th>Value Description</th>
-                                            <th>Pricing</th>
+                                            <!-- <th>Pricing</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -83,13 +83,14 @@
                                             </td>
                                             <td>
                                                 {{characteristic.valueDesc}}
+                                                <a class="pull-right label label-success" (click)="selectCharacteristic(i)" data-dismiss="modal">Select</a>
                                             </td>
-                                            <td>
+                                            <!-- <td>
                                                 {{characteristic.pricing}}
-                                            </td>
-                                            <td>
+                                            </td> -->
+                                            <!-- <td>
                                                 <button class="btn btn-success" (click)="selectCharacteristic(i)" data-dismiss="modal">select</button>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                     </tbody>
                                 </table>
