@@ -30,7 +30,7 @@
                                     <label class="col-sm-2 control-label pull-left">Color</label>
                                     <div class="col-sm-12">
                                         <div class="panel-body">
-                                            <ul class="list-inline external-event-color-selector">
+                                            <ul class="list-inline external-event-color-selector margin-sm-colors">
                                                 <li *ngFor="let color of colors; let i='index'" class="p0">
                                                     <a class="circle circle-{{color.name}} circle-xl" (click)="colorSelected(color.id, $event)" [ngClass]="{'currentColor':color.selected === true}">
                                                         <!-- <input type="checkbox" [checked]="color.selected" style="visibility:hidden" /> -->

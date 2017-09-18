@@ -1,0 +1,9 @@
+input.form-control{
+    width: 95% !important;
+}
+
+@media only screen and (min-width: 781px){
+    input.form-control{
+        width: 100% !important;
+    }
+}
