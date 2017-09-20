@@ -13,6 +13,7 @@ export class CharacteristicsComponent implements OnInit {
   currentCharacteristicId:number=0;
   selectedCharacteristic:number;
   showProductDetails = false;
+  product:any;
 
   toggleShowProductDetails() {
     this.showProductDetails = !this.showProductDetails;
@@ -53,7 +54,8 @@ export class CharacteristicsComponent implements OnInit {
       {id:"6",description:"passenger side door",value:[{charValu:"8907", valueDesc:"fgtyh",pricing:"1000",status:''}]},
       {id:"7",description:"driver side door",value:[]},
       {id:"8",description:"interior lights",value:[{charValu:"0987", valueDesc:"hbgyt",pricing:"2000",status:''}]},      
-    ]
+    ];
+    this.product = {name:'product1',price:null};
   }
 
   showVlaues(event,index){
@@ -64,6 +66,7 @@ export class CharacteristicsComponent implements OnInit {
         this.characteristics[this.currentCharacteristicId].value[i].status = '';
     }
     this.characteristics[this.currentCharacteristicId].value[index].status = 'selected';
+    this.product.price = this.product.price + parseInt(this.characteristics[this.currentCharacteristicId].value[index].pricing);
     //this.selectedCharacteristic=null;
   }
   findSelectedCharacteristicValue(index){
