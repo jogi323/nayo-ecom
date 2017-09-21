@@ -7,6 +7,7 @@ import { ProductCatalogComponent } from './components/product-catalog/product-ca
 import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderViewComponent } from './components/order-view/order-view.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
         { path: 'products', component:ProductCatalogComponent },
         { path: 'characteristics', component:CharacteristicsComponent },
         { path: 'orders', component:OrdersComponent },
-        { path: 'vieworder', component:OrderViewComponent }
+        { path: 'vieworder', component:OrderViewComponent },
+        { path: 'shoppingcart', component:ShoppingCartComponent },
     ]
   },
   

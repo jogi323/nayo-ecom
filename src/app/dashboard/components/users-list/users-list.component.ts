@@ -42,15 +42,15 @@ export class UsersListComponent implements OnInit {
       public columns: Array<any> = [
           { title: 'Name', name: 'name', filtering: { filterString: '', placeholder: 'Filter by name' } },
           {
-              title: 'Position',
+              title: 'Company Name',
               name: 'position',
               sort: false,
-              filtering: { filterString: '', placeholder: 'Filter by position' }
+              filtering: { filterString: '', placeholder: 'Filter by Company' }
           },
-          { title: 'Office', className: ['office-header', 'text-success'], name: 'office', sort: 'asc' },
-          { title: 'Extn.', name: 'ext', sort: '', filtering: { filterString: '', placeholder: 'Filter by extn.' } },
-          { title: 'Start date', className: 'text-warning', name: 'startDate' },
-          { title: 'Salary ($)', name: 'salary' }
+          { title: 'location', className: ['office-header', 'text-success'], name: 'office', sort: 'asc' },
+          { title: 'Mobile', name: 'ext', sort: '', filtering: { filterString: '', placeholder: 'Filter by mobile.' } },
+          { title: 'Registered On', className: 'text-warning', name: 'startDate' },
+          { title: 'Pin Code', name: 'salary' }
       ];
       public page: number = 1;
       public itemsPerPage: number = 10;

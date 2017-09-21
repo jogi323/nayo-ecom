@@ -135,7 +135,7 @@ export class TopNavbarComponent implements OnInit {
         this.openModal.next();
     }
     detailsOfProduct(id:number){
-        this._route.navigate(['home/cart/',id]);
+        this._route.navigate(['home/shoppingcart']);
     }
 
 }
