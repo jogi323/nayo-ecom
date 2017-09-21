@@ -2,7 +2,7 @@
 <div class="layout-h">
   <div class="wrapper">
     <!-- Page content-->
-    <div class="content-wrapper contentWrapperTopMargin" >
+    <div class="content-wrapper contentWrapperTopMargin">
       <div class="content-heading">Search
           <small>Search and filter results</small>
       </div>
@@ -105,7 +105,11 @@
               <div class="panel-footer">
                 <div class="row">
                   <div class="col-xs-12">
-                      <div class="pull-right"><a class="btn btn-primary btn-lg" >Proceed to checout</a>
+                      <div class="col-xs-5 col-xs-offset-7">
+                          <div class="pull-left"><a class="btn btn-warning btn-lg" [routerLink]="'/home/products'">Back to all Products</a>
+                          </div>
+                          <div class="pull-right"><a class="btn btn-primary btn-lg" >Proceed to checout</a>
+                          </div>
                       </div>
                   </div>
                 </div>
@@ -141,7 +145,8 @@
               <div class="panel-footer">
                 
               </div>
-            </div><!-- END panel-->
+            </div>
+            <!-- END panel-->
           </div>
         </div>
       </div>

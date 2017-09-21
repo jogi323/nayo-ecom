@@ -1,220 +1,230 @@
-<!--Carousal Selector-->
 
-<app-carousal></app-carousal>
-
-<!--Products Selector-->
-<!-- <app-products></app-products> -->
-<!--Categoriees Selector-->
-<!-- <app-categories></app-categories> -->
-<section>
-
-    <!-- Page content-->
-    <div class="content-wrapper">
-        <div class="content-heading">Products Avilable 
-            <small>these are our top selling products</small>
-        </div>
-    </div>
-</section>
-<div class="container-fluid" style="background:transparent;">
-    <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <!-- START widget-->
-            <!--<div class="panel widget horizontal">
-                <div class="row row-table row-flush">
-                    <div class="col-xs-8 col-lg-8 col-md-8 col-sm-8">
-                        <img class="img-responsive horizontal" src="assets/img/product2.PNG" alt="" />
-                    </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4col-lg-4  bg-info">
-                        <span class="details"> Some details about this product.</span><br>
-                        <a [routerLink]="''" id="product-details">For more......</a>
-                    </div>
-                </div>
-            </div>-->
-            <a>
-             <div class="panel widget">
-                <img class="img-responsive vertical" src="assets/img/product8.png" alt="Image" [routerLink]="'/home/products'"/>
-                <div class="panel-body">
-                    <div class="row row-table text-center">
-                        <!-- <span> Some details about this product.</span><br> -->
-                        <h3 [routerLink]="'/home/products'" class="m0">Roofing</h3>
-                        <a [routerLink]="'/home/products'"><small>View details</small></a>
-                    </div>
-                </div>
-            </div>
-             </a>
-            <!-- END widget-->
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <!-- START widget-->
-            <a>
-            <div class="panel widget">
-                <img class="img-responsive vertical" src="assets/img/product10.png" alt="Image" [routerLink]="'/home/products'" />
-                <div class="panel-body">
-                    <div class="row row-table text-center">
-                            <h3 [routerLink]="'/home/products'" class="m0">Sliding</h3>
-                            <a [routerLink]="'/home/products'"><small>View details</small></a>
-                    </div>
-                </div>
-            </div>
-        </a>
-            <!-- END widget-->
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <!-- START widget-->
-            <a>
-            <div class="panel widget">
-                <img class="img-responsive vertical" src="assets/img/product9.png" alt="Image" [routerLink]="'/home/products'" />
-                <div class="panel-body">
-                    <div class="row row-table text-center">
-                            <h3 [routerLink]="'/home/products'" class="m0">Soffit</h3>
-                            <a [routerLink]="'/home/products'"><small>View details</small></a>
-                    </div>
-                </div>
-            </div>
+<div class="layout-h">
+    <div class="wrapper">
+        <!-- Page content-->
+        <div class="contentWrapperTopMargin">
+            <!--Carousal Selector-->
+            <app-carousal></app-carousal>
+            <a href="#" class="list-group-item">
+                <table class="wd-wide">
+                    <tbody>
+                        <tr>
+                            <td class="wd-xs"><div class="ph">
+                                <img src="app/img/dummy.png" alt="" class="media-box-object img-responsive img-rounded thumb64"></div>
+                            </td>
+                            <td>
+                                <div class="ph">
+                                    <h4 class="media-box-heading">Welcome back User</h4>
+                                    <small class="text-muted">We have a special offer on this particular product</small>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </a>
-                <!-- END widget-->
-            </div> 
-             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-            <!-- START widget-->
-            <a>
-            <div class="panel widget">
-                <img class="img-responsive vertical" src="assets/img/product7.png" alt="Image" [routerLink]="'/home/products'" />
-                <div class="panel-body">
-                    <div class="row row-table text-center">
-                            <h3 [routerLink]="'/home/products'" class="m0">Rain Ware</h3>
-                            <a [routerLink]="'/home/products'"><small>View details</small></a>
+            <section>
+                <!-- Page content-->
+                <div class="content-wrapper">
+                    <div class="content-heading">Products Avilable 
+                        <small>these are our top selling products</small>
                     </div>
                 </div>
-            </div>
-            </a>
-            <!-- END widget-->
-        </div>    
-</div>
-</div>
-<!-- <section> -->
-<div class="content-wrapper">
-    <div class="content-heading">Categories
-        <small>Categories of procuts avilable</small>
+            </section>
+            <div class="container-fluid" style="background:transparent;">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <a>
+                             <div class="panel widget">
+                                <img class="img-responsive vertical" src="assets/img/product8.png" alt="Image" [routerLink]="'/home/products'"/>
+                                <div class="panel-body">
+                                    <div class="row row-table text-center">
+                                        <!-- <span> Some details about this product.</span><br> -->
+                                        <h3 [routerLink]="'/home/products'" class="m0">Roofing</h3>
+                                        <a [routerLink]="'/home/products'"><small>View details</small></a>
+                                    </div>
+                                </div>
+                            </div>
+                             </a>
+                            <!-- END widget-->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <!-- START widget-->
+                            <a>
+                            <div class="panel widget">
+                                <img class="img-responsive vertical" src="assets/img/product10.png" alt="Image" [routerLink]="'/home/products'" />
+                                <div class="panel-body">
+                                    <div class="row row-table text-center">
+                                            <h3 [routerLink]="'/home/products'" class="m0">Sliding</h3>
+                                            <a [routerLink]="'/home/products'"><small>View details</small></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                            <!-- END widget-->
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <!-- START widget-->
+                            <a>
+                            <div class="panel widget">
+                                <img class="img-responsive vertical" src="assets/img/product9.png" alt="Image" [routerLink]="'/home/products'" />
+                                <div class="panel-body">
+                                    <div class="row row-table text-center">
+                                            <h3 [routerLink]="'/home/products'" class="m0">Soffit</h3>
+                                            <a [routerLink]="'/home/products'"><small>View details</small></a>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                                <!-- END widget-->
+                            </div> 
+                             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                            <!-- START widget-->
+                            <a>
+                            <div class="panel widget">
+                                <img class="img-responsive vertical" src="assets/img/product7.png" alt="Image" [routerLink]="'/home/products'" />
+                                <div class="panel-body">
+                                    <div class="row row-table text-center">
+                                            <h3 [routerLink]="'/home/products'" class="m0">Rain Ware</h3>
+                                            <a [routerLink]="'/home/products'"><small>View details</small></a>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                            <!-- END widget-->
+                        </div>    
+                </div>
+                </div>
+                <!-- <section> -->
+                <div class="content-wrapper">
+                    <div class="content-heading">Categories
+                        <small>Categories of procuts avilable</small>
+                    </div>
+                </div>
+                <div class="container-fluid" style="background:transparent;">
+                
+                    <div class="col-lg-6">
+                        <!-- START widget-->
+                        <div class="panel widget">
+                            <div class="row row-table row-flush">
+                                <div class="col-xs-6">
+                                    <picture class="lateral-picture">
+                                        <img src="assets/img/product8.png" alt="" />
+                                    </picture>
+                                </div>
+                                <div class="col-xs-6 align-middle p-lg">
+                                    <!--<div class="pull-right"><a class="btn btn-primary btn-sm" href="#">Register</a>
+                                    </div>
+                                    <p>
+                                        <span class="text-lg">16</span>Aug</p>
+                                    <p>
+                                        <strong>EVENT INVITATION</strong>
+                                    </p>-->
+                                     <h3 class="m0">Siding</h3>
+                                    <p class="text-muted">Some tag</p>
+                                    <p>Donec posuere neque in elit luctus tempor consequat enim egestas. Nulla dictum egestas leo at lobortis.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END widget-->
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- START widget-->
+                        <div class="panel widget">
+                            <div class="half-float">
+                                <img class="img-responsive second-catageroies" src="assets/img/product8.png" alt="" />
+                                <div class="half-float-bottom">
+                                    <!-- <img class="img-thumbnail img-circle thumb128" src="assets/img/user/09.jpg" alt="Image" /> -->
+                                </div>
+                            </div>
+                            <div class="panel-body text-center">
+                                <h3 class="m0">Roofing</h3>
+                                <p class="text-muted">Some tag</p>
+                                <p>Proin metus justo, commodo in ultrices at, lobortis sit amet dui. Fusce dolor purus, adipiscing a tempus
+                                    at, gravida vel purus.</p>
+                            </div>
+                            <!--<div class="panel-body text-center bg-gray-dark">
+                                <div class="row row-table">
+                                    <div class="col-xs-4">
+                                        <h3 class="m0">400</h3>
+                                        <p class="m0">Photos</p>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <h3 class="m0">2000</h3>
+                                        <p class="m0">Likes</p>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <h3 class="m0">500</h3>
+                                        <p class="m0">Following</p>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
+                        <!-- END widget-->
+                    </div>
+                    <div class="col-lg-6 catageoryTopMargin">
+                        <!-- START widget-->
+                        <div class="panel widget">
+                            <div class="half-float">
+                                <img class="img-responsive" src="assets/img/product10.png" alt="" />
+                                <div class="half-float-bottom">
+                                    <!-- <img class="img-thumbnail img-circle thumb128" src="assets/img/user/09.jpg" alt="Image" /> -->
+                                </div>
+                            </div>
+                            <div class="panel-body text-center">
+                                <h3 class="m0">Rainware</h3>
+                                <p class="text-muted">Some tag</p>
+                                <p>Proin metus justo, commodo in ultrices at, lobortis sit amet dui. Fusce dolor purus, adipiscing a tempus
+                                    at, gravida vel purus.</p>
+                            </div>
+                            <!--<div class="panel-body text-center bg-gray-dark">
+                                <div class="row row-table">
+                                    <div class="col-xs-4">
+                                        <h3 class="m0">400</h3>
+                                        <p class="m0">Photos</p>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <h3 class="m0">2000</h3>
+                                        <p class="m0">Likes</p>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <h3 class="m0">500</h3>
+                                        <p class="m0">Following</p>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </div>
+                        <!-- END widget-->
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- START widget-->
+                        <div class="panel widget">
+                            <div class="row row-table row-flush">
+                                <div class="col-xs-6">
+                                    <picture class="lateral-picture">
+                                        <img src="assets/img/product9.png" alt="" />
+                                    </picture>
+                                </div>
+                                <div class="col-xs-6 align-middle p-lg">
+                                    <!--<div class="pull-right"><a class="btn btn-primary btn-sm" href="#">Register</a>
+                                    </div>
+                                    <p>
+                                        <span class="text-lg">16</span>Aug</p>
+                                    <p>
+                                        <strong>EVENT INVITATION</strong>
+                                    </p>-->
+                                    <h3 class="m0">Saffit,Fascia&Trim</h3>
+                                    <p class="text-muted">Some tag</p>
+                                    <p>Donec posuere neque in elit luctus tempor consequat enim egestas. Nulla dictum egestas leo at lobortis.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END widget-->
+                    </div>
+                </div>
+        </div>
     </div>
 </div>
-<div class="container-fluid" style="background:transparent;">
 
-    <div class="col-lg-6">
-        <!-- START widget-->
-        <div class="panel widget">
-            <div class="row row-table row-flush">
-                <div class="col-xs-6">
-                    <picture class="lateral-picture">
-                        <img src="assets/img/product8.png" alt="" />
-                    </picture>
-                </div>
-                <div class="col-xs-6 align-middle p-lg">
-                    <!--<div class="pull-right"><a class="btn btn-primary btn-sm" href="#">Register</a>
-                    </div>
-                    <p>
-                        <span class="text-lg">16</span>Aug</p>
-                    <p>
-                        <strong>EVENT INVITATION</strong>
-                    </p>-->
-                     <h3 class="m0">Siding</h3>
-                    <p class="text-muted">Some tag</p>
-                    <p>Donec posuere neque in elit luctus tempor consequat enim egestas. Nulla dictum egestas leo at lobortis.</p>
-                </div>
-            </div>
-        </div>
-        <!-- END widget-->
-    </div>
-    <div class="col-lg-6">
-        <!-- START widget-->
-        <div class="panel widget">
-            <div class="half-float">
-                <img class="img-responsive second-catageroies" src="assets/img/product8.png" alt="" />
-                <div class="half-float-bottom">
-                    <!-- <img class="img-thumbnail img-circle thumb128" src="assets/img/user/09.jpg" alt="Image" /> -->
-                </div>
-            </div>
-            <div class="panel-body text-center">
-                <h3 class="m0">Roofing</h3>
-                <p class="text-muted">Some tag</p>
-                <p>Proin metus justo, commodo in ultrices at, lobortis sit amet dui. Fusce dolor purus, adipiscing a tempus
-                    at, gravida vel purus.</p>
-            </div>
-            <!--<div class="panel-body text-center bg-gray-dark">
-                <div class="row row-table">
-                    <div class="col-xs-4">
-                        <h3 class="m0">400</h3>
-                        <p class="m0">Photos</p>
-                    </div>
-                    <div class="col-xs-4">
-                        <h3 class="m0">2000</h3>
-                        <p class="m0">Likes</p>
-                    </div>
-                    <div class="col-xs-4">
-                        <h3 class="m0">500</h3>
-                        <p class="m0">Following</p>
-                    </div>
-                </div>
-            </div>-->
-        </div>
-        <!-- END widget-->
-    </div>
-    <div class="col-lg-6 catageoryTopMargin">
-        <!-- START widget-->
-        <div class="panel widget">
-            <div class="half-float">
-                <img class="img-responsive" src="assets/img/product10.png" alt="" />
-                <div class="half-float-bottom">
-                    <!-- <img class="img-thumbnail img-circle thumb128" src="assets/img/user/09.jpg" alt="Image" /> -->
-                </div>
-            </div>
-            <div class="panel-body text-center">
-                <h3 class="m0">Rainware</h3>
-                <p class="text-muted">Some tag</p>
-                <p>Proin metus justo, commodo in ultrices at, lobortis sit amet dui. Fusce dolor purus, adipiscing a tempus
-                    at, gravida vel purus.</p>
-            </div>
-            <!--<div class="panel-body text-center bg-gray-dark">
-                <div class="row row-table">
-                    <div class="col-xs-4">
-                        <h3 class="m0">400</h3>
-                        <p class="m0">Photos</p>
-                    </div>
-                    <div class="col-xs-4">
-                        <h3 class="m0">2000</h3>
-                        <p class="m0">Likes</p>
-                    </div>
-                    <div class="col-xs-4">
-                        <h3 class="m0">500</h3>
-                        <p class="m0">Following</p>
-                    </div>
-                </div>
-            </div>-->
-        </div>
-        <!-- END widget-->
-    </div>
-    <div class="col-lg-6">
-        <!-- START widget-->
-        <div class="panel widget">
-            <div class="row row-table row-flush">
-                <div class="col-xs-6">
-                    <picture class="lateral-picture">
-                        <img src="assets/img/product9.png" alt="" />
-                    </picture>
-                </div>
-                <div class="col-xs-6 align-middle p-lg">
-                    <!--<div class="pull-right"><a class="btn btn-primary btn-sm" href="#">Register</a>
-                    </div>
-                    <p>
-                        <span class="text-lg">16</span>Aug</p>
-                    <p>
-                        <strong>EVENT INVITATION</strong>
-                    </p>-->
-                    <h3 class="m0">Saffit,Fascia&Trim</h3>
-                    <p class="text-muted">Some tag</p>
-                    <p>Donec posuere neque in elit luctus tempor consequat enim egestas. Nulla dictum egestas leo at lobortis.</p>
-                </div>
-            </div>
-        </div>
-        <!-- END widget-->
-    </div>
-</div>
+
+
+

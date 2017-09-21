@@ -32,3 +32,14 @@
 @import "./app/shared/styles/bootstrap.scss";
 //== Application
 @import "./app/shared/styles/app.scss";
+
+//top maring for content without aside
+.contentWrapperTopMargin{
+    margin-top:55px!important;
+}
+
+@media only screen and (max-width: 767px) {
+    .contentWrapperTopMargin{
+        margin-top:112px!important;
+    }
+}
