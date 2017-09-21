@@ -29,6 +29,7 @@ import { CharacteristicsComponent } from './components/characteristics/character
 import { OrdersComponent } from './components/orders/orders.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { OrderViewComponent } from './components/order-view/order-view.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 @NgModule({
   imports: [
@@ -54,7 +55,8 @@ import { OrderViewComponent } from './components/order-view/order-view.component
       FooterComponent,
       CharacteristicsComponent,
       OrderViewComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    ShoppingCartComponent
     ],
   providers:[
     SettingsService,
