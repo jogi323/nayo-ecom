@@ -54,7 +54,7 @@ import { OrderViewComponent } from './components/order-view/order-view.component
       FooterComponent,
       CharacteristicsComponent,
       OrderViewComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
     ],
   providers:[
     SettingsService,

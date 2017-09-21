@@ -140,21 +140,21 @@
                     <div class="label label-danger">4</div>
                 </a>
                 <!-- START Dropdown menu-->
-                <ul *dropdownMenu class="dropdown-menu animated flipInX">
+                <ul *dropdownMenu class="dropdown-menu animated flipInX cart-dropdown">
                     <li>
                         <!-- START list group-->
                         <div class="list-group">
                             <!-- list item-->
                             <a class="list-group-item" *ngFor="let product of cart">
-                                <div class="media-box" (click)="detailsOfProduct()">
+                                <div class="media-box" (click)="detailsOfProduct(product.id)">
                                     <div class="pull-left">
                                         <!--<em class="fa fa-pencil-square-o fa-2x text-info"></em>-->
                                         <img src="https://www.ssm.com.my/sites/default/files/3_products_services.jpg" height="50" width="50">
                                     </div>
                                     <div class="media-box-body clearfix">
-                                        <p class="m0">
-                                            <span>{{product.productName}}</span>
-                                            &nbsp;Rs:<span>{{product.price}}</span>
+                                        <p class="m0 text-warning">
+                                            <span>{{product.productName}}</span> &nbsp;Rs:
+                                            <span>{{product.price}}</span>
                                         </p>
                                         <p class="m0 text-muted">
                                             <small>{{product.description}}</small>
