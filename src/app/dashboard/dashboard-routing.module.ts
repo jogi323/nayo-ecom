@@ -10,6 +10,7 @@ import { DasboardComponent } from './components/dasboard/dasboard.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { FeaturedProductsComponent } from './components/featured-products/featured-products.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
+import { DocumentLibraryComponent } from './components/document-library/document-library.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
         { path: 'homepage', component: HomePageComponent },
         { path: 'featuredproducts', component: FeaturedProductsComponent },
         { path: 'userslist', component: UsersListComponent },
+        { path: 'documentslibrary', component: DocumentLibraryComponent },
         // { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
         // { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
         // { path: 'maps', loadChildren: './maps/maps.module#MapsModule' },

@@ -28,6 +28,11 @@ const userslist = {
     link: '/dashboard/userslist',
     icon: 'fa fa-users'
 };
+const docusLibrary = {
+    text: 'Documents Library',
+    link: '/dashboard/documentslibrary',
+    icon: 'fa fa-file-text'
+};
 // const Dashboard = {
 //     text: 'Dashboard',
 //     link: '/dashboard',
@@ -423,7 +428,8 @@ export const menu = [
     featuredProducts,
     Sales,
     activityreports,
-    userslist
+    userslist,
+    docusLibrary
     // Widgets,
     // headingComponents,
     // Elements,
