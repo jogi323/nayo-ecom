@@ -133,6 +133,56 @@
                 <!-- END Dropdown menu-->
             </li>
             <!-- END Alert menu-->
+            <!-- START Cart Details-->
+            <li class="dropdown dropdown-list" dropdown>
+                <a dropdownToggle>
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <div class="label label-danger">4</div>
+                </a>
+                <!-- START Dropdown menu-->
+                <ul *dropdownMenu class="dropdown-menu animated flipInX cart-dropdown">
+                    <li>
+                        <!-- START list group-->
+                        <div class="list-group">
+                            <!-- list item-->
+                            <a class="list-group-item" *ngFor="let product of cart">
+                                <div class="media-box" (click)="detailsOfProduct(product.id)">
+                                    <div class="pull-left">
+                                        <!--<em class="fa fa-pencil-square-o fa-2x text-info"></em>-->
+                                        <img src="https://www.ssm.com.my/sites/default/files/3_products_services.jpg" height="50" width="50">
+                                    </div>
+                                    <div class="media-box-body clearfix">
+                                        <p class="m0 text-warning">
+                                            <span>{{product.productName}}</span> &nbsp;$:
+                                            <span>{{product.price}}</span>
+                                        </p>
+                                        <p class="m0 text-muted">
+                                            <small>{{product.description}}</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- list item-->
+                            <!--<a class="list-group-item">
+                                <div class="media-box">
+                                    <div class="pull-left">
+                                        <em class="fa fa-power-off fa-2x text-warning"></em>
+                                    </div>
+                                    <div class="media-box-body clearfix">
+                                        <p class="m0">Log Out</p>
+                                        <p class="m0 text-muted">
+                                            <small>You have 10 new emails</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>-->
+                        </div>
+                        <!-- END list group-->
+                    </li>
+                </ul>
+                <!-- END Dropdown menu-->
+            </li>
+            <!--End of Cart-->
             <!-- START Profile menu-->
             <li class="dropdown dropdown-list" dropdown>
                 <a dropdownToggle>
@@ -178,6 +228,7 @@
                 </ul>
                 <!-- END Dropdown menu-->
             </li>
+            <!--End of Profile Menu-->
             <!-- START Offsidebar button-->
             <!--<li>
                 <a (click)="toggleOffsidebar()">

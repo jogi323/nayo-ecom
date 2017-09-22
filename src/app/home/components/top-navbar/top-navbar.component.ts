@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild, Output, EventEmitter} from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 const screenfull = require('screenfull');
 const browser = require('jquery.browser');
 declare var $: any;
@@ -16,14 +17,45 @@ export class TopNavbarComponent implements OnInit {
     navCollapsed = true; // for horizontal layout
     menuItems = []; // for horizontal layout
     logo: any;
-    logoIcon:any;
+    logoIcon: any;
     isNavSearchVisible: boolean;
+    cart: any[];
     @ViewChild('fsbutton') fsbutton;  // the fullscreen button
 
-    constructor(private settings: SettingsService, private themes: ThemesService, private topNavbarService: AppService) {
+    constructor(private settings: SettingsService, private themes: ThemesService, private topNavbarService: AppService, private _route:Router) {
 
         // show only a few items on demo
         // this.menuItems = menu.getMenu().slice(0,4); // for horizontal layout
+        this.cart = [
+            {
+                id: 1,
+                productName: 'product 1',
+                description: 'some description about the product',
+                price: 1200,
+                expectedArrival: '10/10/2017'
+            },
+            {
+                id: 2,
+                productName: 'product 2',
+                description: 'some description about the product',
+                price: 2200,
+                expectedArrival: '10/10/2017'
+            },
+            {
+                id: 3,
+                productName: 'product 3',
+                description: 'some description about the product some description about the product some description about the product',
+                price: 3200,
+                expectedArrival: '10/10/2017'
+            },
+            {
+                id: 4,
+                productName: 'product 4',
+                description: 'some description about the product',
+                price: 4200,
+                expectedArrival: '10/10/2017'
+            }
+        ]
 
     }
 
@@ -33,12 +65,12 @@ export class TopNavbarComponent implements OnInit {
         }
         if (localStorage.getItem('logo')) {
             this.logo = localStorage.getItem('logo');
-        }else{
+        } else {
             this.logo = 'assets/img/logo.png';
         }
-        if(localStorage.getItem('logoIcon')){
+        if (localStorage.getItem('logoIcon')) {
             this.logoIcon = localStorage.getItem('logoIcon');
-        }else{
+        } else {
             this.logoIcon = 'assets/img/logo-single.png';
         }
         // this.topNavbarService.url  = 'http://localhost:4200/src/app/shared/data.json';
@@ -99,8 +131,11 @@ export class TopNavbarComponent implements OnInit {
             el.children('em').removeClass('fa-compress').addClass('fa-expand');
         }
     }
-    editProfile(){
+    editProfile() {
         this.openModal.next();
+    }
+    detailsOfProduct(id:number){
+        this._route.navigate(['home/shoppingcart']);
     }
 
 }

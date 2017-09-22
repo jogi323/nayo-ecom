@@ -1,110 +1,185 @@
 <div class="layout-h">
     <div class="wrapper">
-        <section>
-            <!-- Page content-->
-            <div class="content-wrapper contentWrapperTopMargin">
-                <!-- START panel-->
-                <div class="panel widget">
-                    <div class="panel-body">
-                        <div class="row row-table">
-                            <div class="col-xs-2 ">
-                                <img class="img-thumbnail img-circle img-responsive thumb96" src="assets/img/product7.png" alt="Image" />
-                            </div>
-                            <div class="col-xs-7">
-
-                                <h3 class="mt0">Product Name</h3>
-                                <p class="text-muted">Our award-winning steel roofing offers timeless beauty and an unmatched quality.</p>
-                                <p class="text-muted" *ngIf="showProductDetails"> Engineered to withstand the most extreme weather conditions - hail, wind, snow and ice, while maintaining its original look for years to come. Home and business owners alike will have peace of mind knowing their products
-                                    are backed with a lifetime, non-prorated warranty. </p>
-                                <a><small (click)="toggleShowProductDetails()" *ngIf="!showProductDetails" class="pull-right">View Details</small></a>
-                                <a><small (click)="toggleShowProductDetails()" *ngIf="showProductDetails" class="pull-right">Close</small></a>
-                            </div>
-                            <div class="col-xs-2">
-                                <div><a class="btn btn-success" [routerLink]="'/home/products'">Change Product</a>
+        <!-- Page content-->
+        <div class="content-wrapper contentWrapperTopMargin">
+            <div class="content-heading">Customise
+                <small>your selected product</small>
+            </div>
+            <!-- START panel-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel widget">
+                        <div class="panel-body">
+                            <div class="row row-table">
+                                <div class="col-xs-2 ">
+                                    <img class="img-thumbnail img-circle img-responsive thumb96" src="assets/img/product7.png" alt="Image" />
+                                </div>
+                                <div class="col-xs-7">
+    
+                                    <h3 class="mt0">Product Name</h3>
+                                    <p class="text-muted">Our award-winning steel roofing offers timeless beauty and an unmatched quality.</p>
+                                    <p class="text-muted" *ngIf="showProductDetails"> Engineered to withstand the most extreme weather conditions - hail, wind, snow and ice, while maintaining its original look for years to come. Home and business owners alike will have peace of mind knowing their products
+                                        are backed with a lifetime, non-prorated warranty. </p>
+                                    <a><small (click)="toggleShowProductDetails()" *ngIf="!showProductDetails" class="pull-right">View Details</small></a>
+                                    <a><small (click)="toggleShowProductDetails()" *ngIf="showProductDetails" class="pull-right">Close</small></a>
+                                </div>
+                                <div class="col-xs-2">
+                                    <div><a class="btn btn-success" [routerLink]="'/home/products'">Change Product</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">Customize this product</div>
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-hover" id="table-ext-3">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Description</th>
-                                    <th>Chosen option</th>
-                                    <th>List of Values</th>
-                                    <th>Description of chosen option</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let characteristic of characteristics; let i = 'index'">
-                                    <td>{{characteristic.id}}</td>
-                                    <td>{{characteristic.description}}</td>
-                                    <td>{{findSelectedCharacteristicValue(i)}}</td>
-                                    <td><a class="label label-danger" (click)=showVlaues($event,i) data-toggle="modal" data-target="#characteristicModal" *ngIf="characteristic.value.length">Select</a></td>
-                                    <td>{{findSelectedCharacteristicDesc(i)}}</td>
-                                    <td>{{findSelectedCharacteristicPricing(i)}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+            </div>
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Customize this product</div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover" id="table-ext-3">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Description</th>
+                                        <th>Chosen option</th>
+                                        <th>List of Values</th>
+                                        <th>Description of chosen option</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let characteristic of characteristics; let i = 'index'">
+                                        <td>{{characteristic.id}}</td>
+                                        <td>{{characteristic.description}}</td>
+                                        <td>{{findSelectedCharacteristicValue(i)}}</td>
+                                        <td><a class="label label-danger" (click)=showVlaues($event,i) data-toggle="modal" data-target="#characteristicModal" *ngIf="characteristic.value.length">Select</a></td>
+                                        <td>{{findSelectedCharacteristicDesc(i)}}</td>
+                                        <td>{{findSelectedCharacteristicPricing(i)}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- END table-responsive-->
+        
                     </div>
-                    <!-- END table-responsive-->
-
                 </div>
-                <!-- Characteristic Modal -->
-                <div class="modal fade" id="characteristicModal" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Select Value for Characteristic</h4>
-                            </div>
-                            <div class="modal-body">
-                                <input #txtFname placeholder="search by characteristic value" class="form-control mb" type="text" />
-                                <table class="table table-bordered table-hover text-center" id="table-ext-3">
-                                    <thead>
-                                        <tr>
-                                            <!-- <th>Action</th> -->
-                                            <th id="char">Characteristic value</th>
-                                            <th class="text-center">Value Description</th>
-                                            <!-- <th>Pricing</th> -->
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let characteristic of characteristics[currentCharacteristicId].value | searchfilter: 'charValu' : txtFname.value; let i = 'index'">
-                                            <td>
-                                                {{characteristic.charValu}}
-                                            </td>
-                                            <td>
-                                                {{characteristic.valueDesc}}
-                                                <a class="pull-right label label-success" (click)="selectCharacteristic(i)" data-dismiss="modal">Select</a>
-                                            </td>
-                                            <!-- <td>
-                                                {{characteristic.pricing}}
-                                            </td> -->
-                                            <!-- <td>
-                                                <button class="btn btn-success" (click)="selectCharacteristic(i)" data-dismiss="modal">select</button>
-                                            </td> -->
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="col-lg-3">
+                    <!-- START panel-->
+            <div id="panelDemo7" class="panel panel-default">
+                    <div class="panel-heading">Price Details</div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                              <tbody>
+                                <tr>
+                                    <td>Prduct Price</td>
+                                    <td>$2432</td>
+                                </tr>
+                                <tr>
+                                    <td>Expected Delivery</td>
+                                    <td>27/08/2017</td>
+                                </tr>
+                                <tr>
+                                    <td>Products in stock</td>
+                                    <td>9</td>
+                                </tr>
+                                <tr>
+                                    <td>Avilability for Shipping</td>
+                                    <td>yes</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="col-xs-6">
+                                    <div class="pull-left"><a class="btn btn-warning btn-lg" >Add to Cart</a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="pull-right"><a class="btn btn-primary btn-lg" [routerLink]="'/home/shoppingcart'">Checkout</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
+                        
+                    </div>
+                  </div>
+                  <!-- END panel-->
+                </div>
+            </div> 
+            
+            <!--<div>
+                <span class="pull-right" *ngIf="product.price">
+                    Total Price : {{product.price}}
+                </span>
+            </div>-->
+            <!-- <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="panel widget">
+                        <div class="panel-body">
+                            <h3 class="mt0" *ngIf="product.price"> Total Price : {{product.price}}</h3>
+                            <h4 class="mt0"> No of Items Available : 12</h4>
+                            <h4 class="mt0"> Expected Arrival : 10/10/17</h4>
+                            <span class="pull-right"> <button class="btn btn-success">Add to Cart</button></span>
+                            
+                        </div>
                     </div>
                 </div>
-                <!-- End of Characteristic Modal -->
+            </div> -->
+
+        </div>
+    </div>
+</div>
+<!-- Characteristic Modal -->
+<div class="modal fade" id="characteristicModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Select Value for Characteristic</h4>
             </div>
-        </section>
+            <div class="modal-body">
+                <input #txtFname placeholder="search by characteristic value" class="form-control mb" type="text" />
+                <table class="table table-bordered table-hover" id="table-ext-3">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Characteristic value</th>
+                            <th>Value Description</th>
+                            <th>Pricing</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let characteristic of characteristics[currentCharacteristicId].value | searchfilter: 'charValu' : txtFname.value; let i = 'index'">
+                            <td>
+                                {{characteristic.charValu}}
+                            </td>
+                            <td>
+                                {{characteristic.valueDesc}}
+                            </td>
+                            <td>
+                                {{characteristic.pricing}}
+                            </td>
+                            <td>
+                                <button class="btn btn-success" (click)="selectCharacteristic(i)" data-dismiss="modal">select</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
 
     </div>
 </div>
+<!-- End of Characteristic Modal -->

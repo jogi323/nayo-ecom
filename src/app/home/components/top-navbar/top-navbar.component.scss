@@ -1,12 +1,17 @@
 .btn-primary-outline {
     background-color: transparent;
     border-color: #ccc;
-    color:#ccc;
-  }
-  .brand{
+    color: #ccc;
+}
+
+.brand {
     font-size: 30px;
     font-weight: 900;
     color: white;
     font-family: inherit;
     padding-top: 7% !important;
+}
+
+.cart-dropdown {
+    min-width: 400px;
 }

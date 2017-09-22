@@ -9,58 +9,69 @@
                 <div class="modal-header">
                     <h4 class="modal-title pull-left">Edit Profile</h4>
                     <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                    <form [formGroup]="valForm" class="form-validate mb-lg" role="form" name="registerForm" novalidate="" (submit)="submitForm($event, valForm.value)">
-                        <div class="form-group has-feedback">
-                            <!--<label class="text-muted">Full name</label>-->
-                            <input class="form-control" type="text" name="account_name" placeholder="Enter Name" autocomplete="off" formControlName="name" required="" />
-                            <span class="fa fa-user-o form-control-feedback text-muted"></span>
-                            <span class="text-danger" *ngIf="valForm.controls['name'].hasError('required') && (valForm.controls['name'].dirty || valForm.controls['name'].touched)">Name is required</span>
-                            <span class="text-danger" *ngIf="valForm.controls['name'].hasError('minlength') && (valForm.controls['name'].dirty || valForm.controls['name'].touched)">Name must contain atleast 2 characters</span>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-xs-6">
+                                <form [formGroup]="valForm" class="form-validate mb-lg" role="form" name="registerForm" novalidate="" (submit)="submitForm($event, valForm.value)">
+                                            <div class="form-group has-feedback">
+                                                <!--<label class="text-muted">Full name</label>-->
+                                                <input class="form-control" type="text" name="account_name" placeholder="Enter Name" autocomplete="off" formControlName="name" required="" />
+                                                <span class="fa fa-user-o form-control-feedback text-muted"></span>
+                                                <span class="text-danger" *ngIf="valForm.controls['name'].hasError('required') && (valForm.controls['name'].dirty || valForm.controls['name'].touched)">Name is required</span>
+                                                <span class="text-danger" *ngIf="valForm.controls['name'].hasError('minlength') && (valForm.controls['name'].dirty || valForm.controls['name'].touched)">Name must contain atleast 2 characters</span>
+                                            </div>
+                                            <div class="form-group has-feedback">
+                                                <!--<label class="text-muted">Email address</label>-->
+                                                <input class="form-control" type="email" name="account_email" placeholder="Enter email" autocomplete="off" formControlName="email" required="" />
+                                                <span class="fa fa-envelope form-control-feedback text-muted"></span>
+                                                <span class="text-danger" *ngIf="valForm.controls['email'].hasError('required') && (valForm.controls['email'].dirty || valForm.controls['email'].touched)">Email is required</span>
+                                                <span class="text-danger" *ngIf="valForm.controls['email'].hasError('email') && (valForm.controls['email'].dirty || valForm.controls['email'].touched)">This field must be a valid email address</span>
+                                            </div>
+                                            <div class="form-group has-feedback">
+                                                <!--<label class="text-muted">address</label>-->
+                                                <input class="form-control" type="description" name="account_address" placeholder="Enter address" autocomplete="off" formControlName="address" required="" />
+                                                <span class="fa fa-address-card form-control-feedback text-muted"></span>
+                                                <span class="text-danger" *ngIf="valForm.controls['address'].hasError('required') && (valForm.controls['address'].dirty || valForm.controls['address'].touched)">address is required</span>
+                                                <span class="text-danger" *ngIf="valForm.controls['address'].hasError('minlength') && (valForm.controls['address'].dirty || valForm.controls['address'].touched)">address must contain atlest 10 characters</span>
+                                            </div>
+                                            <div class="form-group has-feedback">
+                                                <!--<label class="text-muted">address</label>-->
+                                                <input class="form-control" type="description" name="account_company" placeholder="Enter company name" autocomplete="off" formControlName="company" required="" />
+                                                <span class="fa fa-briefcase form-control-feedback text-muted"></span>
+                                                <span class="text-danger" *ngIf="valForm.controls['company'].hasError('required') && (valForm.controls['company'].dirty || valForm.controls['company'].touched)">Company name is required</span>
+                                                <span class="text-danger" *ngIf="valForm.controls['company'].hasError('minlength') && (valForm.controls['company'].dirty || valForm.controls['company'].touched)">Company name must contain atlest 2 characters</span>
+                                            </div>
+                                            <div class="form-group has-feedback">
+                                                <!--<label class="text-muted">Phone Number</label>-->
+                                                <input class="form-control" type="number" name="account_phone" placeholder="Enter Mobile number" autocomplete="off" formControlName="phone" required="" />
+                                                <span class="fa fa-phone-square form-control-feedback text-muted"></span>
+                                                <span class="text-danger" *ngIf="valForm.controls['phone'].hasError('required') && (valForm.controls['phone'].dirty || valForm.controls['phone'].touched)">Phone Number is required</span>
+                                                <span class="text-danger" *ngIf="valForm.controls['phone'].hasError('minlength') && (valForm.controls['phone'].dirty || valForm.controls['phone'].touched)">Must contain atleast 10 number</span>
+                                            </div>
+                                            <div class="form-group has-feedback">
+                                                <!--<label class="text-muted">Phone Number</label>-->
+                                                <input class="form-control" type="number" name="account_pincode" placeholder="Enter Pin code" autocomplete="off" formControlName="pincode" required="" />
+                                                <span class="fa fa-ellipsis-h form-control-feedback text-muted"></span>
+                                                <span class="text-danger" *ngIf="valForm.controls['pincode'].hasError('required') && (valForm.controls['pincode'].dirty || valForm.controls['pincode'].touched)">Pin Code is required</span>
+                                                <span class="text-danger" *ngIf="valForm.controls['pincode'].hasError('minlength') && (valForm.controls['pincode'].dirty || valForm.controls['pincode'].touched)">Must contain atleast 6 numbers</span>
+                                            </div>
+                                            <button class="btn btn-block btn-primary mt-lg" type="submit">Submit</button>
+                                        </form>  
+                            </div>
+                            <div class="col-xs-6">
+                                    
+                            </div>
                         </div>
-                        <div class="form-group has-feedback">
-                            <!--<label class="text-muted">Email address</label>-->
-                            <input class="form-control" type="email" name="account_email" placeholder="Enter email" autocomplete="off" formControlName="email" required="" />
-                            <span class="fa fa-envelope form-control-feedback text-muted"></span>
-                            <span class="text-danger" *ngIf="valForm.controls['email'].hasError('required') && (valForm.controls['email'].dirty || valForm.controls['email'].touched)">Email is required</span>
-                            <span class="text-danger" *ngIf="valForm.controls['email'].hasError('email') && (valForm.controls['email'].dirty || valForm.controls['email'].touched)">This field must be a valid email address</span>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <!--<label class="text-muted">address</label>-->
-                            <input class="form-control" type="description" name="account_address" placeholder="Enter address" autocomplete="off" formControlName="address" required="" />
-                            <span class="fa fa-address-card form-control-feedback text-muted"></span>
-                            <span class="text-danger" *ngIf="valForm.controls['address'].hasError('required') && (valForm.controls['address'].dirty || valForm.controls['address'].touched)">address is required</span>
-                            <span class="text-danger" *ngIf="valForm.controls['address'].hasError('minlength') && (valForm.controls['address'].dirty || valForm.controls['address'].touched)">address must contain atlest 10 characters</span>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <!--<label class="text-muted">address</label>-->
-                            <input class="form-control" type="description" name="account_company" placeholder="Enter company name" autocomplete="off" formControlName="company" required="" />
-                            <span class="fa fa-briefcase form-control-feedback text-muted"></span>
-                            <span class="text-danger" *ngIf="valForm.controls['company'].hasError('required') && (valForm.controls['company'].dirty || valForm.controls['company'].touched)">Company name is required</span>
-                            <span class="text-danger" *ngIf="valForm.controls['company'].hasError('minlength') && (valForm.controls['company'].dirty || valForm.controls['company'].touched)">Company name must contain atlest 2 characters</span>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <!--<label class="text-muted">Phone Number</label>-->
-                            <input class="form-control" type="number" name="account_phone" placeholder="Enter Mobile number" autocomplete="off" formControlName="phone" required="" />
-                            <span class="fa fa-phone-square form-control-feedback text-muted"></span>
-                            <span class="text-danger" *ngIf="valForm.controls['phone'].hasError('required') && (valForm.controls['phone'].dirty || valForm.controls['phone'].touched)">Phone Number is required</span>
-                            <span class="text-danger" *ngIf="valForm.controls['phone'].hasError('minlength') && (valForm.controls['phone'].dirty || valForm.controls['phone'].touched)">Must contain atleast 10 number</span>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <!--<label class="text-muted">Phone Number</label>-->
-                            <input class="form-control" type="number" name="account_pincode" placeholder="Enter Pin code" autocomplete="off" formControlName="pincode" required="" />
-                            <span class="fa fa-ellipsis-h form-control-feedback text-muted"></span>
-                            <span class="text-danger" *ngIf="valForm.controls['pincode'].hasError('required') && (valForm.controls['pincode'].dirty || valForm.controls['pincode'].touched)">Pin Code is required</span>
-                            <span class="text-danger" *ngIf="valForm.controls['pincode'].hasError('minlength') && (valForm.controls['pincode'].dirty || valForm.controls['pincode'].touched)">Must contain atleast 6 numbers</span>
-                        </div>
-                        <button class="btn btn-block btn-primary mt-lg" type="submit">Submit</button>
-                    </form>
+                    </div>
+                    
                 </div>
             </div>
         </div>
+        
     </div>
     <!-- Page footer-->
-    <footer app-footer></footer>
+    <!-- <footer app-footer></footer> -->
