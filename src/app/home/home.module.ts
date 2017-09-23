@@ -30,6 +30,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { OrderViewComponent } from './components/order-view/order-view.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { WarrantyInfoComponent } from './components/warranty-info/warranty-info.component';
 
 @NgModule({
   imports: [
@@ -56,7 +57,8 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
       CharacteristicsComponent,
       OrderViewComponent,
     SearchFilterPipe,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    WarrantyInfoComponent
     ],
   providers:[
     SettingsService,

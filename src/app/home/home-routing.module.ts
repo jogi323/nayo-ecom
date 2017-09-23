@@ -8,7 +8,7 @@ import { CharacteristicsComponent } from './components/characteristics/character
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderViewComponent } from './components/order-view/order-view.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
-
+import { WarrantyInfoComponent } from './components/warranty-info/warranty-info.component';
 
 const routes: Routes = [
   {
@@ -21,6 +21,7 @@ const routes: Routes = [
         { path: 'orders', component:OrdersComponent },
         { path: 'vieworder', component:OrderViewComponent },
         { path: 'shoppingcart', component:ShoppingCartComponent },
+        { path: 'warrantyinfo', component:WarrantyInfoComponent },
     ]
   },
   
