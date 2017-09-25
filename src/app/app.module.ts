@@ -25,6 +25,11 @@ import { RegisterComponent } from './register/register.component';
 import { RecoverComponent } from './recover/recover.component';
 import { RecoverUsernameComponent } from './recover-username/recover-username.component';
 
+//defined services
+import { UserService } from './shared/services/user.service';
+import { ApiService } from './shared/services/api.service';
+import { JwtService } from './shared/services/jwt-service.service';
+
 // https://github.com/ocombe/ng2-translate/issues/218
 export function createTranslateLoader(http: Http) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -54,7 +59,10 @@ export function createTranslateLoader(http: Http) {
         })
     ],
     providers: [
-        AppService
+        AppService,
+        UserService,
+        ApiService,
+        JwtService
     ],
     bootstrap: [AppComponent]
 })
