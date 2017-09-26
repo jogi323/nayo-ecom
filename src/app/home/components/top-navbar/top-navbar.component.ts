@@ -32,6 +32,7 @@ export class TopNavbarComponent implements OnInit {
                 productName: 'product 1',
                 description: 'some description about the product',
                 price: 1200,
+                items: 4,
                 expectedArrival: '10/10/2017'
             },
             {
@@ -39,6 +40,7 @@ export class TopNavbarComponent implements OnInit {
                 productName: 'product 2',
                 description: 'some description about the product',
                 price: 2200,
+                items: 1,
                 expectedArrival: '10/10/2017'
             },
             {
@@ -46,6 +48,7 @@ export class TopNavbarComponent implements OnInit {
                 productName: 'product 3',
                 description: 'some description about the product some description about the product some description about the product',
                 price: 3200,
+                items: 1,                
                 expectedArrival: '10/10/2017'
             },
             {
@@ -53,6 +56,7 @@ export class TopNavbarComponent implements OnInit {
                 productName: 'product 4',
                 description: 'some description about the product',
                 price: 4200,
+                items: 2,                
                 expectedArrival: '10/10/2017'
             }
         ]
