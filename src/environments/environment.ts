@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  api_url:'https://testapi.io/api/ashokona'
+  api_url:'localhost:4200/'
 };

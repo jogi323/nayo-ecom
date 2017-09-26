@@ -15,7 +15,7 @@ import { UserService } from '../shared/services/user.service';
 export class LoginComponent implements OnInit {
 
     valForm: FormGroup;
-    authType= '';
+    authType= 'signin';
 
     constructor(
         public settings: SettingsService,

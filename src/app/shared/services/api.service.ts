@@ -49,11 +49,11 @@ export class ApiService {
     });
   }
 
-  post(path: string, body: Object = {}): Observable<any> {
+  post(path: string, body: Object = {}, params: URLSearchParams = new URLSearchParams()): Observable<any> {
     return this.http.post(
       `${environment.api_url}${path}`,
       JSON.stringify(body),
-      { headers: this.setHeaders() }
+      { headers: this.setHeaders(), search:params }
     )
     .map((res: Response) => res.json())
     .catch((error: Response) => {

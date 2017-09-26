@@ -61,8 +61,8 @@ export class UserService {
   }
 
   attemptAuth(type, credentials): Observable<any> {
-    const route = (type === 'login') ? '/login' : '';
-    return this.apiService.post('/users' + route, {user: credentials})
+    // const route = (type === 'login') ? '/login' : '';
+    return this.apiService.post(type, {user: credentials},credentials)
     .map(
       data => {
         this.setAuth(data.user);
